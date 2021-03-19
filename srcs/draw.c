@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:03:58 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:21:48 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void			draw_scene(t_rt *rt, int x, int y)
 	r.r1 = .5;
 	r.r2 = .5;
 	ray = ray_init(rt, x, y, r);
-	if (rt->filters[5] == 1)
+	if (rt->save_filter == 5)
 	{
 		col1 = int_to_rgb_yatak(pixel_color(rt, ray));
 		ray->origin.x += 5.0;

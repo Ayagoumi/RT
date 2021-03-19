@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:32 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:05:46 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:13:49 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static void		draw_fourth_thread(t_rt *rt)
 		x = W / 2;
 		while (x < W)
 		{
-			if (rt->filters[0])
+			if (rt->save_filter == 0)
 				apply_antiliasing(rt, x, y);
 			else
 				draw_scene(rt, x, y);

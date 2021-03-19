@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:08:20 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:15:08 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,11 @@ void			render(t_sdl *sdl, t_rt *rt)
 			break ;
 		i++;
 	}
-	if (i == 2)
+	if (rt->save_filter == 2)
 		sepia_effect(rt->sdl->data);
-	if (i == 3)
+	if (rt->save_filter == 3)
 		grey_effect(rt->sdl->data);
-	if (i == 4)
+	if (rt->save_filter == 4)
 		cartoon_effect(rt->sdl->data);
 	if (i == 6)
 		blur_effect(rt->sdl->data);
