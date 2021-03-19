@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:15:08 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:40:27 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void			render(t_sdl *sdl, t_rt *rt)
 		grey_effect(rt->sdl->data);
 	if (rt->save_filter == 4)
 		cartoon_effect(rt->sdl->data);
-	if (i == 6)
+	if (rt->save_filter == 6)
 		blur_effect(rt->sdl->data);
 	SDL_RenderClear(sdl->ren_ptr);
 	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->data, W * 4);
@@ -110,8 +110,8 @@ void			destroy_sdl(t_sdl **s)
 	//SDL_DestroyRenderer(sdl->ren_menu);
 	SDL_DestroyWindow(sdl->win_ptr);
 	//SDL_DestroyWindow(sdl->win_menu);
-	TTF_CloseFont(sdl->font_p);
-	TTF_CloseFont(sdl->font_s);
+	//TTF_CloseFont(sdl->font_p);
+	//TTF_CloseFont(sdl->font_s);
 	TTF_Quit();
 	SDL_Quit();
 	free(sdl);

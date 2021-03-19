@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:21:48 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:52:07 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			apply_antiliasing(t_rt *rt, int x, int y)
 	col = (t_col){0, 0, 0};
 	r.r1 = 0.0000;
 	r.r2 = 0.0000;
-	while (z < 10)
+	while (z < 20)
 	{
 		r.r1 = ((double)(rand() % 10)) / 10.0;
 		r.r2 = ((double)(rand() % 10)) / 10.0;
@@ -101,7 +101,7 @@ void			apply_antiliasing(t_rt *rt, int x, int y)
 		free(ray);
 		z++;
 	}
-	col = divide_color(col, (double)(10.0));
+	col = divide_color(col, (double)(20.0));
 	col.r = col.r > 255 ? 255 : col.r;
 	col.g = col.g > 255 ? 255 : col.g;
 	col.b = col.b > 255 ? 255 : col.b;

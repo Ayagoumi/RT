@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 23:16:14 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:21:41 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/19 17:35:31 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	err(int ac, char **av, t_rt *rt, char *file)
 	free(file);
 	new_camera(rt);
 	rt->sdl = init_sdl();
-	rt->save_filter = 6;
+	rt->save_filter = 7;
 	(rt->sdl) ? rtrace(rt) : free_rt(&rt);
 }
 
