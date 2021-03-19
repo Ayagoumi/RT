@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/07 14:42:51 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:08:20 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,30 @@ t_sdl			*init_sdl(void)
 	if (!(sdl = malloc(sizeof(t_sdl))))
 		return (NULL);
 	SDL_Init(SDL_INIT_EVERYTHING);
-	TTF_Init();
-	sdl->font_p = TTF_OpenFont(\
-			"./resources/great-vibes/GreatVibes-Regular.otf", 100);
-	if (!sdl->font_p)
-		return (NULL);
-	sdl->font_s = TTF_OpenFont("./resources/lato/Lato-Medium.ttf", 36);
-	if (!sdl->font_s)
-		return (NULL);
-	sdl->win_menu = SDL_CreateWindow("menu", 480, 320, 400, 800, 0);
+	// TTF_Init();
+	// sdl->font_p = TTF_OpenFont(\
+	// 		"./resources/great-vibes/GreatVibes-Regular.otf", 100);
+	// if (!sdl->font_p)
+	// 	return (NULL);
+	// sdl->font_s = TTF_OpenFont("./resources/lato/Lato-Medium.ttf", 36);
+	// if (!sdl->font_s)
+	// 	return (NULL);
+	// sdl->win_menu = SDL_CreateWindow("menu", 480, 320, 400, 800, 0);
 	sdl->win_ptr = SDL_CreateWindow("Rt", SDL_WINDOWPOS_UNDEFINED, \
-			SDL_WINDOWPOS_UNDEFINED, W, H, 0);
+			SDL_WINDOWPOS_UNDEFINED, WID, HEI, 0);
 	sdl->ren_ptr = SDL_CreateRenderer(sdl->win_ptr, -1, 0);
-	sdl->ren_menu = SDL_CreateRenderer(sdl->win_menu, -1, 0);
+	//sdl->ren_menu = SDL_CreateRenderer(sdl->win_menu, -1, 0);
 	sdl->tex_ptr = SDL_CreateTexture(sdl->ren_ptr, SDL_PIXELFORMAT_ARGB8888,
-	SDL_TEXTUREACCESS_STREAMING, W, H);
+	SDL_TEXTUREACCESS_STREAMING, WID, HEI);
+	sdl->save = 0;
+	sdl->text[0] = malloc(sizeof(char) * 5);
+	sdl->text[1] = malloc(sizeof(char) * 5);
+	sdl->text[2] = malloc(sizeof(char) * 5);
+	sdl->text[0][4] = '\0';
+	sdl->text[0][4] = '\0';
+	sdl->text[0][4] = '\0';
+	sdl->enterind = 0;
+	sdl->indtext = 0;
 	return (sdl);
 }
 
@@ -78,18 +87,14 @@ void			render(t_sdl *sdl, t_rt *rt)
 			break ;
 		i++;
 	}
-	if (i == 1)
-		img_noise(rt->sdl->data);
 	if (i == 2)
-		img_sepia(rt->sdl->data);
+		sepia_effect(rt->sdl->data);
 	if (i == 3)
-		img_grey(rt->sdl->data);
+		grey_effect(rt->sdl->data);
 	if (i == 4)
-		ft_cartoon(rt->sdl->data);
-	if (i == 5)
-		img_ddd(rt->sdl->data);
+		cartoon_effect(rt->sdl->data);
 	if (i == 6)
-		blurr(rt->sdl->data);
+		blur_effect(rt->sdl->data);
 	SDL_RenderClear(sdl->ren_ptr);
 	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->data, W * 4);
 	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
@@ -102,9 +107,9 @@ void			destroy_sdl(t_sdl **s)
 
 	sdl = *s;
 	SDL_DestroyRenderer(sdl->ren_ptr);
-	SDL_DestroyRenderer(sdl->ren_menu);
+	//SDL_DestroyRenderer(sdl->ren_menu);
 	SDL_DestroyWindow(sdl->win_ptr);
-	SDL_DestroyWindow(sdl->win_menu);
+	//SDL_DestroyWindow(sdl->win_menu);
 	TTF_CloseFont(sdl->font_p);
 	TTF_CloseFont(sdl->font_s);
 	TTF_Quit();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   core_raytracing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 12:21:03 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/09 09:20:29 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:08:59 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int			core(t_rt **r)
 			|| rt->sdl->event.type == SDL_QUIT)
 		return (0);
 	hooks(r);
-	mouse_hook(r, &to_do);
+	//mouse_hook(r, &to_do);
 	return (1);
 }
 
@@ -70,6 +70,7 @@ void		rtrace(t_rt *rt)
 	rt->sdl->loop = 2;
 	rt->save_filter = -1;
 	rt->filters = init_tab();
+	rt->save_filter = 1;
 	while (rt->sdl->loop)
 	{
 		initab(rt->filters);

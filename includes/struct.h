@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/08 18:35:06 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:04:34 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,8 +265,12 @@ typedef struct	s_sdl
 	int				loop;
 	SDL_Event		event;
 	char			*key_table;
+	int				save;
 	int				*tex;
 	int				data[W * H];
+	char			*text[3];
+	int				indtext;
+	int				enterind;
 }				t_sdl;
 
 typedef struct	s_rt

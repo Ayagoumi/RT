@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bmp.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:46:42 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/02/22 12:51:15 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:00:15 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,14 @@ void	image_create(int *img)
 {
 	t_image	image;
 	int		file;
+	char	*name;
+	char	*tmp;
+	time_t 	rawtime;
 
-	file = open("./save.bmp", O_RDWR | O_CREAT, 777);
+	rawtime = time(NULL);
+	tmp = ctime(&rawtime);
+	name = ft_strtrim(tmp);
+	file = open(name, O_RDWR | O_CREAT, 777);
 	fill_data(&image);
 	image_header(&image, file);
 	image_put(img, file);

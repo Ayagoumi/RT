@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   image.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahkhilad <ahkhilad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:23:39 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/06 15:55:53 by chzabakh         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:59:26 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,25 @@
 # include <time.h>
 # include <stdlib.h>
 
-typedef	struct	s_vec
+typedef	struct	s_ind
 {
-	float x;
-	float y;
-	float z;
-}				t_vec;
+	int		i;
+	int		j;
+}				t_ind;
 
-typedef	struct	s_clr
-{
-	int	r;
-	int	g;
-	int	b;
-}				t_clr;
 
-typedef	struct	s_z
+typedef	struct	s_col
 {
-	int	i;
-	int	j;
-	int	d;
-	int	dd;
-}				t_z;
+	double	r;
+	double	g;
+	double	b;
+}				t_col;
+
+typedef	struct	s_dist
+{
+	double	dist;
+	double	distance;
+}				t_dist;
 
 typedef struct	s_image
 {
@@ -58,13 +56,18 @@ typedef struct	s_image
 	unsigned int	clr_important;
 }				t_image;
 
+int         	rgb_to_int_yatak(t_col col);
+t_col       	int_to_rgb_yatak(int val);
+t_col       	alpha_compositing(t_col c1, t_col c2, double a1, double a2);
+t_col      		divide_color(t_col c, double v);
+t_col      		plus_color(t_col c1, t_col c2);
+void			grey_effect(int *img);
+void			cartoon_effect(int *img);
+void			sepia_effect(int *img);
+void			anaglyph_effect(int *img);
+void			blur_effect(int *img);
+
 void			image_create(int *img);
-void			img_sepia(int *img);
-void			img_noise(int *img);
 void			img_neg(int *img);
-void			img_grey(int *img);
 void			antialiasing(int *img);
-void			ft_cartoon(int *img);
-void			img_ddd(int *img);
-void			blurr(int *img);
 #endif

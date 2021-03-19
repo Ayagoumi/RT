@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/09 11:18:03 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:03:58 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,36 +84,56 @@ unsigned int	pixel_color(t_rt *rt, t_ray *ray)
 void			apply_antiliasing(t_rt *rt, int x, int y)
 {
 	int		z;
-	t_color	c;
+	t_col	col;
 	t_ray	*ray;
 	t_rr	r;
 
 	z = 0;
-	c = (t_color){0, 0, 0};
-	while (z < 5)
+	col = (t_col){0, 0, 0};
+	r.r1 = 0.0000;
+	r.r2 = 0.0000;
+	while (z < 10)
 	{
-		r.r1 = (rand() % 10) / 10.;
-		r.r2 = (rand() % 10) / 10.;
+		r.r1 = ((double)(rand() % 10)) / 10.0;
+		r.r2 = ((double)(rand() % 10)) / 10.0;
 		ray = ray_init(rt, x, y, r);
-		c = vect_add(c, int_to_rgb(pixel_color(rt, ray)));
+		col = plus_color(col, int_to_rgb_yatak(pixel_color(rt, ray)));
 		free(ray);
 		z++;
 	}
-	c = v_c_prod(c, (double)(1.0 / 5.0));
-	c.x = (int)c.x & 255;
-	c.y = (int)c.y & 255;
-	c.z = (int)c.z & 255;
-	rt->sdl->data[y * W + x] = rgb_to_int(c);
+	col = divide_color(col, (double)(10.0));
+	col.r = col.r > 255 ? 255 : col.r;
+	col.g = col.g > 255 ? 255 : col.g;
+	col.b = col.b > 255 ? 255 : col.b;
+	rt->sdl->data[y * W + x] = rgb_to_int_yatak(col);
 }
 
 void			draw_scene(t_rt *rt, int x, int y)
 {
+
 	t_rr	r;
 	t_ray	*ray;
+	t_col	col1;
+	t_col	col2;
+	t_col	col;
 
 	r.r1 = .5;
 	r.r2 = .5;
 	ray = ray_init(rt, x, y, r);
-	rt->sdl->data[y * W + x] = pixel_color(rt, ray);
+	if (rt->filters[5] == 1)
+	{
+		col1 = int_to_rgb_yatak(pixel_color(rt, ray));
+		ray->origin.x += 5.0;
+		col2 = int_to_rgb_yatak(pixel_color(rt, ray));
+		col1.g += 50;
+		col1.r = 0;
+		col2.r += 50;
+		col2.g = 0;
+		col = plus_color(col1, col2);
+		col = divide_color(col, 2);
+		rt->sdl->data[y * W + x] = rgb_to_int_yatak(col);
+	}
+	else 
+		rt->sdl->data[y * W + x] = pixel_color(rt, ray);
 	free(ray);
 }
