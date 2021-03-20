@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/18 19:49:25 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/20 17:43:50 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ double			in_shadow(t_rt *rt, t_light *light, t_object *object)
 			distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
 			if (distance < light->d && !obj->is_transp)
 				return (1 - fabs(dot(shadow.direction, object->normal)));
-			else if (obj->is_transp)
+			else if (distance < light->d && obj->is_transp)
 				light->intensity *= obj->is_transp;
 		}
 		obj = obj->next;
