@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 14:25:52 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/20 18:30:55 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/20 19:04:35 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,18 @@ double			hit_triangle(t_object *triangle, t_ray *r)
 
 	tr.ca = vect_sub(triangle->point_c, triangle->point_a);
 	tr.ba = vect_sub(triangle->point_b, triangle->point_a);
+	t_vect3 surface_normal = normalize(cross(tr.ba, tr.ca));
+	double i  = dot(r->direction, surface_normal);
+	if (i < 0)
+	{
+		t_vect3 tmp;
+		tmp = tr.ba;
+		tr.ba = tr.ca;
+		tr.ca = tmp;
+	}
 
-	cross_raydir_edge2 = cross(r->direction, tr.ca);
-	det = dot(tr.ba, cross_raydir_edge2);
+	cross_raydir_edge2 = cross(r->direction, tr.ba);
+	det = dot(tr.ca, cross_raydir_edge2);
 	if (det < 0.00001)
 		return (-1);
 
@@ -62,12 +71,12 @@ double			hit_triangle(t_object *triangle, t_ray *r)
 	if (u < 0.0 || u > det)
 		return (-1);
 
-	cross_ori_edge1 = cross(origin_minus_v0, tr.ba);
+	cross_ori_edge1 = cross(origin_minus_v0, tr.ca);
 	v = dot(r->direction, cross_ori_edge1);
 	if (v < 0.0 || u + v > det)
 		return (-1);
 
-	inter.t = dot(tr.ca, cross_ori_edge1);
+	inter.t = dot(tr.ba, cross_ori_edge1);
 
 	inv_det = 1.0 / det;
 	u *= inv_det;
