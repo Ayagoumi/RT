@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 20:08:06 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/20 18:06:37 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/20 10:11:49 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_vect3		vect_div(t_vect3 u, t_vect3 v);
 t_vect3		vect_prod(t_vect3 u, t_vect3 v);
 t_vect3		v_c_prod(t_vect3 u, double v);
 t_vect3		v_c_add(t_vect3 u, double v);
-int			ft_solve_cubic(double w[4], double s[3]);
-int		ft_solve_quadric(double c[3], double s[2]);
 int			ft_solve_quartic(double w[5], double s[4]);
+int			ft_solve_cubic(double w[4], double s[3]);
+int			ft_solve_quadric(double c[3], double s[2]);
+
 #endif

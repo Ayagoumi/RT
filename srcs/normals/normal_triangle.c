@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   normal_triangle.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 10:33:30 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/18 17:42:23 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/20 18:31:22 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_vect3			triangle_normal(t_object *object, t_ray *ray)
 	ca = vect_sub(object->point_c, object->point_a);
 	ba = vect_sub(object->point_b, object->point_a);
 	normal = normalize(cross(ba, ca));
-	if (dot(ray->direction, normal) > 0)
-		normal = v_c_prod(normal, -1.0);
+	// if (dot(ray->direction, normal) > 0)
+	// 	normal = v_c_prod(normal, -1.0);
 	return (normal);
 }

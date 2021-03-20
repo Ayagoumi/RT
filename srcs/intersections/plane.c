@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plane.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:50:23 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/08 16:52:55 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:11:43 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 double		hit_plane(t_object *object, t_ray *ray)
 {
-	double		t;
-	double		a;
-	double		b;
-	t_vect3		oc;
+	t_intersect		i;
 
 	object->orientation = normalize(object->orientation);
-	oc = vect_sub(ray->origin, object->position);
-	a = dot(oc, object->orientation);
-	b = dot(ray->direction, object->orientation);
-	if (b == 0 || a * b >= 0)
+	i.oc = vect_sub(ray->origin, object->position);
+	i.a = dot(i.oc, object->orientation);
+	i.b = dot(ray->direction, object->orientation);
+	if (i.b == 0 || i.a * i.b >= 0)
 		return (-1.0);
-	t = -a / b;
-	return (slice_obj(*object, *ray, t));
+	i.t = -i.a / i.b;
+	return (slice_obj(*object, *ray, i.t));
 }

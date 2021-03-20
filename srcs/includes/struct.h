@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 18:09:17 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/20 17:49:35 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,6 @@
 # define STRUCT_H
 
 # include "./parser/pars_struct.h"
-
-typedef struct	s_cubic
-{
-	double	a;
-	double	b;
-	double	c;
-	double	d;
-	double	sq_a;
-	double	p;
-	double	q;
-	double	cb_p;
-}				t_cubic;
-
-typedef struct	s_quartic
-{
-	double	a;
-	double	b;
-	double	c;
-	double	d;
-	double	z;
-	double	u;
-	double	v;
-	double	sub;
-	double	sq_a;
-	double	p;
-	double	q;
-	double	r;
-}				t_quartic;
 
 typedef struct	s_vect3
 {
@@ -318,5 +290,33 @@ typedef struct	s_rt
 	double			(**intersection)(t_object *obj, t_ray *r);
 	t_vect3			(**normal)(t_object *obj, t_ray *r);
 }				t_rt;
+
+typedef struct	s_cubic
+{
+	double		a;
+	double		b;
+	double		c;
+	double		d;
+	double		sq_a;
+	double		p;
+	double		q;
+	double		cb_p;
+}				t_cubic;
+
+typedef struct	s_quartic
+{
+	double		a;
+	double		b;
+	double		c;
+	double		d;
+	double		z;
+	double		u;
+	double		v;
+	double		sub;
+	double		sq_a;
+	double		p;
+	double		q;
+	double		r;
+}				t_quartic;
 
 #endif

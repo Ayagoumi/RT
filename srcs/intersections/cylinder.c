@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:49:36 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/08 16:41:11 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/20 17:44:58 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,3 +121,32 @@ double		hit_cylinder(t_object *cyl, t_ray *ray)
 	limit_calc(cyl, &cap, ray, x);
 	return (slice_obj(*cyl, *ray, limit_calc1(cyl, ray, cap)));
 }
+
+// double		hit_cylinder(t_object *cyl, t_ray *r)
+// {
+// 	t_intersect		inter;
+
+// 	inter.oc = vect_sub(r->origin, cyl->position);
+// 	inter.a = dot(r->direction, r->direction) - powf(dot(r->direction, cyl->orientation), 2);
+// 	inter.b = 2 * (dot(r->direction, inter.oc) - (dot(r->direction, cyl->orientation) *\
+// 				dot(inter.oc, cyl->orientation)));
+// 	inter.c = dot(inter.oc, inter.oc) - (dot(inter.oc, cyl->orientation) *\
+// 			dot(inter.oc, cyl->orientation)) - (cyl->radius * cyl->radius);
+// 	inter.delta = inter.b * inter.b - (4 * inter.a * inter.c);
+// 	if (inter.delta < 0)
+// 		return (-1);
+// 	inter.delta = sqrtf(inter.delta);
+// 	inter.t1 = (-inter.b - inter.delta) / (2 * inter.a);
+// 	inter.t2 = (-inter.b + inter.delta) / (2 * inter.a);
+// 	r->t = equa_solu(cyl->cyl.a, cyl->cyl.b, cyl->cyl.delta);
+// 	if ((inter.t1 <= inter.t2 && inter.t1 >= 0.0) ||\
+// 			(inter.t1 >= 0.0 && inter.t2 < 0.0))
+// 		return (r->t = inter.t1);
+// 	if ((inter.t2 <= inter.t1 && inter.t2 >= 0.0) ||\
+// 			(inter.t2 >= 0.0 && inter.t1 < 0.0))
+// 		return (r->t = inter.t2);
+// 	// if (cyl->height <= 0)
+// 		// return (t);
+// 	return (-1);
+// }
+
