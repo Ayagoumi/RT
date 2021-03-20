@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_functions.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 23:14:56 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/09 11:34:42 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:26:37 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int				check_for_box(int type, t_node n);
 int				check_for_parallelogram(int type, t_node n);
 int				check_for_triangle(int type, t_node n);
 int				check_for_disk(int type, t_node n);
+int				*convert_color(char *pixels, int w, int h, int bbp);
 /*
 ** ------------------------------{Util}-------------------------
 */

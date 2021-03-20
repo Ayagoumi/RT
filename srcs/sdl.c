@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:40:27 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/20 15:31:28 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ t_sdl			*init_sdl(void)
 	//sdl->ren_menu = SDL_CreateRenderer(sdl->win_menu, -1, 0);
 	sdl->tex_ptr = SDL_CreateTexture(sdl->ren_ptr, SDL_PIXELFORMAT_ARGB8888,
 	SDL_TEXTUREACCESS_STREAMING, WID, HEI);
+	if (!(sdl->bstila = IMG_Load("bstila.png")))
+	{
+		printf("dfdf\n");
+		exit(0);
+	}
+	sdl->data_bstila = convert_color((char*)sdl->bstila->pixels, sdl->bstila->w, sdl->bstila->h, sdl->bstila->format->BytesPerPixel);
 	sdl->save = 0;
 	sdl->text[0] = malloc(sizeof(char) * 5);
 	sdl->text[1] = malloc(sizeof(char) * 5);
@@ -59,21 +65,39 @@ int				re_calc(t_sdl *sdl, SDL_Event event)
 	SDL_GetMouseState(&x, &y);
 	z.a = (SDL_Rect){x, y, 1, 1};
 	i = 8;
-	if (SDL_GetMouseFocus() == sdl->win_menu)
-	{
-		i = 0;
-		while (i < 7)
-		{
-			z.b = (SDL_Rect){70, 220 + (i * 79), 260, 58};
-			if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE)
-				break ;
-			i++;
-		}
-	}
+	i = sdl->data[0];
+	// if (SDL_GetMouseFocus() == sdl->win_menu)
+	// {
+	// 	i = 0;
+	// 	while (i < 7)
+	// 	{
+	// 		z.b = (SDL_Rect){70, 220 + (i * 79), 260, 58};
+	// 		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE)
+	// 			break ;
+	// 		i++;
+	// 	}
+	// }
 	if (i < 7 && event.type == SDL_MOUSEBUTTONDOWN && event.button.button \
 			== SDL_BUTTON_LEFT)
 		return (i);
 	return (-1);
+}
+
+void			copy_bstila(t_sdl *sdl)
+{
+	t_ind	ind;
+
+	ind.i = 200;
+	while (ind.i < WID)
+	{
+		ind.j = 50;
+		while (ind.j < HEI)
+		{
+			sdl->data_bstila[WID * ind.j + ind.i] = sdl->data[W * (ind.j - 50) + (ind.i - 200)];
+			ind.j++;
+		}
+		ind.i++;
+	}
 }
 
 void			render(t_sdl *sdl, t_rt *rt)
@@ -96,7 +120,8 @@ void			render(t_sdl *sdl, t_rt *rt)
 	if (rt->save_filter == 6)
 		blur_effect(rt->sdl->data);
 	SDL_RenderClear(sdl->ren_ptr);
-	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->data, W * 4);
+	copy_bstila(sdl);
+	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->data_bstila, WID * 4);
 	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
 	SDL_RenderPresent(sdl->ren_ptr);
 }
