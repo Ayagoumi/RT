@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 15:28:59 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/21 11:17:51 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void		clear_camera(t_rt *rt)
 
 void	enter_camera_position(t_rt *rt)
 {
-	if (rt->save_filter == 1)
+	if (rt->save_filter == 9)
 	{
 		if (rt->sdl->event.type == SDL_KEYDOWN)
 		{
@@ -159,47 +159,12 @@ void	hooks(t_rt **r)
 	// 	//menu(rt->sdl, rt->save_filter);
 	// }
 	
-	if (rt->sdl->event.type == SDL_KEYDOWN && rt->save_filter != 1)
+	if (rt->sdl->event.type == SDL_KEYDOWN && rt->save_filter != 9)
 	{
 		printf("pres\n");
-		if (rt->sdl->event.key.keysym.sym == SDLK_q && rt->save_filter != 0)
+		if (rt->sdl->event.key.keysym.sym == SDLK_t && rt->save_filter != 9)
 		{
-			rt->save_filter = 0;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_w && rt->save_filter != 2)
-		{
-			rt->save_filter = 2;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_e && rt->save_filter != 3)
-		{
-			rt->save_filter = 3;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_r && rt->save_filter != 4)
-		{
-			rt->save_filter = 4;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_t && rt->save_filter != 1)
-		{
-			rt->save_filter = 1;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_y && rt->save_filter != 5)
-		{
-			rt->save_filter = 5;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_u && rt->save_filter != 6)
-		{
-			rt->save_filter = 6;
-			first_render(rt);
-		}
-		if (rt->sdl->event.key.keysym.sym == SDLK_i && rt->save_filter != 7)
-		{
-			rt->save_filter = 7;
+			rt->save_filter = 9;
 			first_render(rt);
 		}
 	}
@@ -210,23 +175,22 @@ void	hooks(t_rt **r)
 void	mouse_hook(t_rt **r, int *to_do)
 {
 	t_rt *rt;
-	int		i;
 
 	rt = *r;
-	// if (SDL_GetMouseFocus() == rt->sdl->win_menu)
-	// {
-	// 	if ((*to_do = re_calc(rt->sdl, rt->sdl->event)) != -1)
-	// 	{
-	// 		if (rt->save_filter == *to_do)
-	// 			rt->save_filter = -1;
-	// 		else
-	// 		{
-	// 			rt->filters[*to_do] = 1;
-	// 			rt->save_filter = *to_do;
-	// 		}
-	// 	first_render(rt);
-	i = *to_do;
-	 	render(rt->sdl, rt);
+	if (SDL_GetMouseFocus() == rt->sdl->win_ptr)
+	 {
+	 	if ((*to_do = re_calc(rt->sdl, rt->sdl->event)) != -1)
+		{
+		if (rt->save_filter == *to_do)
+			rt->save_filter = 8;
+		else
+	 		rt->save_filter = *to_do;
+		printf("the save filter : %d\n", rt->save_filter);
+		first_render(rt);
+	 	}
+	 }
+	//i = *to_do;
+	 //	render(rt->sdl, rt);
 	// 	menu(rt->sdl, rt->save_filter);
 	// 	}
 	// }

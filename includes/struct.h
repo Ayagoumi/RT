@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 18:09:17 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/21 11:08:02 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,6 +289,7 @@ typedef struct	s_sdl
 	SDL_Texture		*tex_ptr;
 	SDL_Surface		*bstila;
 	int				*data_bstila;
+	int				frame[WID * HEI];
 	int				loop;
 	SDL_Event		event;
 	int				save;
