@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 11:17:51 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/21 15:17:41 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ void	mouse_hook(t_rt **r, int *to_do)
 	rt = *r;
 	if (SDL_GetMouseFocus() == rt->sdl->win_ptr)
 	 {
-	 	if ((*to_do = re_calc(rt->sdl, rt->sdl->event)) != -1)
+	 	if ((*to_do = re_calc(rt->sdl, rt->sdl->event, rt)) != -1)
 		{
 		if (rt->save_filter == *to_do)
 			rt->save_filter = 8;

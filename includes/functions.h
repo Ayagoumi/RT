@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/18 17:53:55 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/21 15:16:30 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void			square(t_sdl *sdl, int x, int save);
 t_sdl			*init_sdl(void);
 void			destroy_sdl(t_sdl **s);
 void			render(t_sdl *sdl, t_rt *rt);
-int				re_calc(t_sdl *sdl, SDL_Event event);
+int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt);
 double			ft_min_ray(double t1, double t2, double *tmin);
 void			ft_compute_normals(t_hit *hit, t_ray *ray);
 t_ray			obj_intersect(t_object *p, t_hit *hit, t_ray ray, double t);
