@@ -46,3 +46,15 @@ t_col       divide_color(t_col c, double v)
     col.b = c.b / v;
     return (col);
 }
+
+int         compare_color(int   c1, int c2)
+{
+    t_col   col1;
+    t_col   col2;
+
+    col1 = int_to_rgb_yatak(c1);
+    col2 = int_to_rgb_yatak(c2);
+    if (col1.r == col2.r && col1.g == col2.g && col1.b == col2.b)
+        return (1);
+    return (0);
+}

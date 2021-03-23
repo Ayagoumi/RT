@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:46:46 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 15:22:52 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/20 18:10:02 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
 # define DIFFUSE 1.0
 # define SPECULER 1.0
 # define MAX_REF 3
+# define EQN_EPS 1e-9
+# define IS_ZERO(x) ((x) > -EQN_EPS && (x) < EQN_EPS)
+# ifndef CBRT
+#  define POW1(x) (pow((double)(x), 1.0 / 3.0))
+#  define POW2(x) (pow((double)-(x), 1.0 / 3.0))
+#  define CBRT(x) ((x) > 0.0 ? POW1(x) : ((x) < 0.0 ? -POW2(x) : 0.0))
+# endif
 
 typedef enum	e_error
 {

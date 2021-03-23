@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+         #
+#    By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 17:22:57 by chzabakh          #+#    #+#              #
-#    Updated: 2021/03/19 17:00:48 by yoouali          ###   ########.fr        #
+#    Updated: 2021/03/20 18:12:20 by ayagoumi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = libfilters.a
 FLAGS= -Wall -Wextra -Werror
 OBJDIR = ../../objs
 SRCDIR= ./
-OBJ= $(OBJDIR)/antialiasing.o $(OBJDIR)/filters.o $(OBJDIR)/bmp.o $(OBJDIR)/cartoon.o\
-$(OBJDIR)/grey.o $(OBJDIR)/negative.o $(OBJDIR)/noise.o\
-$(OBJDIR)/sepia.o $(OBJDIR)/stereo.o $(OBJDIR)/blur.o 
+OBJ= $(OBJDIR)/filters.o $(OBJDIR)/bmp.o $(OBJDIR)/cartoon.o\
+$(OBJDIR)/grey.o \
+$(OBJDIR)/sepia.o $(OBJDIR)/blur.o
 INC = ../../includes/
 INC1 = ../../includes/functions.h
 INC2 = ../../includes/define.h

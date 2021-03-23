@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 15:31:28 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 14:12:23 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,13 @@ t_sdl			*init_sdl(void)
 		printf("dfdf\n");
 		exit(0);
 	}
+	if (!(sdl->magana = IMG_Load("magana.png")))
+	{
+		printf("magana\n");
+		exit(0);
+	}
 	sdl->data_bstila = convert_color((char*)sdl->bstila->pixels, sdl->bstila->w, sdl->bstila->h, sdl->bstila->format->BytesPerPixel);
+	sdl->data_magana = convert_color((char*)sdl->magana->pixels, sdl->magana->w, sdl->magana->h, sdl->magana->format->BytesPerPixel);
 	sdl->save = 0;
 	sdl->text[0] = malloc(sizeof(char) * 5);
 	sdl->text[1] = malloc(sizeof(char) * 5);
@@ -55,7 +61,7 @@ t_sdl			*init_sdl(void)
 	return (sdl);
 }
 
-int				re_calc(t_sdl *sdl, SDL_Event event)
+int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt)
 {
 	int			x;
 	int			y;
@@ -64,40 +70,98 @@ int				re_calc(t_sdl *sdl, SDL_Event event)
 
 	SDL_GetMouseState(&x, &y);
 	z.a = (SDL_Rect){x, y, 1, 1};
-	i = 8;
-	i = sdl->data[0];
-	// if (SDL_GetMouseFocus() == sdl->win_menu)
-	// {
-	// 	i = 0;
-	// 	while (i < 7)
-	// 	{
-	// 		z.b = (SDL_Rect){70, 220 + (i * 79), 260, 58};
-	// 		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE)
-	// 			break ;
-	// 		i++;
-	// 	}
-	// }
-	if (i < 7 && event.type == SDL_MOUSEBUTTONDOWN && event.button.button \
+	i = 0;
+	 if (SDL_GetMouseFocus() == sdl->win_ptr)
+	{
+		i = 0;
+		while (i < 6)
+		{
+			z.b = (SDL_Rect){11,  456 + (i * (65)), 180, 60};
+			if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE)
+				break ;
+			i++;
+		}
+		z.b = (SDL_Rect){206, 4, 40, 40};
+		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
+		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
+				image_create(rt->sdl->data);
+		z.b = (SDL_Rect){30, 45, 50, 26};
+		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
+		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
+			next_cam(rt, 1);
+		z.b = (SDL_Rect){120, 45, 50, 26};
+		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
+		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
+			next_cam(rt, 0);
+	 }
+	if (i < 6 && event.type == SDL_MOUSEBUTTONDOWN && event.button.button \
 			== SDL_BUTTON_LEFT)
 		return (i);
 	return (-1);
 }
 
-void			copy_bstila(t_sdl *sdl)
+void			copy_bstila(t_sdl *sdl, int filter)
 {
 	t_ind	ind;
 
+	ind.i = 0;
+	while (ind.i < WID)
+	{
+		ind.j = 0;
+		while (ind.j < HEI)
+		{
+			sdl->frame[WID * ind.j + ind.i] = sdl->data_bstila[WID * ind.j+ ind.i];
+			ind.j++;
+		}
+		ind.i++;
+	}
 	ind.i = 200;
 	while (ind.i < WID)
 	{
 		ind.j = 50;
 		while (ind.j < HEI)
 		{
-			sdl->data_bstila[WID * ind.j + ind.i] = sdl->data[W * (ind.j - 50) + (ind.i - 200)];
+			sdl->frame[WID * ind.j + ind.i] = sdl->data[W * (ind.j - 50) + (ind.i - 200)];
 			ind.j++;
 		}
 		ind.i++;
 	}
+	if (filter >= 0 && filter <= 5)
+	{
+	ind.i = 11;
+	while (ind.i < 11 + 180)
+	{
+		ind.j = 456 + (filter * 65);
+		while (ind.j < 456 + (filter * 65) + 60)
+		{
+			if (compare_color(sdl->frame[WID * ind.j + ind.i], 0xc4c4c4))
+				sdl->frame[WID * ind.j + ind.i] = 0xffffffff;
+			ind.j++;
+		}
+		ind.i++;
+	}
+	}
+}
+
+void			render_loading_frame(t_sdl	*sdl)
+{
+	t_ind	ind;
+
+	ind.i = 954;
+	while (ind.i - 954 < 40)
+	{
+		ind.j = 4;
+		while (ind.j - 4 < 40)
+		{
+			sdl->frame[WID * ind.j + ind.i] = sdl->data_magana[40 * (ind.j - 4) + (ind.i - 954)];
+			ind.j++;
+		}
+		ind.i++;
+	}
+	SDL_RenderClear(sdl->ren_ptr);
+	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
+	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
+	SDL_RenderPresent(sdl->ren_ptr);
 }
 
 void			render(t_sdl *sdl, t_rt *rt)
@@ -111,17 +175,17 @@ void			render(t_sdl *sdl, t_rt *rt)
 			break ;
 		i++;
 	}
-	if (rt->save_filter == 2)
-		sepia_effect(rt->sdl->data);
 	if (rt->save_filter == 3)
-		grey_effect(rt->sdl->data);
+		sepia_effect(rt->sdl->data);
 	if (rt->save_filter == 4)
+		grey_effect(rt->sdl->data);
+	if (rt->save_filter == 1)
 		cartoon_effect(rt->sdl->data);
-	if (rt->save_filter == 6)
+	if (rt->save_filter == 2)
 		blur_effect(rt->sdl->data);
 	SDL_RenderClear(sdl->ren_ptr);
-	copy_bstila(sdl);
-	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->data_bstila, WID * 4);
+	copy_bstila(sdl, rt->save_filter);
+	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
 	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
 	SDL_RenderPresent(sdl->ren_ptr);
 }

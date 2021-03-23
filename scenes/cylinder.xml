@@ -3,118 +3,10 @@
 	<cylinder>
 		<height>10</height>
 		<radius>20</radius>
-		<position>-30 0 0</position>
+		<position>0 0 0</position>
 		<orientation>0 1 0 </orientation>
 		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
-		<color>0xff00ff</color>
-	</cylinder>
-	<cylinder>
-		<height>10</height>
-		<radius>20</radius>
-		<position>-30 0 0</position>
-		<orientation>0 1 0 </orientation>
-		<translation>0 0 0</translation>
-		<rotation>0 0 0</rotation>
+		<rotation>30 0 0</rotation>
 		<color>0xff00ff</color>
 	</cylinder>
 	<camera>
@@ -123,8 +15,8 @@
 		<look-at>0 0 0</look-at>
 	</camera>
 	<light>
-		<position>0 0 60</position>
+		<position>0 0 160</position>
 		<color>0xffffff</color>
-		<intensity>100</intensity>
+		<intensity>200</intensity>
 	</light>
 </scene>

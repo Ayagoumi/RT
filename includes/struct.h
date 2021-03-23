@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 15:14:48 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 13:26:06 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,34 @@
 # define STRUCT_H
 
 # include "./parser/pars_struct.h"
+
+typedef struct	s_cubic
+{
+	double	a;
+	double	b;
+	double	c;
+	double	d;
+	double	sq_a;
+	double	p;
+	double	q;
+	double	cb_p;
+}				t_cubic;
+
+typedef struct	s_quartic
+{
+	double	a;
+	double	b;
+	double	c;
+	double	d;
+	double	z;
+	double	u;
+	double	v;
+	double	sub;
+	double	sq_a;
+	double	p;
+	double	q;
+	double	r;
+}				t_quartic;
 
 typedef struct	s_vect3
 {
@@ -111,6 +139,7 @@ typedef struct	s_intersect
 	double	t;
 	double	t1;
 	double	t2;
+	t_vect3	oc;
 }				t_intersect;
 
 typedef struct	s_delta
@@ -213,6 +242,7 @@ typedef struct	s_object
 	t_intersect		sph;
 	t_intersect		cyl;
 	t_intersect		cne;
+	t_intersect		elip;
 	int				id;
 	t_matter		matter;
 	t_tex			*texture;
@@ -260,6 +290,9 @@ typedef struct	s_sdl
 	SDL_Texture		*tex_ptr;
 	SDL_Surface		*bstila;
 	int				*data_bstila;
+	SDL_Surface		*magana;
+	int				*data_magana;
+	int				frame[WID * HEI];
 	int				loop;
 	SDL_Event		event;
 	int				save;

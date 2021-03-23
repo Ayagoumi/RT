@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/18 17:53:55 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:30:03 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void			square(t_sdl *sdl, int x, int save);
 t_sdl			*init_sdl(void);
 void			destroy_sdl(t_sdl **s);
 void			render(t_sdl *sdl, t_rt *rt);
-int				re_calc(t_sdl *sdl, SDL_Event event);
+int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt);
 double			ft_min_ray(double t1, double t2, double *tmin);
 void			ft_compute_normals(t_hit *hit, t_ray *ray);
 t_ray			obj_intersect(t_object *p, t_hit *hit, t_ray ray, double t);
@@ -100,5 +100,7 @@ t_color			ref_trsp(t_rt *rt, t_object *object, t_ray reflect, \
 t_color			is_direct_light(t_rt *rt, t_ray ray, double t);
 int				parallel_light(t_ray r, t_light light);
 void			set_matter(t_object *o);
+void			next_cam(t_rt *rt, int dir);
+void			render_loading_frame(t_sdl	*sdl);
 
 #endif

@@ -9,7 +9,7 @@
 		<point_c>0.000000 0.718298 -0.086795</point_c>
 	</triangle>
 	<triangle>
-		<color>0xff0000</color>
+		<color>0xffff00</color>
 		<rotation>0 0 0</rotation>
 		<translation>0 0 0</translation>
 		<point_a>0.395755 0.850654 0.251929</point_a>

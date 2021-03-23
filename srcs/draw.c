@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:52:07 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/21 17:14:21 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			apply_antiliasing(t_rt *rt, int x, int y)
 	col = (t_col){0, 0, 0};
 	r.r1 = 0.0000;
 	r.r2 = 0.0000;
-	while (z < 20)
+	while (z < 5)
 	{
 		r.r1 = ((double)(rand() % 10)) / 10.0;
 		r.r2 = ((double)(rand() % 10)) / 10.0;
@@ -101,7 +101,7 @@ void			apply_antiliasing(t_rt *rt, int x, int y)
 		free(ray);
 		z++;
 	}
-	col = divide_color(col, (double)(20.0));
+	col = divide_color(col, (double)(5.0));
 	col.r = col.r > 255 ? 255 : col.r;
 	col.g = col.g > 255 ? 255 : col.g;
 	col.b = col.b > 255 ? 255 : col.b;
@@ -123,7 +123,7 @@ void			draw_scene(t_rt *rt, int x, int y)
 	if (rt->save_filter == 5)
 	{
 		col1 = int_to_rgb_yatak(pixel_color(rt, ray));
-		ray->origin.x += 5.0;
+		ray->origin.x += 2.0;
 		col2 = int_to_rgb_yatak(pixel_color(rt, ray));
 		col1.g += 50;
 		col1.r = 0;
@@ -133,7 +133,7 @@ void			draw_scene(t_rt *rt, int x, int y)
 		col = divide_color(col, 2);
 		rt->sdl->data[y * W + x] = rgb_to_int_yatak(col);
 	}
-	else 
+	else
 		rt->sdl->data[y * W + x] = pixel_color(rt, ray);
 	free(ray);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+         #
+#    By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 05:04:40 by nabouzah          #+#    #+#              #
-#    Updated: 2021/03/08 16:12:50 by nabouzah         ###   ########.fr        #
+#    Updated: 2021/03/20 17:50:42 by ayagoumi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ OBJDIR = ../../objs
 SRCDIR= ./
 OBJ= $(OBJDIR)/cone.o $(OBJDIR)/plane.o $(OBJDIR)/sphere.o\
 $(OBJDIR)/cylinder.o $(OBJDIR)/box.o $(OBJDIR)/ellipsoid.o\
-$(OBJDIR)/paraboloid.o $(OBJDIR)/parallelogram.o $(OBJDIR)/triangle.o\
-$(OBJDIR)/utils.o $(OBJDIR)/disk.o $(OBJDIR)/slicer.o
+$(OBJDIR)/paraboloid.o  $(OBJDIR)/triangle.o\
+$(OBJDIR)/utils.o $(OBJDIR)/disk.o $(OBJDIR)/slicer.o $(OBJDIR)/torus.o
 INCS = ../../includes/
 INC = ./includes/
 INC1 = ../../includes/functions.h
@@ -27,7 +27,7 @@ INC3 = ../../includes/rt.h
 all	: $(NAME)
 
 $(OBJDIR)/%.o : $(SRCDIR)%.c $(INCS) $(INC1) $(INC2) $(INC5) $(INC3)
-	@gcc $(FLAGS) -c -o $@ $< -I $(INC) -I $(INCS) 
+	@gcc $(FLAGS) -c -o $@ $< -I $(INC) -I $(INCS)
 	@ar rc $(NAME) $@
 
 $(NAME) : $(OBJ)
