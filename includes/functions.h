@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 13:30:03 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 15:46:08 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,7 @@ int				parallel_light(t_ray r, t_light light);
 void			set_matter(t_object *o);
 void			next_cam(t_rt *rt, int dir);
 void			render_loading_frame(t_sdl	*sdl);
+void			loading_savemess(t_sdl *sdl, t_rt *rt);
+void			loading_messages(t_sdl *sdl, int  key);
 
 #endif

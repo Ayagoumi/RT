@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 13:26:06 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 18:54:28 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,10 @@ typedef struct	s_object
 	t_intersect		cyl;
 	t_intersect		cne;
 	t_intersect		elip;
+	t_intersect		torus;
+	t_intersect		pln;
+	t_intersect		par;
+	t_intersect		dsk;
 	int				id;
 	t_matter		matter;
 	t_tex			*texture;
@@ -292,6 +296,8 @@ typedef struct	s_sdl
 	int				*data_bstila;
 	SDL_Surface		*magana;
 	int				*data_magana;
+	SDL_Surface		*savemes;
+	int				*data_savemes;
 	int				frame[WID * HEI];
 	int				loop;
 	SDL_Event		event;

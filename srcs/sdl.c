@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 14:12:23 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 15:46:41 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,14 @@ t_sdl			*init_sdl(void)
 		printf("magana\n");
 		exit(0);
 	}
+	if (!(sdl->savemes = IMG_Load("savemes.png")))
+	{
+		printf("magana\n");
+		exit(0);
+	}
 	sdl->data_bstila = convert_color((char*)sdl->bstila->pixels, sdl->bstila->w, sdl->bstila->h, sdl->bstila->format->BytesPerPixel);
 	sdl->data_magana = convert_color((char*)sdl->magana->pixels, sdl->magana->w, sdl->magana->h, sdl->magana->format->BytesPerPixel);
+	sdl->data_savemes = convert_color((char*)sdl->savemes->pixels, sdl->savemes->w, sdl->savemes->h, sdl->savemes->format->BytesPerPixel);
 	sdl->save = 0;
 	sdl->text[0] = malloc(sizeof(char) * 5);
 	sdl->text[1] = malloc(sizeof(char) * 5);
@@ -84,7 +90,7 @@ int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt)
 		z.b = (SDL_Rect){206, 4, 40, 40};
 		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
 		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
-				image_create(rt->sdl->data);
+				loading_savemess(sdl, rt);
 		z.b = (SDL_Rect){30, 45, 50, 26};
 		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
 		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
@@ -158,10 +164,74 @@ void			render_loading_frame(t_sdl	*sdl)
 		}
 		ind.i++;
 	}
+	loading_messages(sdl, 0);
 	SDL_RenderClear(sdl->ren_ptr);
 	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
 	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
 	SDL_RenderPresent(sdl->ren_ptr);
+}
+
+void			loading_messages(t_sdl *sdl, int  key)
+{
+	SDL_Surface		*surface;
+	int				*tab;
+	char			*str;
+	t_ind			ind;
+
+	if (key == 0)
+		str = "antialiasing.png";
+	else if (key == 0)
+		str = "antialiasing.png";
+	else if (key == 0)
+		str = "antialiasing.png";
+	else if (key == 0)
+		str = "antialiasing.png";
+	else if (key == 0)
+		str = "antialiasing.png";
+	else if (key == 0)
+		str = "antialiasing.png";
+	surface = NULL;
+	if (!(surface = IMG_Load(str)))
+	{
+		exit(0);
+	}
+	tab = convert_color((char*)surface->pixels, surface->w, surface->h, surface->format->BytesPerPixel);
+	ind.i = 725;
+	while (ind.i - 725 < 220)
+	{
+		ind.j = 4;
+		while (ind.j - 4 < 40)
+		{
+			sdl->frame[WID * ind.j + ind.i] = tab[220 * (ind.j - 4) + (ind.i - 725)];
+			ind.j++;
+		}
+		ind.i++;
+	}
+}
+
+void			loading_savemess(t_sdl *sdl, t_rt *rt)
+{
+	t_ind	ind;
+	t_col	col1;
+	t_col	col2;
+
+	ind.i = 500;
+	image_create(sdl->data);
+	while (ind.i - 500 < 287)
+	{
+		ind.j = 730;
+		while (ind.j - 730 < 63)
+		{
+			col1 = int_to_rgb_yatak(sdl->frame[WID * ind.j + ind.i]);
+			col2 = int_to_rgb_yatak(sdl->data_savemes[287 * (ind.j - 730) + (ind.i - 500)]);
+			col1 = alpha_compositing(col1, col2, 1, 0.5);
+			sdl->frame[WID * ind.j + ind.i] = rgb_to_int_yatak(col1);
+			ind.j++;
+		}
+		ind.i++;
+	}
+	render_loading_frame(sdl);
+	first_render(rt);
 }
 
 void			render(t_sdl *sdl, t_rt *rt)
