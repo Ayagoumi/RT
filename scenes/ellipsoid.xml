@@ -9,7 +9,7 @@
 		<rotation>0 0 0</rotation>
 		<translation>0 0 0</translation>
 		<color>0x00ff00</color>
-		</ellipsoid>
+	</ellipsoid>
 	<camera>
 		<origin>0 0 10</origin>
 		<fov>60</fov>

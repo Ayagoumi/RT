@@ -6,25 +6,25 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:51:02 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/22 15:09:49 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 19:06:39 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-double calc_solv(t_intersect *i, t_ray *ray)
+double calc_solv(t_object *elip, t_ray *ray)
 {
-	i->t1 = (-i->b + i->delta) / (2 * i->a);
-	i->t2 = (-i->b - i->delta) / (2 * i->a);
-	if (((i->t1 < i->t2 || i->t2 < 0.001) && i->t1 > 0.1))
+	elip->elip.t1 = (-elip->elip.b + elip->elip.delta) / (2 * elip->elip.a);
+	elip->elip.t2 = (-elip->elip.b - elip->elip.delta) / (2 * elip->elip.a);
+	if (((elip->elip.t1 < elip->elip.t2 || elip->elip.t2 < 0.001) && elip->elip.t1 > 0.1))
 	{
-		ray->t = i->t1;
-		return (i->t1);
+		ray->t = elip->elip.t1;
+		return (elip->elip.t1);
 	}
-	else if (((i->t2 < i->t1 || i->t1 < 0.001) && i->t2 > 0.1))
+	else if (((elip->elip.t2 < elip->elip.t1 || elip->elip.t1 < 0.001) && elip->elip.t2 > 0.1))
 	{
-		ray->t = i->t2;
-		return (i->t2);
+		ray->t = elip->elip.t2;
+		return (elip->elip.t2);
 	}
 	return (-1);
 }
@@ -56,22 +56,24 @@ double calc_solv(t_intersect *i, t_ray *ray)
 
 double hit_ellipsoid(t_object *elip, t_ray *r)
 {
-	double t;
+	// double t;
 	double radius;
+	double a1;
+	double a2;
 
 	elip->elip.oc = vect_sub(r->origin, elip->position);
 	radius = elip->radius1 + elip->radius2;
-	double A1 = 2 * elip->distance * dot(r->direction, elip->orientation);
-	double A2 = powf(radius, 2) + 2 * elip->distance * dot(elip->elip.oc, elip->orientation) - elip->distance;
-	elip->elip.a = 4 * powf(radius, 2) * dot(r->direction, r->direction) - A1 * A1;
-	elip->elip.b = 2 * 4 * powf(radius, 2) * dot(r->direction, elip->elip.oc) - A1 * A2;
-	elip->elip.c = 4 * powf(radius, 2) * dot(elip->elip.oc, elip->elip.oc) - A2 * A2;
+	a1 = 2 * elip->distance * dot(r->direction, elip->orientation);
+	a2 = powf(radius, 2) + 2 * elip->distance * dot(elip->elip.oc, elip->orientation) - elip->distance;
+	elip->elip.a = 4 * powf(radius, 2) * dot(r->direction, r->direction) - a1 * a1;
+	elip->elip.b = 2 * 4 * powf(radius, 2) * dot(r->direction, elip->elip.oc) - a1 * a2;
+	elip->elip.c = 4 * powf(radius, 2) * dot(elip->elip.oc, elip->elip.oc) - a2 * a2;
 	elip->elip.delta = elip->elip.b * elip->elip.b - 4 * elip->elip.a * elip->elip.c;
 	if (elip->elip.delta < 0)
 		return (-1);
 	elip->elip.delta = sqrtf(elip->elip.delta);
 	if (elip->elip.delta < 0)
 		return (-1);
-	t = calc_solv(&elip->elip, r);
-	return (slice_obj(*elip, *r, calc_solv(&elip->elip, r)));
+	elip->elip.t = calc_solv(elip, r);
+	return (slice_obj(*elip, *r, calc_solv(elip, r)));
 }

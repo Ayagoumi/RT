@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:49:36 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/22 12:31:09 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:44:39 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ static double limit_cal(t_object *cyl, t_ray *ray, t_cap cap)
 	double t;
 
 	limit_calc(cyl, &cap, ray);
-	t = ray->t;
+	t = cyl->cyl.t;
 	if (cap.m0 < -cyl->height)
 		return (-1.0);
 	else if (cap.m0 >= -cyl->height && cap.m0 <= cyl->height)
@@ -167,8 +167,8 @@ double hit_cylinder(t_object *cyl, t_ray *ray)
 	cyl->cyl.delta = sqrt(cyl->cyl.delta);
 	cyl->cyl.t1 = (-cyl->cyl.b + cyl->cyl.delta) / (2 * cyl->cyl.a);
 	cyl->cyl.t2 = (-cyl->cyl.b - cyl->cyl.delta) / (2 * cyl->cyl.a);
-	ray->t = equa_solu(cyl->cyl.a, cyl->cyl.b, cyl->cyl.delta);
+	cyl->cyl.t = equa_solu(cyl->cyl.a, cyl->cyl.b, cyl->cyl.delta);
 	if (cyl->height <= 0)
-		return (slice_obj(*cyl, *ray, ray->t));
+		return (slice_obj(*cyl, *ray, cyl->cyl.t));
 	return (slice_obj(*cyl, *ray, limit_cal(cyl, ray, cap)));
 }
