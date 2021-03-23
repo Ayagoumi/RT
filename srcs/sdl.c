@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 16:31:18 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 10:00:49 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt)
 		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
 		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
 				image_create(rt->sdl->data);
+		z.b = (SDL_Rect){30, 45, 50, 26};
+		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
+		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
+			next_cam(rt, 1);
+		z.b = (SDL_Rect){120, 45, 50, 26};
+		if (SDL_IntersectRect(&z.a, &z.b, &z.c) == SDL_TRUE && event.type\
+		== SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
+			next_cam(rt, 0);
 	 }
 	if (i < 6 && event.type == SDL_MOUSEBUTTONDOWN && event.button.button \
 			== SDL_BUTTON_LEFT)

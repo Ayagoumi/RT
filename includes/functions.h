@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 16:31:28 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 10:01:00 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ t_color			ref_trsp(t_rt *rt, t_object *object, t_ray reflect, \
 t_color			is_direct_light(t_rt *rt, t_ray ray, double t);
 int				parallel_light(t_ray r, t_light light);
 void			set_matter(t_object *o);
+void			next_cam(t_rt *rt, int dir);
 
 #endif
