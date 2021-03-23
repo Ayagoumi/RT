@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 05:10:29 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/21 15:35:42 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/23 17:56:34 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_color			shade(t_rt *rt, t_light li, t_object obj, t_ray r)
 		color = add_color(color,\
 		fraction(refract_color(rt, r, &obj, &li), obj.is_transp));
 	}
-	color = fraction(color, parallel * pow(shadow, 2.5) * li.intensity);
+	color = fraction(color, parallel * shadow * li.intensity);
 	return (color);
 }
 

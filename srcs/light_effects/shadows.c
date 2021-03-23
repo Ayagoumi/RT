@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/21 15:48:09 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:07:59 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int				cmp_vect(t_vect3 lhs, t_vect3 rhs)
 	return (0);
 }
 
-int			in_shadow(t_rt *rt, t_light *light, t_object *object)
+double			in_shadow(t_rt *rt, t_light *light, t_object *object)
 {
 	t_object	*obj;
 	t_object	o;
@@ -30,7 +30,6 @@ int			in_shadow(t_rt *rt, t_light *light, t_object *object)
 	shadow.origin = light->position;
 	shadow.direction = v_c_prod(light->direction, -1.0);
 	obj = rt->objects;
-	distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
 	while (obj)
 	{
 		copy_obj(&o, obj);
@@ -38,12 +37,15 @@ int			in_shadow(t_rt *rt, t_light *light, t_object *object)
 				&& (t = rt->intersection[obj->type](&o, &shadow)) > 0.0)
 		{
 			shadow.hit_point = v_c_prod(shadow.direction, t);
+			distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
 			if (distance < light->d && !obj->is_transp)
+			{
 				return (0);
+			}
 			else if (distance < light->d && obj->is_transp)
-				light->intensity *= obj->is_transp;
+				light->intensity *= powf(obj->is_transp, 0.2);
 		}
 		obj = obj->next;
 	}
-	return (1);
+	return (1.0);
 }
