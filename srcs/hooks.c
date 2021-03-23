@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 10:00:42 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:12:50 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,26 @@ void	next_cam(t_rt *rt, int dir)
 		new_camera(rt);
 		first_render(rt);
 	}
+	// if (rt->sdl->key_table[SDL_SCANCODE_O])
+	// {
+	// 	if (rt->cameras->next)
+	// 	{
+	// 		rt->cameras = rt->cameras->next;
+	// 		new_camera(rt);
+	// 		first_render(rt);
+	// 		//menu(rt->sdl, rt->save_filter);
+	// 	}
+	// }
+	// if (rt->sdl->key_table[SDL_SCANCODE_P])
+	// {
+	// 	if (rt->cameras->prev)
+	// 	{
+	// 		rt->cameras = rt->cameras->prev;
+	// 		new_camera(rt);
+	// 		first_render(rt);
+	// 		//menu(rt->sdl, rt->save_filter);
+	// 	}
+	// }
 	// if (rt->sdl->key_table[SDL_SCANCODE_S] && rt->sdl->save == 0)
 	// {
 	// 	printf("key pres\n");
@@ -58,67 +78,67 @@ void	next_cam(t_rt *rt, int dir)
 	// 	printf("%c key released\n", (char)rt->sdl->event.key.keysym.sym);
 	// 	rt->sdl->save = 0;
 	// }
-	//hooks2(r);
+	// hooks2(r);
 }
 
-void		clear_camera(t_rt *rt)
-{
-	int		i;
-	int		j;
+// void		clear_camera(t_rt *rt)
+// {
+// 	int		i;
+// 	int		j;
 
-	printf("set new origin\n");
-	rt->cameras->o.x = (double)ft_atoi(rt->sdl->text[0]);
-	rt->cameras->o.y = (double)ft_atoi(rt->sdl->text[1]);
-	rt->cameras->o.z = (double)ft_atoi(rt->sdl->text[2]);
-	rt->sdl->indtext = 0;
-	rt->sdl->enterind = 0;
-	i = 0;
-	while (i < 3)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			rt->sdl->text[i][j] = '\0';
-			j++;
-		}
-		i++;
-	}
-	first_render(rt);
-	rt->save_filter = 7;
-	//menu(rt->sdl, rt->save_filter);
-}
+// 	printf("set new origin\n");
+// 	rt->cameras->o.x = (double)ft_atoi(rt->sdl->text[0]);
+// 	rt->cameras->o.y = (double)ft_atoi(rt->sdl->text[1]);
+// 	rt->cameras->o.z = (double)ft_atoi(rt->sdl->text[2]);
+// 	rt->sdl->indtext = 0;
+// 	rt->sdl->enterind = 0;
+// 	i = 0;
+// 	while (i < 3)
+// 	{
+// 		j = 0;
+// 		while (j < 4)
+// 		{
+// 			rt->sdl->text[i][j] = '\0';
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	first_render(rt);
+// 	rt->save_filter = 7;
+// 	//menu(rt->sdl, rt->save_filter);
+// }
 
-void	enter_camera_position(t_rt *rt)
-{
-	if (rt->save_filter == 9)
-	{
-		if (rt->sdl->event.type == SDL_KEYDOWN)
-		{
-			if (rt->sdl->event.key.keysym.sym == SDLK_RETURN)
-			{
-				rt->sdl->enterind += 1;
-				rt->sdl->indtext =0;
-					printf("\n");
-			}
-			else
-			{
-				rt->sdl->text[rt->sdl->enterind][rt->sdl->indtext] = rt->sdl->event.key.keysym.sym;
-				printf("%c", rt->sdl->event.key.keysym.sym);
-				rt->sdl->indtext += 1;
-			}
-			if (rt->sdl->indtext > 3)
-			{
-				printf("\n");
-				rt->sdl->indtext = 0;
-				rt->sdl->enterind += 1;
-			}
-			if (rt->sdl->enterind > 2)
-			{
-				clear_camera(rt);
-			}
-		}
-	}
-}
+// void	enter_camera_position(t_rt *rt)
+// {
+// 	if (rt->save_filter == 9)
+// 	{
+// 		if (rt->sdl->event.type == SDL_KEYDOWN)
+// 		{
+// 			if (rt->sdl->event.key.keysym.sym == SDLK_RETURN)
+// 			{
+// 				rt->sdl->enterind += 1;
+// 				rt->sdl->indtext =0;
+// 					printf("\n");
+// 			}
+// 			else
+// 			{
+// 				rt->sdl->text[rt->sdl->enterind][rt->sdl->indtext] = rt->sdl->event.key.keysym.sym;
+// 				printf("%c", rt->sdl->event.key.keysym.sym);
+// 				rt->sdl->indtext += 1;
+// 			}
+// 			if (rt->sdl->indtext > 3)
+// 			{
+// 				printf("\n");
+// 				rt->sdl->indtext = 0;
+// 				rt->sdl->enterind += 1;
+// 			}
+// 			if (rt->sdl->enterind > 2)
+// 			{
+// 				clear_camera(rt);
+// 			}
+// 		}
+// 	}	
+// }
 
 void	hooks(t_rt **r)
 {
@@ -147,19 +167,19 @@ void	hooks(t_rt **r)
 	// 	first_render(rt);
 	// 	//menu(rt->sdl, rt->save_filter);
 	// }
-
+	
 	if (rt->sdl->event.type == SDL_KEYDOWN && rt->save_filter != 9)
 	{
 		printf("pres\n");
-		if (rt->sdl->event.key.keysym.sym == SDLK_t && rt->save_filter != 9)
+		if (rt->sdl->event.key.keysym.sym == SDLK_ESCAPE)
 		{
-			rt->save_filter = 9;
-			first_render(rt);
+			destroy_sdl(&rt->sdl);
+			exit(0);
 		}
 	}
-	else
-	enter_camera_position(rt);
-}
+	// else 
+	// enter_camera_position(rt);
+}	
 
 void	mouse_hook(t_rt **r, int *to_do)
 {
@@ -178,9 +198,4 @@ void	mouse_hook(t_rt **r, int *to_do)
 		first_render(rt);
 	 	}
 	 }
-	//i = *to_do;
-	 //	render(rt->sdl, rt);
-	// 	menu(rt->sdl, rt->save_filter);
-	// 	}
-	// }
 }
