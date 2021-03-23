@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 13:12:50 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/23 13:30:13 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,7 @@ void	mouse_hook(t_rt **r, int *to_do)
 		else
 	 		rt->save_filter = *to_do;
 		printf("the save filter : %d\n", rt->save_filter);
+		render_loading_frame(rt->sdl);
 		first_render(rt);
 	 	}
 	 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 10:00:49 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:12:23 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,13 @@ t_sdl			*init_sdl(void)
 		printf("dfdf\n");
 		exit(0);
 	}
+	if (!(sdl->magana = IMG_Load("magana.png")))
+	{
+		printf("magana\n");
+		exit(0);
+	}
 	sdl->data_bstila = convert_color((char*)sdl->bstila->pixels, sdl->bstila->w, sdl->bstila->h, sdl->bstila->format->BytesPerPixel);
+	sdl->data_magana = convert_color((char*)sdl->magana->pixels, sdl->magana->w, sdl->magana->h, sdl->magana->format->BytesPerPixel);
 	sdl->save = 0;
 	sdl->text[0] = malloc(sizeof(char) * 5);
 	sdl->text[1] = malloc(sizeof(char) * 5);
@@ -135,6 +141,27 @@ void			copy_bstila(t_sdl *sdl, int filter)
 		ind.i++;
 	}
 	}
+}
+
+void			render_loading_frame(t_sdl	*sdl)
+{
+	t_ind	ind;
+
+	ind.i = 954;
+	while (ind.i - 954 < 40)
+	{
+		ind.j = 4;
+		while (ind.j - 4 < 40)
+		{
+			sdl->frame[WID * ind.j + ind.i] = sdl->data_magana[40 * (ind.j - 4) + (ind.i - 954)];
+			ind.j++;
+		}
+		ind.i++;
+	}
+	SDL_RenderClear(sdl->ren_ptr);
+	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
+	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
+	SDL_RenderPresent(sdl->ren_ptr);
 }
 
 void			render(t_sdl *sdl, t_rt *rt)

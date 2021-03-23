@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 10:01:00 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:30:03 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ t_color			is_direct_light(t_rt *rt, t_ray ray, double t);
 int				parallel_light(t_ray r, t_light light);
 void			set_matter(t_object *o);
 void			next_cam(t_rt *rt, int dir);
+void			render_loading_frame(t_sdl	*sdl);
 
 #endif
