@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 11:38:55 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/21 17:14:21 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ void			draw_scene(t_rt *rt, int x, int y)
 		col = divide_color(col, 2);
 		rt->sdl->data[y * W + x] = rgb_to_int_yatak(col);
 	}
-	else 
+	else
 		rt->sdl->data[y * W + x] = pixel_color(rt, ray);
 	free(ray);
 }

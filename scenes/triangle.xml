@@ -22,7 +22,7 @@
 		<look-at>0 0 0</look-at>
 	</camera>
 	<light>
-		<position>0 0 -12</position>
+		<position>0 0 12</position>
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>

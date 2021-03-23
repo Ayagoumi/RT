@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 11:08:02 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/22 15:06:27 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,6 +242,7 @@ typedef struct	s_object
 	t_intersect		sph;
 	t_intersect		cyl;
 	t_intersect		cne;
+	t_intersect		elip;
 	int				id;
 	t_matter		matter;
 	t_tex			*texture;

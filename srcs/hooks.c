@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/21 15:17:41 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/21 16:34:39 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void	enter_camera_position(t_rt *rt)
 				clear_camera(rt);
 			}
 		}
-	}	
+	}
 }
 
 void	hooks(t_rt **r)
@@ -158,7 +158,7 @@ void	hooks(t_rt **r)
 	// 	first_render(rt);
 	// 	//menu(rt->sdl, rt->save_filter);
 	// }
-	
+
 	if (rt->sdl->event.type == SDL_KEYDOWN && rt->save_filter != 9)
 	{
 		printf("pres\n");
@@ -168,9 +168,9 @@ void	hooks(t_rt **r)
 			first_render(rt);
 		}
 	}
-	else 
+	else
 	enter_camera_position(rt);
-}	
+}
 
 void	mouse_hook(t_rt **r, int *to_do)
 {

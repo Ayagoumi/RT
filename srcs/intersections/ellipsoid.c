@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:51:02 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/20 14:50:19 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/22 15:09:49 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,22 @@ double calc_solv(t_intersect *i, t_ray *ray)
 
 double hit_ellipsoid(t_object *elip, t_ray *r)
 {
-	t_vect3 x;
 	double t;
 	double radius;
-	t_intersect i;
 
-	x = vect_sub(r->origin, elip->position);
+	elip->elip.oc = vect_sub(r->origin, elip->position);
 	radius = elip->radius1 + elip->radius2;
 	double A1 = 2 * elip->distance * dot(r->direction, elip->orientation);
-	double A2 = powf(radius, 2) + 2 * elip->distance * dot(x, elip->orientation) - elip->distance;
-	i.a = 4 * powf(radius, 2) * dot(r->direction, r->direction) - A1 * A1;
-	i.b = 2 * 4 * powf(radius, 2) * dot(r->direction, x) - A1 * A2;
-	i.c = 4 * powf(radius, 2) * dot(x, x) - A2 * A2;
-	i.delta = i.b * i.b - 4 * i.a * i.c;
-	if (i.delta < 0)
+	double A2 = powf(radius, 2) + 2 * elip->distance * dot(elip->elip.oc, elip->orientation) - elip->distance;
+	elip->elip.a = 4 * powf(radius, 2) * dot(r->direction, r->direction) - A1 * A1;
+	elip->elip.b = 2 * 4 * powf(radius, 2) * dot(r->direction, elip->elip.oc) - A1 * A2;
+	elip->elip.c = 4 * powf(radius, 2) * dot(elip->elip.oc, elip->elip.oc) - A2 * A2;
+	elip->elip.delta = elip->elip.b * elip->elip.b - 4 * elip->elip.a * elip->elip.c;
+	if (elip->elip.delta < 0)
 		return (-1);
-	i.delta = sqrtf(i.delta);
-	if (i.delta < 0)
+	elip->elip.delta = sqrtf(elip->elip.delta);
+	if (elip->elip.delta < 0)
 		return (-1);
-	t = calc_solv(&i, r);
-	return (slice_obj(*elip, *r, calc_solv(&i, r)));
+	t = calc_solv(&elip->elip, r);
+	return (slice_obj(*elip, *r, calc_solv(&elip->elip, r)));
 }
