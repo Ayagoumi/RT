@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sphere.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:51:51 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/24 14:14:45 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:31:40 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ double	hit_sphere(t_object *sph, t_ray *ray)
 	delta = sph->inter.b * sph->inter.b - 4.0 * sph->inter.a * sph->inter.c;
 	if (delta < 0.0)
 		return (-1.0);
+	sph->inter.t1 = (-sph->inter.b - sqrtf(delta)) / (2 * sph->inter.a); 
+	sph->inter.t2 = (-sph->inter.b + sqrtf(delta)) / (2 * sph->inter.a); 
 	ray->t = equa_solu(sph->inter.a, sph->inter.b, delta);
 	sph->inter.t = ray->t;
-	return (slice_obj(*sph, *ray, ray->t));
+	return (ray->t);
 }

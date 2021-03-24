@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:49:36 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/24 14:24:13 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:36:30 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ double		limit_calc1(t_object *cyl, t_ray *ray, t_cap cap)
 	limit_calc(cyl, &cap, ray);
 	if (cap.m0 < -cyl->height)
 	{
-		// if (ft_cylinder_cap1(cyl, ray, &t, cap.m1) && (ray->ret = -1))
-		// 	return (t);
+		if (ft_cylinder_cap1(cyl, ray, &t, cap.m1) && (ray->ret = -1))
+			return (t);
 		return (-1.0);
 	}
 	else if (cap.m0 >= -cyl->height && cap.m0 <= cyl->height)
@@ -83,12 +83,12 @@ double		limit_calc1(t_object *cyl, t_ray *ray, t_cap cap)
 	{
 		if (cap.m1 > cyl->height)
 			return (-1.0);
-		// if (ft_cylinder_cap(ray, &t, v_c_prod(cyl->orientation,\
-		// 	cyl->height), cyl->orientation))
-		// {
-		// 	ray->ret = 2;
+		if (ft_cylinder_cap(ray, &t, v_c_prod(cyl->orientation,\
+			cyl->height), cyl->orientation))
+		{
+			ray->ret = 2;
 			return (t);
-		// }
+		}
 	}
 	return (-1.0);
 }
@@ -96,7 +96,6 @@ double		limit_calc1(t_object *cyl, t_ray *ray, t_cap cap)
 double		hit_cylinder(t_object *cyl, t_ray *ray)
 {
 	t_cap	cap;
-	double	t;
 
 	cap.m0 = 0;
 	cyl->inter.oc = vect_sub(ray->origin, cyl->position);
@@ -115,10 +114,9 @@ double		hit_cylinder(t_object *cyl, t_ray *ray)
 	(2 * cyl->inter.a);
 	cyl->inter.t2 = (-cyl->inter.b - cyl->inter.delta) /\
 	(2 * cyl->inter.a);
-	t = equa_solu(cyl->inter.a, cyl->inter.b, cyl->inter.delta);
 	if (cyl->height <= 0)
-		return (slice_obj(*cyl, *ray, t));
-	return (slice_obj(*cyl, *ray, limit_calc1(cyl, ray, cap)));
+		return (equa_solu(cyl->inter.a, cyl->inter.b, cyl->inter.delta));
+	return (limit_calc1(cyl, ray, cap));
 }
 
 // static void limit_calc(t_object *cyl, t_cap *ca, t_ray *ra)
