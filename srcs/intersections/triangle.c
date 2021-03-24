@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 14:25:52 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/20 19:04:35 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 17:25:03 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,21 @@
 // 	return (-1);
 // }
 
+void			swap_vect(t_vect3 *a, t_vect3 *b, t_ray *ray)
+{
+	double n;
+	t_vect3		*tmp;
+
+	t_vect3 surface_normal = normalize(cross(*a, *b));
+	n = dot(ray->direction, surface_normal);
+	if (n < 0)
+	{
+		tmp = a;
+		a = b;
+		b = tmp;
+	}
+}
+
 double			hit_triangle(t_object *triangle, t_ray *r)
 {
 	t_intersect inter;
@@ -48,14 +63,14 @@ double			hit_triangle(t_object *triangle, t_ray *r)
 	double u;
 	double v;
 	t_tri		tr;
+	t_vect3		tmp;
 
 	tr.ca = vect_sub(triangle->point_c, triangle->point_a);
 	tr.ba = vect_sub(triangle->point_b, triangle->point_a);
 	t_vect3 surface_normal = normalize(cross(tr.ba, tr.ca));
-	double i  = dot(r->direction, surface_normal);
-	if (i < 0)
+	double n  = dot(r->direction, surface_normal);
+	if (n < 0)
 	{
-		t_vect3 tmp;
 		tmp = tr.ba;
 		tr.ba = tr.ca;
 		tr.ca = tmp;
