@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:27:21 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/19 17:00:00 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/24 16:24:20 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	blur_effect(int *img)
 		{
 			if (ind.i + ind.j < W * H)
 				col = int_to_rgb_yatak(img[ind.i + ind.j]);
-			sum = plus_color(sum , col);
+			sum = plus_color(sum, col);
 			ind.j++;
 		}
 		sum = divide_color(sum, 30.0);

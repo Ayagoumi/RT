@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:46:42 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/23 14:33:49 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/24 16:25:21 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	image_create(int *img)
 	int		file;
 	char	*name;
 	char	*tmp;
-	time_t 	rawtime;
+	time_t	rawtime;
 
 	rawtime = time(NULL);
 	tmp = ctime(&rawtime);

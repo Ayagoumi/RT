@@ -6,43 +6,14 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 17:09:12 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/19 17:00:30 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/24 17:02:10 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-int	*ft_tableu_color()
+int		*ft_tableu_color_2(int *tab)
 {
-	int		*tab;
-
-	tab = (int *)malloc(sizeof(int) * 50);
-	tab[0] = 0x17202A;
-	tab[1] = 0x1B2631;
-	tab[2] = 0x424949;
-	tab[3] = 0xCD6155;
-	tab[4] = 0x626567;
-	tab[5] = 0x7B7D7D;
-	tab[6] = 0x6E2C00;
-	tab[7] = 0x784212;
-	tab[8] = 0x7E5109;
-	tab[9] = 0x7D6608;
-	tab[10] = 0x186A3B;
-	tab[11] = 0x145A32;
-	tab[12] = 0x0B5345;
-	tab[13] = 0x0E6251;
-	tab[14] = 0x1B4F72;
-	tab[15] = 0x154360;
-	tab[16] = 0x512E5F;
-	tab[17] = 0x78281F;
-	tab[18] = 0x641E16;
-	tab[19] = 0x566573;
-	tab[20] = 0x5D6D7E;
-	tab[21] = 0x99A3A4;
-	tab[22] = 0xAAB7B8;
-	tab[23] = 0xCACFD2;
-	tab[24] = 0xAAB7B8;
-	tab[25] = 0xCACFD2;
 	tab[26] = 0xF0F3F4;
 	tab[27] = 0xDC7633;
 	tab[28] = 0xEB984E;
@@ -70,34 +41,82 @@ int	*ft_tableu_color()
 	return (tab);
 }
 
+int		*ft_tableu_color_1(int *tab)
+{
+	tab[2] = 0x424949;
+	tab[3] = 0xCD6155;
+	tab[4] = 0x626567;
+	tab[5] = 0x7B7D7D;
+	tab[6] = 0x6E2C00;
+	tab[7] = 0x784212;
+	tab[8] = 0x7E5109;
+	tab[9] = 0x7D6608;
+	tab[10] = 0x186A3B;
+	tab[11] = 0x145A32;
+	tab[12] = 0x0B5345;
+	tab[13] = 0x0E6251;
+	tab[14] = 0x1B4F72;
+	tab[15] = 0x154360;
+	tab[16] = 0x512E5F;
+	tab[17] = 0x78281F;
+	tab[18] = 0x641E16;
+	tab[19] = 0x566573;
+	tab[20] = 0x5D6D7E;
+	tab[21] = 0x99A3A4;
+	tab[22] = 0xAAB7B8;
+	tab[23] = 0xCACFD2;
+	tab[24] = 0xAAB7B8;
+	tab[25] = 0xCACFD2;
+	return (ft_tableu_color_2(tab));
+}
+
+int		*ft_tableu_color(void)
+{
+	int		*tab;
+
+	if (!(tab = (int *)malloc(sizeof(int) * 50)))
+		return (NULL);
+	tab[0] = 0x17202A;
+	tab[1] = 0x1B2631;
+	return (ft_tableu_color_1(tab));
+}
+
+t_col	alpha_compositing(t_col c1, t_col c2, double a1, double a2)
+{
+	t_col	col;
+	double	alpha;
+
+	alpha = a2 + a1 * (1.0 - a2);
+	col.r = (c2.r * a2 + c1.r * a1 * (1 - a2)) / alpha;
+	col.g = (c2.g * a2 + c1.g * a1 * (1 - a2)) / alpha;
+	col.b = (c2.b * a2 + c1.b * a1 * (1 - a2)) / alpha;
+	return (col);
+}
+
 void	cartoon_effect(int *img)
 {
 	int		*tab;
-	t_ind	ind;
-	t_ind	dist;
-	t_col	col1;
-	t_col	col2;
+	t_dist	dist;
 
-	tab =ft_tableu_color();
-	ind.i = -1;
-	while (++ind.i < W * H)
+	tab = ft_tableu_color();
+	dist.ind.i = -1;
+	while (++dist.ind.i < W * H)
 	{
-		if (img[ind.i] == 0)
-			continue;
-		col1 = int_to_rgb_yatak(img[ind.i]);
-		dist.i = INFINITY;
-		ind.j = 0;
-		img[ind.i] = tab[ind.j];
-		while (ind.j < 50)
+		if (img[dist.ind.i] == 0)
+			continue ;
+		dist.col1 = int_to_rgb_yatak(img[dist.ind.i]);
+		dist.dist = INFINITY;
+		dist.ind.j = -1;
+		while (++dist.ind.j < 50)
 		{
-			col2 = int_to_rgb_yatak(tab[ind.j]);
-			dist.j = sqrt(pow(col2.r - col1.r, 2) + pow(col2.g - col1.g, 2) + pow(col2.b - col1.b, 2));
-			if (dist.j < dist.i)
+			dist.col2 = int_to_rgb_yatak(tab[dist.ind.j]);
+			dist.distance = sqrt(pow(dist.col2.r - dist.col1.r, 2) +\
+	pow(dist.col2.g - dist.col1.g, 2) + pow(dist.col2.b - dist.col1.b, 2));
+			if (dist.distance < dist.dist)
 			{
-				dist.i = dist.j;
-				img[ind.i] = tab[ind.j];
+				dist.dist = dist.distance;
+				img[dist.ind.i] = tab[dist.ind.j];
 			}
-			ind.j++;
 		}
 	}
 	free(tab);
