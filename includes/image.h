@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:23:39 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/21 11:33:26 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/24 16:55:35 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ typedef	struct	s_dist
 {
 	double	dist;
 	double	distance;
+	t_col	col1;
+	t_col	col2;
+	t_ind	ind;
 }				t_dist;
 
 typedef struct	s_image

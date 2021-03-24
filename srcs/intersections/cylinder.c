@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 18:49:36 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/24 17:28:21 by ayagoumi         ###   ########.fr       */
+/*   Created: 2021/03/24 17:36:43 by ayagoumi          #+#    #+#             */
+/*   Updated: 2021/03/24 17:36:46 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-static void		limit_calc(t_object *cyl, t_cap *ca, t_ray *ra)
+static void limit_calc(t_object *cyl, t_cap *ca, t_ray *ra)
 {
 	if (cyl->inter.t1 > cyl->inter.t2)
 	{
@@ -20,13 +20,11 @@ static void		limit_calc(t_object *cyl, t_cap *ca, t_ray *ra)
 		cyl->inter.t1 = cyl->inter.t2;
 		cyl->inter.t2 = ca->m0;
 	}
-	ca->m0 = dot(ra->direction, cyl->orientation) * cyl->inter.t1 \
-			+ dot(cyl->inter.oc, cyl->orientation);
-	ca->m1 = dot(ra->direction, cyl->orientation) * cyl->inter.t2 \
-			+ dot(cyl->inter.oc, cyl->orientation);
+	ca->m0 = dot(ra->direction, cyl->orientation) * cyl->inter.t1 + dot(cyl->inter.oc, cyl->orientation);
+	ca->m1 = dot(ra->direction, cyl->orientation) * cyl->inter.t2 + dot(cyl->inter.oc, cyl->orientation);
 }
 
-static double	limit_cal(t_object *cyl, t_ray *ray, t_cap cap)
+static double limit_cal(t_object *cyl, t_ray *ray, t_cap cap)
 {
 	double t;
 
@@ -35,7 +33,7 @@ static double	limit_cal(t_object *cyl, t_ray *ray, t_cap cap)
 	if (cap.m0 < -cyl->height)
 		return (-1.0);
 	else if (cap.m0 >= -cyl->height && cap.m0 <= cyl->height)
-		return (cyl->inter.t1 < EPSILLON ? -1.0 : cyl->inter.t1);
+		return (cyl->inter.t1 < 1e-6 ? -1.0 : cyl->inter.t1);
 	else if (cap.m0 > cyl->height)
 	{
 		if (cap.m1 > cyl->height)
@@ -45,22 +43,16 @@ static double	limit_cal(t_object *cyl, t_ray *ray, t_cap cap)
 	return (-1.0);
 }
 
-double			hit_cylinder(t_object *cyl, t_ray *ray)
+double hit_cylinder(t_object *cyl, t_ray *ray)
 {
 	t_cap cap;
 
 	cap.m0 = 0;
 	cyl->inter.oc = vect_sub(ray->origin, cyl->position);
-	cyl->inter.a = dot(ray->direction, ray->direction) - \
-		pow(dot(ray->direction, cyl->orientation), 2.0);
-	cyl->inter.b = 2.0 * (dot(ray->direction, cyl->inter.oc) - \
-		(dot(ray->direction, cyl->orientation) \
-			* dot(cyl->inter.oc, cyl->orientation)));
-	cyl->inter.c = dot(cyl->inter.oc, cyl->inter.oc) - \
-		pow(dot(cyl->inter.oc, cyl->orientation), 2.0) \
-			- (cyl->radius * cyl->radius);
-	cyl->inter.delta = (cyl->inter.b * cyl->inter.b) - \
-		(4.0 * cyl->inter.a * cyl->inter.c);
+	cyl->inter.a = dot(ray->direction, ray->direction) - pow(dot(ray->direction, cyl->orientation), 2.0);
+	cyl->inter.b = 2.0 * (dot(ray->direction, cyl->inter.oc) - (dot(ray->direction, cyl->orientation) * dot(cyl->inter.oc, cyl->orientation)));
+	cyl->inter.c = dot(cyl->inter.oc, cyl->inter.oc) - pow(dot(cyl->inter.oc, cyl->orientation), 2.0) - (cyl->radius * cyl->radius);
+	cyl->inter.delta = (cyl->inter.b * cyl->inter.b) - (4.0 * cyl->inter.a * cyl->inter.c);
 	if (cyl->inter.delta < 0)
 		return (-1.0);
 	cyl->inter.delta = sqrt(cyl->inter.delta);

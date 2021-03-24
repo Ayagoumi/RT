@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disk.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 14:49:37 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/24 10:36:35 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:28:50 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ double		hit_disk(t_object *disk, t_ray *ray)
 	if (ray->t > 1e-2)
 	{
 		// ray->t = t;
-		return (slice_obj(*disk, *ray, ray->t));
+		return (ray->t);
 	}
 	return (-1.0);
 }

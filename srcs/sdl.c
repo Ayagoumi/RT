@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/23 15:46:41 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/24 15:08:11 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,9 @@ t_sdl			*init_sdl(void)
 	if (!(sdl = malloc(sizeof(t_sdl))))
 		return (NULL);
 	SDL_Init(SDL_INIT_EVERYTHING);
-	// TTF_Init();
-	// sdl->font_p = TTF_OpenFont(\
-	// 		"./resources/great-vibes/GreatVibes-Regular.otf", 100);
-	// if (!sdl->font_p)
-	// 	return (NULL);
-	// sdl->font_s = TTF_OpenFont("./resources/lato/Lato-Medium.ttf", 36);
-	// if (!sdl->font_s)
-	// 	return (NULL);
-	// sdl->win_menu = SDL_CreateWindow("menu", 480, 320, 400, 800, 0);
 	sdl->win_ptr = SDL_CreateWindow("Rt", SDL_WINDOWPOS_UNDEFINED, \
 			SDL_WINDOWPOS_UNDEFINED, WID, HEI, 0);
 	sdl->ren_ptr = SDL_CreateRenderer(sdl->win_ptr, -1, 0);
-	//sdl->ren_menu = SDL_CreateRenderer(sdl->win_menu, -1, 0);
 	sdl->tex_ptr = SDL_CreateTexture(sdl->ren_ptr, SDL_PIXELFORMAT_ARGB8888,
 	SDL_TEXTUREACCESS_STREAMING, WID, HEI);
 	if (!(sdl->bstila = IMG_Load("bstila.png")))
@@ -149,7 +139,7 @@ void			copy_bstila(t_sdl *sdl, int filter)
 	}
 }
 
-void			render_loading_frame(t_sdl	*sdl)
+void			render_loading_frame(t_sdl	*sdl, t_rt *rt)
 {
 	t_ind	ind;
 
@@ -164,7 +154,8 @@ void			render_loading_frame(t_sdl	*sdl)
 		}
 		ind.i++;
 	}
-	loading_messages(sdl, 0);
+	if (rt->save_filter != 8 && rt->save_filter >= 0)
+		loading_messages(sdl, rt->save_filter);
 	SDL_RenderClear(sdl->ren_ptr);
 	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
 	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
@@ -178,18 +169,19 @@ void			loading_messages(t_sdl *sdl, int  key)
 	char			*str;
 	t_ind			ind;
 
+	printf("lhtba 2\n");
 	if (key == 0)
 		str = "antialiasing.png";
-	else if (key == 0)
-		str = "antialiasing.png";
-	else if (key == 0)
-		str = "antialiasing.png";
-	else if (key == 0)
-		str = "antialiasing.png";
-	else if (key == 0)
-		str = "antialiasing.png";
-	else if (key == 0)
-		str = "antialiasing.png";
+	else if (key == 1)
+		str = "cartoon.png";
+	else if (key == 2)
+		str = "blur.png";
+	else if (key == 3)
+		str = "sepia.png";
+	else if (key == 4)
+		str = "grey.png";
+	else if (key == 5)
+		str = "stereoscopy.png";
 	surface = NULL;
 	if (!(surface = IMG_Load(str)))
 	{
@@ -230,7 +222,12 @@ void			loading_savemess(t_sdl *sdl, t_rt *rt)
 		}
 		ind.i++;
 	}
-	render_loading_frame(sdl);
+	SDL_RenderClear(sdl->ren_ptr);
+	SDL_UpdateTexture(sdl->tex_ptr, NULL, sdl->frame, WID * 4);
+	SDL_RenderCopy(sdl->ren_ptr, sdl->tex_ptr, NULL, NULL);
+	SDL_RenderPresent(sdl->ren_ptr);
+	SDL_Delay(100);
+	render_loading_frame(sdl, rt);
 	first_render(rt);
 }
 
@@ -266,11 +263,7 @@ void			destroy_sdl(t_sdl **s)
 
 	sdl = *s;
 	SDL_DestroyRenderer(sdl->ren_ptr);
-	//SDL_DestroyRenderer(sdl->ren_menu);
 	SDL_DestroyWindow(sdl->win_ptr);
-	//SDL_DestroyWindow(sdl->win_menu);
-	//TTF_CloseFont(sdl->font_p);
-	//TTF_CloseFont(sdl->font_s);
 	TTF_Quit();
 	SDL_Quit();
 	free(sdl);
