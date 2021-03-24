@@ -9,18 +9,18 @@
 		<texture>Wood_MapleVeneer_512_albedo.jpg</texture>
 	</plane>
     <box>
-		<color>0xc2c2c2</color>
+		<color>0xffff00</color>
 		<rotation>0 0 0</rotation>
 		<translation>0 0 0</translation>
 		<corner_a>-10 5 -5</corner_a>
 		<corner_b>10 6 5</corner_b>
 	</box>
     <box>
-		<color>0xc2c2c2</color>
+		<color>0xff0000</color>
 		<rotation>0 0 0</rotation>
 		<translation>0 0 0</translation>
-		<corner_a>12 4 -2</corner_a>
-		<corner_b>15 4.5 2</corner_b>
+		<corner_a>12 8 -2</corner_a>
+		<corner_b>15 8.5 2</corner_b>
 	</box>
     <cylinder>
 		<height>2</height>
@@ -200,6 +200,24 @@
 	</camera>
 
 	<camera>
+		<origin>15.5 2 10</origin>
+		<fov>60</fov>
+		<look-at>0 6.1 0</look-at>
+	</camera>
+
+	<camera>
+		<origin>10 15 10</origin>
+		<fov>60</fov>
+		<look-at>0 6.1 0</look-at>
+	</camera>
+
+	<camera>
+		<origin>10 8 10</origin>
+		<fov>60</fov>
+		<look-at>0 6.1 0</look-at>
+	</camera>
+
+	<camera>
 		<origin>0 8 10</origin>
 		<fov>60</fov>
 		<look-at>0 6.1 0</look-at>
@@ -207,11 +225,6 @@
 
 	<light>
 		<position>0 200 0</position>
-		<color>0xffffff</color>
-		<intensity>60</intensity>
-	</light>
-    <light>
-		<position>0 10 60</position>
 		<color>0xffffff</color>
 		<intensity>60</intensity>
 	</light>

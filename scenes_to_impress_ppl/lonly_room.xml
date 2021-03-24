@@ -1,0 +1,82 @@
+<scene>
+	<ambient>5</ambient>
+	<plane>
+		<position>0 0 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>Glass</matter>
+		<transparent>0.5</transparent>
+	</plane>
+	
+	<plane>
+		<position>0 20 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>Glass</matter>
+	</plane>
+	
+	<plane>
+		<position>0 0 -25</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<transparent>0.5</transparent>
+	</plane>
+	<plane>
+		<position>0 0 45</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>Glass</matter>
+		<transparent>0.5</transparent>
+	</plane>
+
+	<plane>
+		<position>30 0 0</position>
+		<orientation>-1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>Glass</matter>
+		<transparent>0.5</transparent>
+	</plane>
+
+	<plane>
+		<position>-30 0 0</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>Glass</matter>
+		<transparent>0.5</transparent>
+	</plane>
+
+	<sphere>
+		<position>0 10 0</position>
+		<radius>2</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x969696</color>
+		<ref_index>1.3</ref_index>
+		<matter>Glass</matter>
+		<transparent>0.5</transparent>
+	</sphere>
+
+	<camera>
+		<origin>0 20 40</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+	<light>
+		<position>0 20 0</position>
+		<color>0xffffff</color>
+		<intensity>60</intensity>
+	</light>
+</scene>

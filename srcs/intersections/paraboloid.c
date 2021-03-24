@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:51:23 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/23 18:53:01 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:14:17 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,21 @@ double				hit_paraboloid(t_object *para, t_ray *r)
 {
 	// t_intersect	i;
 
-    para->par.oc = vect_sub(r->origin, para->position);
-    para->par.a = dot(r->direction, r->direction) - powf(dot(r->direction, para->orientation), 2);
-    para->par.b = 2 * (dot(r->direction, para->par.oc) - (dot(r->direction,para->orientation) * (dot(para->par.oc, para->orientation) + 2 * para->distance)));
-    para->par.c = dot(para->par.oc, para->par.oc) - (dot(para->par.oc, para->orientation) * (dot(para->par.oc, para->orientation) + 4 * para->distance));
-    para->par.delta = para->par.b * para->par.b - (4 * para->par.a * para->par.c);
-    if (para->par.delta < 0)
+    para->inter.oc = vect_sub(r->origin, para->position);
+    para->inter.a = dot(r->direction, r->direction) - powf(dot(r->direction, para->orientation), 2);
+    para->inter.b = 2 * (dot(r->direction, para->inter.oc) - (dot(r->direction,para->orientation) * (dot(para->inter.oc, para->orientation) + 2 * para->distance)));
+    para->inter.c = dot(para->inter.oc, para->inter.oc) - (dot(para->inter.oc, para->orientation) * (dot(para->inter.oc, para->orientation) + 4 * para->distance));
+    para->inter.delta = para->inter.b * para->inter.b - (4 * para->inter.a * para->inter.c);
+    if (para->inter.delta < 0)
         return (-1);
     else
     {
-        para->par.t1 = (-para->par.b - sqrt(para->par.delta)) / (2 * para->par.a);
-        para->par.t2 = (-para->par.b + sqrt(para->par.delta)) / (2 * para->par.a);
-		if ((para->par.t1 <= para->par.t2 && para->par.t1 >= 0.0) || (para->par.t1 >= 0.0 && para->par.t2 < 0.0))
-			return (slice_obj(*para, *r, (r->t = para->par.t1)));
-		if ((para->par.t2 <= para->par.t1 && para->par.t2 >= 0.0) || (para->par.t2 >= 0.0 && para->par.t1 < 0.0))
-			return (slice_obj(*para, *r, (r->t = para->par.t2)));
+        para->inter.t1 = (-para->inter.b - sqrt(para->inter.delta)) / (2 * para->inter.a);
+        para->inter.t2 = (-para->inter.b + sqrt(para->inter.delta)) / (2 * para->inter.a);
+		if ((para->inter.t1 <= para->inter.t2 && para->inter.t1 >= 0.0) || (para->inter.t1 >= 0.0 && para->inter.t2 < 0.0))
+			return (slice_obj(*para, *r, (r->t = para->inter.t1)));
+		if ((para->inter.t2 <= para->inter.t1 && para->inter.t2 >= 0.0) || (para->inter.t2 >= 0.0 && para->inter.t1 < 0.0))
+			return (slice_obj(*para, *r, (r->t = para->inter.t2)));
 		return (-1);
     }
 }

@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:47:25 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/22 12:40:28 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:12:36 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,28 +68,28 @@ static double		ft_cone_init(t_object *cne, t_ray *r)
 	// double		c;
 	// t_vect3		x;
 
-	cne->cne.a = pow(dot(r->direction, cne->orientation), 2) -\
+	cne->inter.a = pow(dot(r->direction, cne->orientation), 2) -\
 		pow(cos(cne->angle), 2.0);
-	cne->cne.oc = vect_sub(r->origin, cne->position);
-	cne->cne.b = 2 * (dot(r->direction, cne->orientation) *\
-		(dot(cne->cne.oc, cne->orientation)) - dot(r->direction, cne->cne.oc) *\
+	cne->inter.oc = vect_sub(r->origin, cne->position);
+	cne->inter.b = 2 * (dot(r->direction, cne->orientation) *\
+		(dot(cne->inter.oc, cne->orientation)) - dot(r->direction, cne->inter.oc) *\
 			pow(cos(cne->angle), 2.0));
-	cne->cne.c = (pow(dot(cne->cne.oc, cne->orientation), 2) -\
-		dot(cne->cne.oc, cne->cne.oc) * pow(cos(cne->angle), 2.0));
-	cne->cne.delta = cne->cne.b * cne->cne.b - 4.0 * cne->cne.a * cne->cne.c;
-	if (cne->cne.delta < 0.00001)
+	cne->inter.c = (pow(dot(cne->inter.oc, cne->orientation), 2) -\
+		dot(cne->inter.oc, cne->inter.oc) * pow(cos(cne->angle), 2.0));
+	cne->inter.delta = cne->inter.b * cne->inter.b - 4.0 * cne->inter.a * cne->inter.c;
+	if (cne->inter.delta < 0.00001)
 		return (-1.0);
 	if (cne->height <= 0)
-		return (equa_solu(cne->cne.a, cne->cne.b, cne->cne.delta));
-	// cne->cne.t = 0.0001;
-	cne->cne.t1 = (-cne->cne.b - sqrt(cne->cne.delta)) / (2 * cne->cne.a);
-	cne->cne.t2 = (-cne->cne.b + sqrt(cne->cne.delta)) / (2 * cne->cne.a);
-	if ((cne->cne.t1 <= cne->cne.t2 && cne->cne.t1 >= 0.0) \
-		|| (cne->cne.t1 >= 0.0 && cne->cne.t2 < 0.0))
-		return (cne->cne.t = cne->cne.t1);
-	else if ((cne->cne.t2 <= cne->cne.t1 && cne->cne.t2 >= 0.0) \
-		|| (cne->cne.t2 >= 0.0 && cne->cne.t1 < 0.0))
-		return (cne->cne.t = cne->cne.t2);
+		return (equa_solu(cne->inter.a, cne->inter.b, cne->inter.delta));
+	// cne->inter.t = 0.0001;
+	cne->inter.t1 = (-cne->inter.b - sqrt(cne->inter.delta)) / (2 * cne->inter.a);
+	cne->inter.t2 = (-cne->inter.b + sqrt(cne->inter.delta)) / (2 * cne->inter.a);
+	if ((cne->inter.t1 <= cne->inter.t2 && cne->inter.t1 >= 0.0) \
+		|| (cne->inter.t1 >= 0.0 && cne->inter.t2 < 0.0))
+		return (cne->inter.t = cne->inter.t1);
+	else if ((cne->inter.t2 <= cne->inter.t1 && cne->inter.t2 >= 0.0) \
+		|| (cne->inter.t2 >= 0.0 && cne->inter.t1 < 0.0))
+		return (cne->inter.t = cne->inter.t2);
 	return (-1);
 }
 
@@ -105,7 +105,7 @@ double			hit_cone(t_object *c, t_ray *r)
 	t = ft_cone_init(c, r);
 	// cp = vect_add(r->origin, v_c_prod(r->direction, (i.t)));
 	// h = dot(cp, c->orientation);
-	m = dot(r->direction, c->orientation) * t + dot(c->cne.oc, c->orientation);
+	m = dot(r->direction, c->orientation) * t + dot(c->inter.oc, c->orientation);
 	if (m < 0 || m > c->height)
 		return (-1.0);
 	return (slice_obj(*c, *r, t));
