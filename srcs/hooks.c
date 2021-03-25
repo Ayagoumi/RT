@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:49:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 15:10:33 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/25 09:53:06 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,32 +36,41 @@ void	hooks(t_rt **r)
 	t_rt *rt;
 
 	rt = *r;
+	if (rt->sdl->event.type == SDL_KEYDOWN)
+	{
 	if (rt->sdl->event.key.keysym.sym == SDLK_h)
 	{
 		if (rt->hooks[1] < 1.0)
 			rt->hooks[1] += 0.1;
+		printf("hhh\n");
+		render_loading_frame(rt->sdl, rt);
 		first_render(rt);
 	}
 	if (rt->sdl->event.key.keysym.sym == SDLK_j)
 	{
 		if (rt->hooks[1] > -1)
 			rt->hooks[1] -= .1;
+		printf("hhh\n");
+		render_loading_frame(rt->sdl, rt);
 		first_render(rt);
 	}
 	if (rt->sdl->event.key.keysym.sym == SDLK_f)
 	{
 		if (rt->hooks[0] < 1.0)
 			rt->hooks[0] += 0.1;
+		printf("hhh\n");
+		render_loading_frame(rt->sdl, rt);
 		first_render(rt);
 	}
 	if (rt->sdl->event.key.keysym.sym == SDLK_g)
 	{
 		if (rt->hooks[0] > -1.0)
 			rt->hooks[0] -= 0.1;
+		printf("hhh\n");
+		render_loading_frame(rt->sdl, rt);
 		first_render(rt);
 	}
-	if (rt->sdl->event.type == SDL_KEYDOWN && rt->save_filter != 9)
-	{
+
 		if (rt->sdl->event.key.keysym.sym == SDLK_ESCAPE)
 		{
 			destroy_sdl(&rt->sdl);
@@ -83,8 +92,12 @@ void	mouse_hook(t_rt **r, int *to_do)
 			rt->save_filter = 8;
 		else
 	 		rt->save_filter = *to_do;
-		render_loading_frame(rt->sdl, rt);
-		first_render(rt);
 	 	}
+		 if (*to_do != -1)
+		 {
+			printf("her\n");
+			render_loading_frame(rt->sdl, rt);
+			first_render(rt);
+		 }
 	 }
 }

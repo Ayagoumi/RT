@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 15:08:11 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/25 09:52:56 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,9 @@ int				re_calc(t_sdl *sdl, SDL_Event event, t_rt *rt)
 	 }
 	if (i < 6 && event.type == SDL_MOUSEBUTTONDOWN && event.button.button \
 			== SDL_BUTTON_LEFT)
+	{
 		return (i);
+	}
 	return (-1);
 }
 
@@ -130,7 +132,7 @@ void			copy_bstila(t_sdl *sdl, int filter)
 		ind.j = 456 + (filter * 65);
 		while (ind.j < 456 + (filter * 65) + 60)
 		{
-			if (compare_color(sdl->frame[WID * ind.j + ind.i], 0xc4c4c4))
+			if (compare_color(sdl->frame[WID * ind.j + ind.i], 0x46484C))
 				sdl->frame[WID * ind.j + ind.i] = 0xffffffff;
 			ind.j++;
 		}
