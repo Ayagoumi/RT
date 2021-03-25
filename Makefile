@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+         #
+#    By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 16:29:44 by aeddaqqa          #+#    #+#              #
-#    Updated: 2021/03/08 12:52:22 by chzabakh         ###   ########.fr        #
+#    Updated: 2021/03/25 11:29:30 by yoouali          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LIBINTERSECT = $(LIBINTERSECTDIR)/libintersection.a
 FLAGS= -Wall -Wextra -Werror
 OBJDIR = objs
 SRCDIR = srcs
-OBJ= objs/main.o objs/sdl.o objs/menu.o objs/menu2.o objs/objfile.o objs/objfile2.o objs/core_raytracing.o objs/threads.o objs/hooks.o objs/draw.o
+OBJ= objs/main.o objs/sdl.o objs/loading.o objs/mouse.o objs/menu2.o objs/objfile.o objs/objfile2.o objs/core_raytracing.o objs/threads.o objs/hooks.o objs/draw.o
 SRC= srcs/main.c srcs/sdl.c srcs/menu.c srcs/menu2.c srcs/objfile.c srcs/ objfile2.c srcs/core_raytracing.c objs/threads.c objs/hooks.c objs/draw.c
 INC= includes/rt.h
 INC1= includes/functions.h

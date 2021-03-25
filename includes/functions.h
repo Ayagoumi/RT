@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 09:01:14 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/25 14:35:38 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_vect3			normal_disk(t_object *disk, t_ray *ray);
 t_vect3			normal_parallelogram(t_object *para, t_ray *ray);
 t_vect3			torus_normal(t_object *obj, t_ray *ray);
 t_vect3			rotation_xyz(t_vect3 v, t_vect3 a);
-void			hooks(t_rt **r);
+void			hooks(t_rt *rt);
 void			mouse_hook(t_rt **r, int *to_do);
 void			apply_antiliasing(t_rt *rt, int x, int y);
 void			draw_scene(t_rt *rt, int x, int y);
@@ -104,5 +104,6 @@ void			next_cam(t_rt *rt, int dir);
 void			render_loading_frame(t_sdl	*sdl, t_rt *rt);
 void			loading_savemess(t_sdl *sdl, t_rt *rt);
 void			loading_messages(t_sdl *sdl, int  key);
+void			copy_frame(t_sdl *sdl, int filter);
 
 #endif

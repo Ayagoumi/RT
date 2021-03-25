@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 18:05:53 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/25 14:35:31 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,21 +282,17 @@ typedef struct	s_sdl
 	SDL_Window		*win_ptr;
 	SDL_Renderer	*ren_ptr;
 	SDL_Texture		*tex_ptr;
-	SDL_Surface		*bstila;
-	int				*data_bstila;
-	SDL_Surface		*magana;
-	int				*data_magana;
+	SDL_Surface		*frame_img;
+	int				*data_frame;
+	SDL_Surface		*loading;
+	int				*data_loading;
 	SDL_Surface		*savemes;
 	int				*data_savemes;
 	int				frame[WID * HEI];
 	int				loop;
 	SDL_Event		event;
-	int				save;
 	int				*tex;
 	int				data[W * H];
-	char			*text[3];
-	int				indtext;
-	int				enterind;
 }				t_sdl;
 
 typedef struct	s_rt

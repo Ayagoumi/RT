@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:23:39 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/24 16:55:35 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/25 10:04:17 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct	s_image
 	unsigned int	clr_used;
 	unsigned int	clr_important;
 }				t_image;
+
 
 int         	rgb_to_int_yatak(t_col col);
 t_col       	int_to_rgb_yatak(int val);

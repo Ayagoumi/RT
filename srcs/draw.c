@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 14:55:24 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/25 11:39:43 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ unsigned int	pixel_color(t_rt *rt, t_ray *ray)
 	{
 		copy_obj(&close_tmp[1], tmp);
 		x_t[0] = rt->intersection[close_tmp[1].type](&close_tmp[1], ray);
-		// printf("old: %lf\t", x_t[0]);
 		x_t[0] = slice_obj(close_tmp[1], *ray, x_t[0]);
-		// printf("new: %lf\n", x_t[0]);
 		if (x_t[0] != -1 && (x_t[0] < x_t[1] || x_t[1] == -1.0))
 		{
 			copy_obj(&close_tmp[0], &close_tmp[1]);
@@ -111,7 +109,6 @@ void			apply_antiliasing(t_rt *rt, int x, int y)
 
 void			draw_scene(t_rt *rt, int x, int y)
 {
-
 	t_rr	r;
 	t_ray	*ray;
 	t_col	col1;
