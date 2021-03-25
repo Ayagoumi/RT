@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 02:14:10 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/08 15:21:25 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:10:34 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static	void			init_otags_elements(t_tags *tags)
 	tags->elements_o[ELLIPSOID] = (char*)"<ellipsoid>";
 	tags->elements_o[PARABOLOID] = (char*)"<paraboloid>";
 	tags->elements_o[TRIANGLE] = (char*)"<triangle>";
-	tags->elements_o[BOX] = (char*)"<box>";
+	tags->elements_o[TORUS] = (char*)"<torus>";
 	tags->elements_o[PARALLELOGRAM] = (char*)"<parallelogram>";
 	tags->elements_o[DISK] = (char*)"<disk>";
 	tags->elements_o[AMBIENT] = (char*)"<ambient>";
@@ -48,7 +48,7 @@ static	void			init_ctags_elements(t_tags *tags)
 	tags->elements_c[ELLIPSOID] = (char*)"</ellipsoid>";
 	tags->elements_c[PARABOLOID] = (char*)"</paraboloid>";
 	tags->elements_c[TRIANGLE] = (char*)"</triangle>";
-	tags->elements_c[BOX] = (char*)"</box>";
+	tags->elements_c[TORUS] = (char*)"</torus>";
 	tags->elements_c[PARALLELOGRAM] = (char*)"</parallelogram>";
 	tags->elements_c[DISK] = (char*)"</disk>";
 	tags->elements_c[AMBIENT] = (char*)"</ambient>";

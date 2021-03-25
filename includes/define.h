@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:46:46 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 18:10:02 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:06:30 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define SPECULER 1.0
 # define MAX_REF 3
 # define EQN_EPS 1e-9
+# define EPSILLON 1e-6
 # define IS_ZERO(x) ((x) > -EQN_EPS && (x) < EQN_EPS)
 # ifndef CBRT
 #  define POW1(x) (pow((double)(x), 1.0 / 3.0))
@@ -75,7 +76,7 @@ typedef	enum	e_type
 	ELLIPSOID,
 	PARABOLOID,
 	TRIANGLE,
-	BOX,
+	TORUS,
 	PARALLELOGRAM,
 	DISK,
 	AMBIENT

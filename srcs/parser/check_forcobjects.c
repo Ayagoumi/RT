@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_forcobjects.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:17:24 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/08 15:26:20 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:09:37 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,31 @@ int		check_for_parallelogram(int type, t_node n)
 	return (1);
 }
 
-int		check_for_box(int type, t_node n)
+int		check_for_torus(int type, t_node n)
 {
-	if (type != CORNER_A && type != TRANSLATION && type != COLOR\
-			&& type != CORNER_B && type != ROTATION && type != REF_INDEX\
-			&& type != REFLEXION && type != TRANSPARENT && type != MATTER\
+	if (type != POSITION && type != ROTATION
+			&& type != TRANSLATION && type != COLOR && type != ORIENTATION
+			&& type != RADIUS_1 && type != RADIUS_2 && type != REF_INDEX\
+			&& type != REFLEXION && type != TRANSPARENT && type != MATTER
 			&& type != TEXTURE && type != SLICE)
 		return (-1);
-	if (type == CORNER_A && n.cmp.corner_a == true)
+	if (type == POSITION && n.cmp.position == true)
 		return (-1);
 	else if (type == COLOR && n.cmp.color == true)
 		return (-1);
-	else if (type == CORNER_B && n.cmp.corner_b == true)
+	else if (type == ORIENTATION && n.cmp.orientation == true)
 		return (-1);
 	else if (type == ROTATION && n.cmp.rotation == true)
 		return (-1);
 	else if (type == TRANSLATION && n.cmp.translation == true)
 		return (-1);
+	else if (type == RADIUS_1 && n.cmp.radius1 == true)
+		return (-1);
+	else if (type == RADIUS_2 && n.cmp.radius2 == true)
+		return (-1);
 	return (1);
 }
+
 
 int		check_for_disk(int type, t_node n)
 {

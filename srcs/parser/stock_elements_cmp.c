@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stock_elements_cmp.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 05:49:45 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/07 12:13:51 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:07:41 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		all_cmp_validforobjects(t_node n)
 		return (all_cmp_valid_for_paraboloid(n));
 	else if (n.type == TRIANGLE)
 		return (all_cmp_valid_for_triangle(n));
-	else if (n.type == BOX)
-		return (all_cmp_valid_for_box(n));
+	else if (n.type == TORUS)
+		return (all_cmp_valid_for_torus(n));
 	else if (n.type == PARALLELOGRAM)
 		return (all_cmp_valid_for_parallelogram(n));
 	else if (n.type == DISK)

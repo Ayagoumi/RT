@@ -6,7 +6,7 @@
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0x969696</color>
-		<texture>earthmap.jpg</texture>
+		<texture>uranus.jpg</texture>
 	</sphere>
 	<camera>
 		<origin> 0 0 10</origin>

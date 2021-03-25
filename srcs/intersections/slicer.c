@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:11:10 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/24 17:36:18 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:12:10 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ double	slice_obj(t_object o, t_ray r, double t)
 	{
 		// printf("%d", o.slice_oaxis_check);
 		o.slice_oaxis = (t_vect3){1.0, 0.0, 0.0};
-		if (o.type == SPHERE || o.type == BOX ||\
+		if (o.type == SPHERE || o.type == TORUS ||\
 		o.type == PARALLELOGRAM || o.type == TRIANGLE)
 			o.orientation = (t_vect3){0.0, 1.0, 0.0};
 		slice = vect_prod((t_vect3){90, 90, 90}, normalize(o.slice_oaxis));

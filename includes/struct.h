@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 14:12:03 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 18:05:53 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,20 +167,15 @@ typedef struct	s_cone
 
 typedef struct	s_tri
 {
-	t_vect3	x;
 	t_vect3	ca;
 	t_vect3	ba;
-	t_vect3	bc;
-	t_vect3	ab;
-	t_vect3	orientation;
-	t_vect3	q;
-	t_vect3	qa;
-	t_vect3	qb;
-	t_vect3	qc;
+	t_vect3	pvec;
+	t_vect3	qvec;
+	t_vect3	tvec;
+	t_vect3	surface_normal;
 	double	distance;
-	double	dist2plane;
-	double	a;
-	double	b;
+	double	det;
+	double	inv_det;
 }				t_tri;
 
 typedef struct	s_parallelo
@@ -240,6 +235,8 @@ typedef struct	s_object
 	double			is_ref;
 	double			is_transp;
 	t_intersect		inter;
+	t_intersect		cyl;
+	t_tri			tri;
 	int				id;
 	t_matter		matter;
 	t_tex			*texture;

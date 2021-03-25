@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nor_functions.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahkhilad <ahkhilad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 18:39:48 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/05 17:05:29 by chzabakh         ###   ########.fr       */
+/*   Updated: 2021/03/25 09:02:34 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_vect3					ft_disk_normal(t_object *disk);
 void					ft_computing_cyl_normal(t_hit *hit, t_ray *ray, \
 						t_vect3 x, double m);
 t_vect3					ft_cone_normal(t_object *cone, t_vect3 p);
-t_vect3					ft_box_normal(t_object *box, t_vect3 h);
+t_vect3					ft_torus_normal(t_object *torus, t_vect3 h);
 t_vect3					ft_parallelogram_normal(t_object *para);
 void					ft_computing_ellipsoid_normal(t_hit *hit);
 void					ft_computing_paraboloid_normal(t_hit *hit);

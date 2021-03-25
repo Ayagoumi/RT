@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shadows.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/24 16:34:20 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/25 10:25:51 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ double			in_shadow(t_rt *rt, t_light *light, t_object *object)
 				shadow.hit_point = v_c_prod(shadow.direction, t);
 				distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
 				if (distance < light->d && !obj->is_transp)
-					return (0);
+					return (1);
 				else if (distance < light->d && obj->is_transp)
 					light->intensity *= powf(obj->is_transp, 0.2);
 			}
 		}
 		obj = obj->next;
 	}
-	return (1.0);
+	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 15:08:20 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/25 09:01:14 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ double			hit_plane(t_object *object, t_ray *ray);
 double			hit_triangle(t_object *triangle, t_ray *ray);
 double			hit_cylinder(t_object *object, t_ray *ray);
 double			hit_ellipsoid(t_object *elip, t_ray *ray);
-double			hit_box(t_object *box, t_ray *ray);
+double			hit_torus(t_object *torus, t_ray *r);
 double			hit_paraboloid(t_object *pa, t_ray *ray);
 double			hit_disk(t_object *disk, t_ray *ray);
 double			hit_parallelogram(t_object *para, t_ray *ray);
@@ -43,10 +43,10 @@ t_vect3			triangle_normal(t_object *object, t_ray *ray);
 t_vect3			cone_normal(t_object *cone, t_ray *ray);
 t_vect3			plane_normal(t_object *object, t_ray *ray);
 t_vect3			sphere_normal(t_object *obj, t_ray *ray);
-t_vect3			box_normal(t_object *box, t_ray *h);
 t_vect3			paraboloid_normal(t_object *object, t_ray *ray);
 t_vect3			normal_disk(t_object *disk, t_ray *ray);
 t_vect3			normal_parallelogram(t_object *para, t_ray *ray);
+t_vect3			torus_normal(t_object *obj, t_ray *ray);
 t_vect3			rotation_xyz(t_vect3 v, t_vect3 a);
 void			hooks(t_rt **r);
 void			mouse_hook(t_rt **r, int *to_do);

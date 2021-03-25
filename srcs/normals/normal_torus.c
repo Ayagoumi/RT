@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   normal_cylinder.c                                  :+:      :+:    :+:   */
+/*   normal_torus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 17:24:33 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/24 16:39:40 by ayagoumi         ###   ########.fr       */
+/*   Created: 2021/03/25 08:48:56 by ayagoumi          #+#    #+#             */
+/*   Updated: 2021/03/25 09:56:19 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-t_vect3			cylinder_normal(t_object *object, t_ray *ray)
+t_vect3			torus_normal(t_object *obj, t_ray *ray)
 {
-	double		m;
-	t_vect3		n;
-	t_vect3		p;
+	t_vect3 h;
+	t_vect3 n;
+	double	m;
+	t_vect3	a_vect;
+	double	k;
 
-	m = dot(ray->direction, object->orientation) * ray->t;
-	m += dot(vect_sub(ray->origin, object->position), object->orientation);
-	p = vect_add(ray->origin, v_c_prod(ray->direction, ray->t));
-	n = normalize(vect_sub(vect_sub(p, object->position),\
-				v_c_prod(object->orientation, m)));
-	return (n);
+	h = vect_add(ray->origin, v_c_prod(ray->direction, obj->inter.t));
+	k = dot(h, obj->orientation);
+	a_vect = vect_sub(h, v_c_prod(obj->orientation, k));
+	m = sqrt(powf(obj->radius2, 2) - powf(k, 2));
+	n = normalize(vect_sub(h, vect_sub(a_vect, \
+		v_c_prod(vect_sub(ray->origin, a_vect), m / (obj->radius1 + m)))));
+	return(n);
 }

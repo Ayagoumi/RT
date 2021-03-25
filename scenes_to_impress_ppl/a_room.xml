@@ -200,6 +200,12 @@
 	</camera>
 
 	<camera>
+		<origin>-15.5 2 10</origin>
+		<fov>60</fov>
+		<look-at>0 6.1 0</look-at>
+	</camera>
+
+	<camera>
 		<origin>15.5 2 10</origin>
 		<fov>60</fov>
 		<look-at>0 6.1 0</look-at>

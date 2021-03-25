@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid_cmp_fpart.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 12:36:20 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/01 17:53:41 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:11:05 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void				valid_forobjects(t_node *n, int type)
 		valid_cmp_for_paraboloid(n, type);
 	else if (n->type == TRIANGLE)
 		valid_cmp_for_triangle(n, type);
-	else if (n->type == BOX)
-		valid_cmp_for_box(n, type);
+	else if (n->type == TORUS)
+		valid_cmp_for_torus(n, type);
 	else if (n->type == PARALLELOGRAM)
 		valid_cmp_for_parallelogram(n, type);
 	else if (n->type == DISK)

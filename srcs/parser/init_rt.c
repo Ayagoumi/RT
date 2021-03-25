@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:59:27 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/20 18:10:50 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/25 09:03:07 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	init_normal(t_rt *new)
 	new->normal[6] = ellipsoid_normal;
 	new->normal[7] = paraboloid_normal;
 	new->normal[8] = triangle_normal;
-	new->normal[9] = box_normal;
+	new->normal[9] = torus_normal;
 	new->normal[10] = NULL;
 	new->normal[11] = normal_disk;
 }
@@ -39,7 +39,7 @@ static void	init_intersections(t_rt *new)
 	new->intersection[6] = hit_ellipsoid;
 	new->intersection[7] = hit_paraboloid;
 	new->intersection[8] = hit_triangle;
-	new->intersection[9] = hit_box;
+	new->intersection[9] = hit_torus;
 	new->intersection[10] = NULL;
 	new->intersection[11] = hit_disk;
 }

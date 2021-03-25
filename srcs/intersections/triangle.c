@@ -6,96 +6,51 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 14:25:52 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/24 17:25:03 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/24 18:13:32 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-// double			hit_triangle(t_object *triangle, t_ray *ray)
-// {
-// 	t_tri		tr;
-// 	t_intersect	i;
-
-// 	tr.ca = vect_sub(triangle->point_c, triangle->point_a);
-// 	tr.ba = vect_sub(triangle->point_b, triangle->point_a);
-// 	tr.orientation = normalize(cross(tr.ca, tr.ba));
-// 	tr.distance = dot(tr.orientation, triangle->point_a);
-// 	tr.x = vect_sub(ray->origin, triangle->point_a);
-// 	tr.a = -1.0 * dot(tr.x, tr.orientation);
-// 	tr.b = dot(ray->direction, tr.orientation);
-// 	tr.dist2plane = tr.a / tr.b;
-// 	tr.q = vect_add(ray->origin, v_c_prod(ray->direction, tr.dist2plane));
-// 	tr.ca = vect_sub(triangle->point_c, triangle->point_a);
-// 	tr.qa = vect_sub(tr.q, triangle->point_a);
-// 	i.t = dot(cross(tr.ca, tr.qa), tr.orientation);
-// 	tr.bc = vect_sub(triangle->point_b, triangle->point_c);
-// 	tr.qc = vect_sub(tr.q, triangle->point_c);
-// 	i.t1 = dot(cross(tr.bc, tr.qc), tr.orientation);
-// 	tr.ab = vect_sub(triangle->point_a, triangle->point_b);
-// 	tr.qb = vect_sub(tr.q, triangle->point_b);
-// 	i.t2 = dot(cross(tr.ab, tr.qb), tr.orientation);
-// 	if (i.t >= 0.0 && i.t1 >= 0.0 && i.t2 >= 0.0)
-// 		return (slice_obj(*triangle, *ray, tr.dist2plane));
-// 	return (-1);
-// }
-
-void			swap_vect(t_vect3 *a, t_vect3 *b, t_ray *ray)
+static void		swap_vect(t_object *triangle, t_ray *r)
 {
-	double n;
-	t_vect3		*tmp;
+	t_vect3	tmp;
 
-	t_vect3 surface_normal = normalize(cross(*a, *b));
-	n = dot(ray->direction, surface_normal);
-	if (n < 0)
+	triangle->tri.surface_normal = \
+		normalize(cross(triangle->tri.ba, triangle->tri.ca));
+	triangle->tri.distance = dot(r->direction, triangle->tri.surface_normal);
+	if (triangle->tri.distance < 0)
 	{
-		tmp = a;
-		a = b;
-		b = tmp;
+		tmp = triangle->tri.ba;
+		triangle->tri.ba = triangle->tri.ca;
+		triangle->tri.ca = tmp;
 	}
 }
 
 double			hit_triangle(t_object *triangle, t_ray *r)
 {
-	t_intersect inter;
-	t_vect3 origin_minus_v0, cross_raydir_edge2, cross_ori_edge1;
-	double det, inv_det;
-	double u;
-	double v;
-	t_tri		tr;
-	t_vect3		tmp;
+	double		u;
+	double		v;
 
-	tr.ca = vect_sub(triangle->point_c, triangle->point_a);
-	tr.ba = vect_sub(triangle->point_b, triangle->point_a);
-	t_vect3 surface_normal = normalize(cross(tr.ba, tr.ca));
-	double n  = dot(r->direction, surface_normal);
-	if (n < 0)
-	{
-		tmp = tr.ba;
-		tr.ba = tr.ca;
-		tr.ca = tmp;
-	}
-
-	cross_raydir_edge2 = cross(r->direction, tr.ba);
-	det = dot(tr.ca, cross_raydir_edge2);
-	if (det < 0.00001)
+	triangle->tri.ca = vect_sub(triangle->point_c, triangle->point_a);
+	triangle->tri.ba = vect_sub(triangle->point_b, triangle->point_a);
+	swap_vect(triangle, r);
+	triangle->tri.pvec = cross(r->direction, triangle->tri.ba);
+	triangle->tri.det = dot(triangle->tri.ca, triangle->tri.pvec);
+	if (triangle->tri.det < EPSILLON)
 		return (-1);
-
-	origin_minus_v0 = vect_sub(r->origin, triangle->point_a);
-	u = dot(origin_minus_v0, cross_raydir_edge2);
-	if (u < 0.0 || u > det)
+	triangle->tri.tvec = vect_sub(r->origin, triangle->point_a);
+	u = dot(triangle->tri.tvec, triangle->tri.pvec);
+	if (u < 0.0 || u > triangle->tri.det)
 		return (-1);
-
-	cross_ori_edge1 = cross(origin_minus_v0, tr.ca);
-	v = dot(r->direction, cross_ori_edge1);
-	if (v < 0.0 || u + v > det)
+	triangle->tri.qvec = cross(triangle->tri.tvec, triangle->tri.ca);
+	v = dot(r->direction, triangle->tri.qvec);
+	if (v < 0.0 || u + v > triangle->tri.det)
 		return (-1);
-
-	inter.t = dot(tr.ba, cross_ori_edge1);
-
-	inv_det = 1.0 / det;
-	u *= inv_det;
-	v *= inv_det;
-	inter.t *= inv_det;
-	return (inter.t);
+	triangle->inter.t = dot(triangle->tri.ba, triangle->tri.qvec);
+	triangle->tri.inv_det = 1.0 / triangle->tri.det;
+	u *= triangle->tri.inv_det;
+	v *= triangle->tri.inv_det;
+	triangle->inter.t *= triangle->tri.inv_det;
+	return (triangle->inter.t);
 }
