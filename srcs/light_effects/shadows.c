@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   shadows.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/26 13:08:38 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/26 14:41:40 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
-
-int				cmp_vect(t_vect3 lhs, t_vect3 rhs)
-{
-	if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
-		return (1);
-	return (0);
-}
 
 int				in_shadow(t_rt *rt, t_light *light, t_object *object)
 {
@@ -42,7 +35,7 @@ int				in_shadow(t_rt *rt, t_light *light, t_object *object)
 			if (t > 0 && distance < light->d && !obj->is_transp)
 				return (0);
 			else if (t > 0 && distance < light->d && obj->is_transp)
-				light->intensity *= obj->is_transp;
+				light->intensity *= powf(obj->is_transp, 0.2);
 		}
 		obj = obj->next;
 	}
