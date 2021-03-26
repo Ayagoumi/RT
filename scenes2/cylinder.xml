@@ -1,32 +1,31 @@
 <scene>
 	<ambient>5</ambient>
 	<camera>
-		<origin>0 0 100</origin>
+		<origin>0 0 250</origin>
 		<fov>60</fov>
 		<look-at>0 0 0</look-at>
 	</camera>
 	<light>
-		<position>0 0 100</position>
+		<position>0 0 250</position>
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>
 	<cylinder>
-		<height>15</height>
-		<radius>20</radius>
+		<height>100</height>
+		<radius>50</radius>
 		<position>0 0 0</position>
 		<orientation>0 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0xff0000</color>
-		<matter>mirror</matter>
-		<texture>spectrum</texture>
+		<texture></texture>
 	</cylinder>
 	<sphere>
 		<position>30 0 0</position>
 		<radius>5</radius>
 		<translation>0 0 0</translation>
-		<rotation>0 0 90</rotation>
-		<texture>earthmap.jpg slice</texture>
+		<rotation>0 0 0</rotation>
+		<texture>earthmap.jpg</texture>
 		<color>0xff0000</color>
 	</sphere>
 </scene>

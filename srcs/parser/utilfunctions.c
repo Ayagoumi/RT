@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilfunctions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 05:39:07 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/09 11:36:07 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:24:34 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static	void		add_front_obj(t_object **head, t_object *new)
 	new->orientation = rotation_xyz(new->orientation, new->rotation);
 	new->position = vect_add(new->position, new->translation);
 	set_matter(new);
+	if (new->type == TORUS)
+		new->position = (t_vect3){0, 0, 0};
 	if (new)
 	{
 		if (!*head)

@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 14:35:38 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:03:26 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void			test_obj(t_stk *w, t_point *tab, int j);
 **		lights
 */
 t_color			specular(t_light *l, t_ray *ray, t_object *object);
-double				in_shadow(t_rt *rt, t_light *light, t_object *object);
+int				in_shadow(t_rt *rt, t_light *light, t_object *object);
 t_color			ambient(t_object *obj, double amb);
 t_color			diffuse(t_light *light, double n_l, t_object *object);
 t_color			multip_color(t_color c1, t_color c2);

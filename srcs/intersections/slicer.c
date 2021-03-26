@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:11:10 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/24 19:12:10 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/25 19:16:34 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ double	slice_obj(t_object o, t_ray r, double t)
 	double	dot1;
 	double	tmp;
 
-	if (t > 0.0 && 0)
+	if (t > 0.0 && o.slice_oaxis_check)
 	{
-		// printf("%d", o.slice_oaxis_check);
 		o.slice_oaxis = (t_vect3){1.0, 0.0, 0.0};
 		if (o.type == SPHERE || o.type == TORUS ||\
 		o.type == PARALLELOGRAM || o.type == TRIANGLE)
@@ -31,7 +30,7 @@ double	slice_obj(t_object o, t_ray r, double t)
 		hit = vect_add(r.origin, v_c_prod(r.direction, t));
 		dist = normalize(vect_sub(hit, o.position));
 		dot1 = dot(dist, o.slice_oaxis);
-		if (dot1 < -0.0000000001)
+		if (dot1 < -EQN_EPS)
 		{
 			if (o.inter.delta > 0)
 			{
@@ -40,7 +39,7 @@ double	slice_obj(t_object o, t_ray r, double t)
 					tmp = t == o.inter.t2 ? o.inter.t1 : o.inter.t2;
 					hit = vect_add(r.origin, v_c_prod(r.direction, tmp));
 					dist = normalize(vect_sub(hit, o.position));
-					if (dot(dist, o.slice_oaxis) >= -0.0000000001)
+					if (dot(dist, o.slice_oaxis) >= -EQN_EPS)
 						return (tmp);
 				}
 			}

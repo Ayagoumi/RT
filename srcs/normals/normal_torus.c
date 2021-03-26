@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:48:56 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/25 09:56:19 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 09:44:05 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_vect3			torus_normal(t_object *obj, t_ray *ray)
 	t_vect3	a_vect;
 	double	k;
 
+	ray->t = obj->inter.t;
 	h = vect_add(ray->origin, v_c_prod(ray->direction, obj->inter.t));
 	k = dot(h, obj->orientation);
 	a_vect = vect_sub(h, v_c_prod(obj->orientation, k));

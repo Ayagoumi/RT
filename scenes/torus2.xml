@@ -1,27 +1,18 @@
 <scene>
-	<ambient>5</ambient>
+	<ambient>15</ambient>
 	<torus>
-		<color>0x00ff00</color>
+		<color>0xffffff</color>
 		<position>0 0 0</position>
-		<rotation>0 0 0</rotation>
-		<orientation>-1 1 1</orientation>
-		<translation>0 0 0</translation>
-		<radius_1>3</radius_1>
-		<radius_2>10</radius_2>
-	</torus>
-	<torus>
-		<color>0xffff00</color>
-		<position>0 10 -10</position>
 		<rotation>0 0 0</rotation>
 		<orientation>1 1 1</orientation>
 		<translation>0 0 0</translation>
-		<radius_1>3</radius_1>
+		<radius_1>4</radius_1>
 		<radius_2>10</radius_2>
 	</torus>
 	<camera>
 		<origin> 0 0 50</origin>
 		<fov>60</fov>
-		<look-at>0 0 1</look-at>
+		<look-at>0 0 -1</look-at>
 	</camera>
 	<light>
 		<position>0 0 40</position>
