@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/26 14:41:40 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:17:41 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int				in_shadow(t_rt *rt, t_light *light, t_object *object)
 		{
 			t = slice_obj(&o, shadow, t);
 			shadow.hit_point = v_c_prod(shadow.direction, t);
-			distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
+			distance = sqrtf(dot(shadow.hit_point, shadow.hit_point)) + 1e-5;
+			if (object->type == TORUS)
+				distance = sqrtf(dot(shadow.hit_point, shadow.hit_point)) + 1e-1;
 			if (t > 0 && distance < light->d && !obj->is_transp)
 				return (0);
 			else if (t > 0 && distance < light->d && obj->is_transp)
