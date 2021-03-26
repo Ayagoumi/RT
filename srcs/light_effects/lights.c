@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lights.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 05:10:29 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/25 08:58:05 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:11:30 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ int				light(t_object *close_obj, t_ray *ray, t_rt *rt, double t)
 	ray->reflect_nb = 0;
 	ray->refraction_index = 1;
 	ray->t = t;
-	close_obj->normal = rt->normal[close_obj->type](close_obj, ray);
+	close_obj->normal =
+	v_c_prod(rt->normal[close_obj->type](close_obj, ray) ,close_obj->slice_flag);
 	if (close_obj->texture->type != NONE && (close_obj->type == SPHERE ||\
 	close_obj->type == CYLINDER || close_obj->type == CONE ||\
 	close_obj->type == PLANE))

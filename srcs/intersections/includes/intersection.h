@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersection.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 15:50:53 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/20 10:42:43 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 12:49:13 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@
 // int		ft_triangle_intersect(t_object *triangle, t_ray *ray, double *tmin);
 // int		ft_disk_intersect(t_object *disk, t_ray *ray, double *tmin);
 // void	ft_compute_normals(t_hit *hit, t_ray *ray);
-double	slice_obj(t_object o, t_ray r, double t);
+double	slice_obj(t_object *o, t_ray r, double t);
 #endif

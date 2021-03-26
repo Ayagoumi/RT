@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 11:39:43 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/26 12:48:44 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void			copy_obj_help(t_object *n_obj, t_object *obj)
 	n_obj->slice_oaxis_check = obj->slice_oaxis_check;
 	n_obj->slice_axis_check = obj->slice_axis_check;
 	n_obj->texture = obj->texture;
+	n_obj->slice_flag = obj->slice_flag;
 }
 
 void			copy_obj(t_object *n_obj, t_object *obj)
@@ -66,7 +67,7 @@ unsigned int	pixel_color(t_rt *rt, t_ray *ray)
 	{
 		copy_obj(&close_tmp[1], tmp);
 		x_t[0] = rt->intersection[close_tmp[1].type](&close_tmp[1], ray);
-		x_t[0] = slice_obj(close_tmp[1], *ray, x_t[0]);
+		x_t[0] = slice_obj(&close_tmp[1], *ray, x_t[0]);
 		if (x_t[0] != -1 && (x_t[0] < x_t[1] || x_t[1] == -1.0))
 		{
 			copy_obj(&close_tmp[0], &close_tmp[1]);

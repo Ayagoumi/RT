@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilfunc2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:27:51 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/09 11:39:47 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:11:41 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	new_objects2(t_object *n_obj)
 	n_obj->radius2 = 0;
 	n_obj->radius1 = 0;
 	n_obj->angle = 0;
+	n_obj->slice_flag = 1;
 	n_obj->distance = 0;
 }
 

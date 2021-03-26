@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:36:43 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/24 17:36:46 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:12:39 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ double hit_cylinder(t_object *cyl, t_ray *ray)
 	cyl->inter.t2 = (-cyl->inter.b - cyl->inter.delta) / (2 * cyl->inter.a);
 	cyl->inter.t = equa_solu(cyl->inter.a, cyl->inter.b, cyl->inter.delta);
 	if (cyl->height <= 0)
-		return (slice_obj(*cyl, *ray, cyl->inter.t));
-	return (slice_obj(*cyl, *ray, limit_cal(cyl, ray, cap)));
+		return (cyl->inter.t);
+	return (limit_cal(cyl, ray, cap));
 }
