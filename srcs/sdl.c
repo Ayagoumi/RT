@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 11:21:14 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/26 08:12:23 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_sdl	*init_sdl2(t_sdl *sdl)
 {
-	if (!(sdl->frame_img = IMG_Load("frame.png")))
+	if (!(sdl->frame_img = IMG_Load("resources/frame.png")))
 		return (NULL);
-	if (!(sdl->loading = IMG_Load("loading.png")))
+	if (!(sdl->loading = IMG_Load("resources/loading.png")))
 		return (NULL);
-	if (!(sdl->savemes = IMG_Load("savemes.png")))
+	if (!(sdl->savemes = IMG_Load("resources/savemes.png")))
 		return (NULL);
 	sdl->data_frame = convert_color((char*)sdl->frame_img->pixels,\
 	sdl->frame_img->w, sdl->frame_img->h,\
