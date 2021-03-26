@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 15:12:05 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/24 16:57:36 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/26 08:31:59 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,20 @@ void	grey_effect(int *img)
 		img[i] = rgb_to_int_yatak(out);
 		i++;
 	}
+}
+
+char	*straddbmp(char *str, t_ind ind)
+{
+	char *tmp;
+
+	tmp = ".bmp";
+	ind.i = 0;
+	while (tmp[ind.i])
+	{
+		str[ind.j] = tmp[ind.i];
+		ind.j++;
+		ind.i++;
+	}
+	str[ind.j] = '\0';
+	return (str);
 }

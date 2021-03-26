@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 14:35:38 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 08:11:00 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int				texture_clr(t_object **object, t_point hit, double tab[2]);
 /*
 **--------------------------++++++++++++++++++++++++++++++++++++
 */
-void			menu(t_sdl *sdl, int save);
 void			square(t_sdl *sdl, int x, int save);
 t_sdl			*init_sdl(void);
 void			destroy_sdl(t_sdl **s);

@@ -6,7 +6,7 @@
 /*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 10:48:59 by yoouali           #+#    #+#             */
-/*   Updated: 2021/03/25 11:22:37 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/26 08:14:08 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			copy_frame(t_sdl *sdl, int filter)
 	t_ind		ind;
 
 	ind.i = -1;
-	while (++ind.i < WID)
+	while (++ind.i < WID && sdl->data_frame)
 	{
 		ind.j = -1;
 		while (++ind.j < HEI)
@@ -68,17 +68,17 @@ SDL_Surface		*get_filter_message(int key)
 	SDL_Surface	*surface;
 
 	if (key == 0)
-		str = "antialiasing.png";
+		str = "resources/antialiasing.png";
 	else if (key == 1)
-		str = "cartoon.png";
+		str = "resources/cartoon.png";
 	else if (key == 2)
-		str = "blur.png";
+		str = "resources/blur.png";
 	else if (key == 3)
-		str = "sepia.png";
+		str = "resources/sepia.png";
 	else if (key == 4)
-		str = "grey.png";
+		str = "resources/grey.png";
 	else if (key == 5)
-		str = "stereoscopy.png";
+		str = "resources/stereoscopy.png";
 	surface = NULL;
 	if (!(surface = IMG_Load(str)))
 		return (NULL);
@@ -95,7 +95,7 @@ void			loading_messages(t_sdl *sdl, int key)
 	tab = convert_color((char*)surface->pixels,\
 	surface->w, surface->h, surface->format->BytesPerPixel);
 	ind.i = 725;
-	while (ind.i - 725 < 220)
+	while (ind.i - 725 < 220 && tab)
 	{
 		ind.j = 4;
 		while (ind.j - 4 < 40)
@@ -118,7 +118,7 @@ void			loading_savemess(t_sdl *sdl, t_rt *rt)
 
 	ind.i = 500;
 	image_create(sdl->data);
-	while (ind.i - 500 < 287)
+	while (ind.i - 500 < 287 && sdl->data_frame && sdl->data_savemes)
 	{
 		ind.j = 730;
 		while (ind.j - 730 < 63)
