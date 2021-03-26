@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:28:02 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/26 10:03:21 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:13:28 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static double	min(double s[4], int n)
 		if (s[i] > EPSILLON && s[i] < min)
 			min = s[i];
 	}
-	if (min > EPSILLON)
+	if (min)
 		return (min);
 	return (-1);
 }

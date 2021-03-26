@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 08:12:23 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/26 15:58:34 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ t_sdl	*init_sdl2(t_sdl *sdl)
 t_sdl	*init_sdl(void)
 {
 	t_sdl		*sdl;
-	SDL_Surface	*s;
 
-	if (!(s = IMG_Load("./resources/earthmap.jpg")))
-		return (NULL);
 	if (!(sdl = malloc(sizeof(t_sdl))))
 		return (NULL);
 	SDL_Init(SDL_INIT_EVERYTHING);
