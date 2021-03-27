@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_ref_trsp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/07 16:43:51 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/27 19:11:34 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,17 @@ static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 		copy_obj(&o, tmp);
 		if (node->id != o.id)
 		{
-			x = rt->intersection[o.type](&o, ray);
-			if (x > 0 && (x < ray->t || ray->t < 0))
+			rt->intersection[o.type](&o, ray);
+			ray->t = slice_obj(tmp, *ray, ray->t);
+			if (ray->t > 0.0 && (x > ray->t || x == -1))
 			{
 				close = tmp;
-				ray->t = x;
+				x = ray->t;
 			}
 		}
 		tmp = tmp->next;
 	}
+	ray->t = x;
 	return (close);
 }
 
