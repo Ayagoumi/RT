@@ -10,6 +10,26 @@
 		<radius_2>10</radius_2>
 	</torus>
 	<camera>
+		<origin> 0 0 500</origin>
+		<fov>60</fov>
+		<look-at>0 0 -1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 300</origin>
+		<fov>60</fov>
+		<look-at>0 0 -1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 200</origin>
+		<fov>60</fov>
+		<look-at>0 0 -1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 100</origin>
+		<fov>60</fov>
+		<look-at>0 0 -1</look-at>
+	</camera>
+	<camera>
 		<origin> 0 0 50</origin>
 		<fov>60</fov>
 		<look-at>0 0 -1</look-at>

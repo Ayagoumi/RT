@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 23:16:14 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/19 17:35:31 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/27 11:25:10 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,34 @@ void	err(int ac, char **av, t_rt *rt, char *file)
 	if (!ft_strcmp(ex, ".xml"))
 	{
 		if (!(file = load_file(av[1])))
+		{
+			free_rt(&rt);
 			exit(0);
+		}
 		if (!(parse(file, rt)))
 			syntax_err(rt, file);
+		free(file);
 	}
 	else if (!ft_strcmp(".obj", ex))
 	{
 		if (!(parse_obj(rt, av[1])))
+		{
+			free_rt(&rt);
 			exit(0);
+		}
 	}
 	else
-		syntax_err(rt, file);
-	free(file);
+	{
+		free_rt(&rt);
+		exit(0);
+	}
+		// syntax_err(rt, file);
+		//hna
 	new_camera(rt);
 	rt->sdl = init_sdl();
 	rt->save_filter = 7;
-	(rt->sdl) ? rtrace(rt) : free_rt(&rt);
+	rtrace(rt);
+	free_rt(&rt);
 }
 
 int		main(int ac, char **av)

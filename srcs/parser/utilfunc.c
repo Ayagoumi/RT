@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilfunc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 05:28:42 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/08 15:54:56 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:30:25 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void					*new_object(int type)
 		n_obj->refraction_index = 0;
 		n_obj->texture = malloc(sizeof(t_tex));
 		n_obj->texture->type = NONE;
+		n_obj->texture->data_pixels = NULL;
 		n_obj->texture->slice = false;
 		n_obj->next = NULL;
 		return (n_obj);

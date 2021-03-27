@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:28:02 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/27 10:52:37 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:02:14 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,6 @@ static double	min(double s[4], int n)
 	if (min)
 		return (min);
 	return (-1);
-}
-
-double powd(double x, int n)
-{
-	double	res;
-
-	res = 1;
-	while (n > 0)
-	{
-		res *= x;
-		n--;
-	}
-	return (res);
 }
 
 double			hit_torus(t_object *to, t_ray *r)
