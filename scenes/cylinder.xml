@@ -1,5 +1,5 @@
 <scene>
-	<ambient>5</ambient>
+	<ambient>15</ambient>
 	<cylinder>
 		<height>10</height>
 		<radius>20</radius>
@@ -21,10 +21,10 @@
 	<cylinder>
 		<height>10</height>
 		<radius>20</radius>
-		<position>-45 0 0</position>
+		<position>15 0 0</position>
 		<orientation>0 1 0 </orientation>
 		<translation>0 0 0</translation>
-		<rotation>-30 0 0</rotation>
+		<rotation>-50 0 0</rotation>
 		<color>0xff00ff</color>
 	</cylinder>
 	<camera>
@@ -33,7 +33,7 @@
 		<look-at>0 0 0</look-at>
 	</camera>
 	<light>
-		<position>0 0 160</position>
+		<position>-45 90 50</position>
 		<color>0xffffff</color>
 		<intensity>200</intensity>
 	</light>

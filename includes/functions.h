@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 10:41:11 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 17:55:24 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,8 @@ void			render_loading_frame(t_sdl	*sdl, t_rt *rt);
 void			loading_savemess(t_sdl *sdl, t_rt *rt);
 void			loading_messages(t_sdl *sdl, int  key);
 void			copy_frame(t_sdl *sdl, int filter);
+
+bool			is_zero(double x);
+double			cbrt(double x);
 
 #endif

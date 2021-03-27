@@ -6,13 +6,13 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:51:02 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/25 17:30:51 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:20:59 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-double	calc_solv(t_object *elip, t_ray *ray)
+double	calc_solv(t_object *elip, t_ray *r)
 {
 	elip->inter.t1 = (-elip->inter.b + elip->inter.delta) \
 		/ (2 * elip->inter.a);
@@ -20,10 +20,10 @@ double	calc_solv(t_object *elip, t_ray *ray)
 		/ (2 * elip->inter.a);
 	if (((elip->inter.t1 < elip->inter.t2 || elip->inter.t2 < 0.001) \
 		&& elip->inter.t1 > 0.1))
-		return (ray->t = elip->inter.t1);
+		return (r->t = elip->inter.t1);
 	else if (((elip->inter.t2 < elip->inter.t1 || elip->inter.t1 < 0.001) \
 		&& elip->inter.t2 > 0.1))
-		return (ray->t = elip->inter.t2);
+		return (r->t = elip->inter.t2);
 	return (-1);
 }
 
@@ -47,10 +47,10 @@ double	hit_ellipsoid(t_object *elip, t_ray *r)
 	elip->inter.delta = elip->inter.b \
 		* elip->inter.b - 4 * elip->inter.a * elip->inter.c;
 	if (elip->inter.delta < 0)
-		return (-1);
+		return (r->t = -1);
 	elip->inter.delta = sqrtf(elip->inter.delta);
 	if (elip->inter.delta < 0)
-		return (-1);
+		return (r->t = -1);
 	elip->inter.t = calc_solv(elip, r);
-	return (calc_solv(elip, r));
+	return (r->t = calc_solv(elip, r));
 }

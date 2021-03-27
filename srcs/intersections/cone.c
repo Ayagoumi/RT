@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:47:25 by ahkhilad          #+#    #+#             */
-/*   Updated: 2021/03/25 17:26:47 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:19:23 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ double				hit_cone(t_object *c, t_ray *r)
 	m = dot(r->direction, c->orientation) * t \
 		+ dot(c->inter.oc, c->orientation);
 	if (m < 0 || m > c->height)
-		return (-1.0);
-	return (t);
+		return (r->t = -1.0);
+	return (r->t = t);
 }

@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:46:46 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 19:06:30 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:05:44 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define W 800
 # define H 800
 # define WID 1000
-#define HEI 850
+# define HEI 850
 # define DIFFUSE 1.0
 # define SPECULER 1.0
 # define MAX_REF 3

@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 14:25:52 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/24 18:13:32 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:21:57 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ double			hit_triangle(t_object *triangle, t_ray *r)
 	u *= triangle->tri.inv_det;
 	v *= triangle->tri.inv_det;
 	triangle->inter.t *= triangle->tri.inv_det;
-	return (triangle->inter.t);
+	return (r->t = triangle->inter.t);
 }
