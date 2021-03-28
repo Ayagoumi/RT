@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/28 16:00:02 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:01:31 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void			copy_obj_help(t_object *n_obj, t_object *obj)
 	n_obj->refraction_index = obj->refraction_index;
 	n_obj->inter = obj->inter;
 	n_obj->id = obj->id;
-	n_obj->slice_oaxis = obj->slice_oaxis;
-	n_obj->slice_axis = obj->slice_axis;
-	n_obj->slice_oaxis_check = obj->slice_oaxis_check;
-	n_obj->slice_axis_check = obj->slice_axis_check;
+	n_obj->slice = obj->slice;
+	n_obj->slice_check = obj->slice_check;
 	n_obj->texture = obj->texture;
 	n_obj->slice_flag = obj->slice_flag;
 }
@@ -60,7 +58,6 @@ unsigned int	pixel_color(t_rt *rt, t_ray *ray)
 	t_color			color1;
 
 	tmp = rt->objects;
-	ray->t = -1.0;
 	x_t[1] = -1.0;
 	color = (t_color){0, 0, 0};
 	while (tmp)
