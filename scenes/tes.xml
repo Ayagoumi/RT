@@ -1,0 +1,27 @@
+<scene>
+	<ambient>15</ambient>
+	<cylinder>
+		<height>50</height>
+		<radius>20</radius>
+		<position>-15 0 0</position>
+		<orientation>1 0 0 </orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff00ff</color>
+	</cylinder>
+	<camera>
+		<origin> 0 0 160</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<light>
+		<position>0 50 50</position>
+		<color>0xffffff</color>
+		<intensity>100</intensity>
+	</light>
+	<light>
+		<position>0 -50 50</position>
+		<color>0xffffff</color>
+		<intensity>100</intensity>
+	</light>
+</scene>
