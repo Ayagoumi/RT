@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:17:24 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 19:09:37 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:38:55 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,6 @@ int		check_for_triangle(int type, t_node n)
 			type != MATTER && type != TEXTURE && type != SLICE)
 		return (-1);
 	if (type == POINT_A && n.cmp.point_a == true)
-		return (-1);
-	else if (type == COLOR && n.cmp.color == true)
-		return (-1);
-	else if (type == POINT_B && n.cmp.point_b == true)
-		return (-1);
-	else if (type == ROTATION && n.cmp.rotation == true)
-		return (-1);
-	else if (type == TRANSLATION && n.cmp.translation == true)
-		return (-1);
-	else if (type == POINT_C && n.cmp.point_c == true)
-		return (-1);
-	return (1);
-}
-
-int		check_for_parallelogram(int type, t_node n)
-{
-	if (type != ROTATION && type != TRANSLATION && type != COLOR\
-			&& type != POINT_A && type != POINT_B && type != POINT_C && \
-			type != POINT_D && type != REF_INDEX && type != REFLEXION\
-			&& type != TRANSPARENT && type != MATTER  \
-			&& type != TEXTURE && type != SLICE)
-		return (-1);
-	if (type == POINT_A && n.cmp.point_a == true)
-		return (-1);
-	if (type == POINT_D && n.cmp.point_d == true)
 		return (-1);
 	else if (type == COLOR && n.cmp.color == true)
 		return (-1);

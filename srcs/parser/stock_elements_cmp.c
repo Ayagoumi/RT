@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 05:49:45 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/24 19:07:41 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:38:42 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int		all_cmp_validforobjects(t_node n)
 		return (all_cmp_valid_for_triangle(n));
 	else if (n.type == TORUS)
 		return (all_cmp_valid_for_torus(n));
-	else if (n.type == PARALLELOGRAM)
-		return (all_cmp_valid_for_parallelogram(n));
 	else if (n.type == DISK)
 		return (all_cmp_valid_for_disk(n));
 	return (-1);

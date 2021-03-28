@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:28:02 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/27 11:02:14 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:54:18 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ double			hit_torus(t_object *to, t_ray *r)
 		+ powd(to->radius2, 2)), 2) - 4 * powd(to->radius2, 2) * \
 		(powd(to->radius1, 2) - dot(to->inter.oc, to->orientation) \
 		* dot(to->inter.oc, to->orientation));
-	num = ft_solve_quartic(c, s);
-	if (num == 0)
+	if ((num = ft_solve_quartic(c, s)) == 0)
 		return (-1);
 	r->t = min(s, num);
 	return (to->inter.t = r->t);

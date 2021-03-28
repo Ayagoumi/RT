@@ -6,7 +6,7 @@
 #    By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 05:04:40 by nabouzah          #+#    #+#              #
-#    Updated: 2021/03/25 08:56:13 by ayagoumi         ###   ########.fr        #
+#    Updated: 2021/03/28 16:40:59 by ayagoumi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS= -Wall -Wextra -Werror
 OBJDIR = ../../objs
 SRCDIR= ./
 OBJ= $(OBJDIR)/normal_cone.o $(OBJDIR)/normal_plane.o $(OBJDIR)/normal_sphere.o\
-$(OBJDIR)/normal_cylinder.o $(OBJDIR)/normal_parallelogram.o\
+$(OBJDIR)/normal_cylinder.o\
 $(OBJDIR)/normal_triangle.o $(OBJDIR)/normal_ellipsoid.o\
 $(OBJDIR)/normal_paraboloid.o $(OBJDIR)/normal_disk.o $(OBJDIR)/normal_torus.o
 INCS = ../../includes/normals/nor_functions.h
