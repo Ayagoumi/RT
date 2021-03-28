@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 23:16:14 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/28 15:46:54 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:29:40 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,8 @@ void	syntax_err(t_rt *rt, char *file)
 	exit(0);
 }
 
-void	err(char **av, t_rt *rt, char *file)
+void	err2(char **av, t_rt *rt, char *file, char *ex)
 {
-	char *ex;
-
-	ex = ft_strrchr(av[1], '.');
-	if (!ex)
-		exit(0);
-	if (!(rt = init_rt()))
-		destroy(MALLOC_ERROR);
 	if (!ft_strcmp(ex, ".xml"))
 	{
 		if (!(file = load_file(av[1])))
@@ -53,6 +46,18 @@ void	err(char **av, t_rt *rt, char *file)
 		free_rt(&rt);
 		exit(0);
 	}
+}
+
+void	err(char **av, t_rt *rt, char *file)
+{
+	char *ex;
+
+	ex = ft_strrchr(av[1], '.');
+	if (!ex)
+		exit(0);
+	if (!(rt = init_rt()))
+		destroy(MALLOC_ERROR);
+	err2(av, rt, file, ex);
 	new_camera(rt);
 	rt->sdl = init_sdl();
 	rt->save_filter = 7;

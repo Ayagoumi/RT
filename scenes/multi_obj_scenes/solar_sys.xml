@@ -1,0 +1,119 @@
+<scene>
+	<ambient>5</ambient>
+	<sphere>
+		<position>0 7 0</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<texture>sun.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>-5 14 0</position>
+		<radius>0.5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<texture>mercury.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>5 12 0</position>
+		<radius>0.5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<texture>venus.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>10 9 0</position>
+		<radius>0.7</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<texture>earth.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>7 7 0</position>
+		<radius>0.8</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<texture>mars.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>-6 5 0</position>
+		<radius>1.5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 00</rotation>
+		<texture>jupiter.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>0 0 0</position>
+		<radius>2</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 00</rotation>
+		<texture>saturn.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<torus>
+		<color>0x9b7653</color>
+		<position>-10 10 -10</position>
+		<rotation>0 30 0</rotation>
+		<orientation>1 1 0</orientation>
+		<translation>0 0 0</translation>
+		<radius_1>0.2</radius_1>
+		<radius_2>3</radius_2>
+	</torus>
+	<sphere>
+		<position>-11 -5 0</position>
+		<radius>2</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 00</rotation>
+		<texture>uranus.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>15 -10 0</position>
+		<radius>2</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 00</rotation>
+		<texture>neptune.jpg</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<camera>
+		<origin> 0 0 10</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 10</origin>
+		<fov>90</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 10</origin>
+		<fov>120</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+		<camera>
+		<origin> 0 0 -20</origin>
+		<fov>120</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 20</origin>
+		<fov>120</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 20</origin>
+		<fov>90</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<light>
+		<position>0 0 40</position>
+		<color>0xffffff</color>
+		<intensity>70</intensity>
+	</light>
+</scene>

@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:27:51 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/28 16:56:13 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:27:09 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void	new_objects2(t_object *n_obj)
 	n_obj->angle = 0;
 	n_obj->slice_flag = 1;
 	n_obj->distance = 0;
+	n_obj->height = 0;
 }
 
-double		map(double x)
+double	map(double x)
 {
 	if (x > 100)
 		return (100.0);
@@ -59,7 +60,8 @@ void	stock_slice(t_object *obj, char *str)
 		obj->slice = (t_vect3){ft_atod(split[0]),\
 		ft_atod(split[1]), ft_atod(split[2])};
 		obj->slice_check = true;
-		obj->slice = (t_vect3){map(obj->slice.x), map(obj->slice.y), map(obj->slice.z)};
+		obj->slice = (t_vect3){map(obj->slice.x), map(obj->slice.y), \
+			map(obj->slice.z)};
 	}
 	free_tab2(&split, i);
 }

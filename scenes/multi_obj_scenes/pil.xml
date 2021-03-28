@@ -6,15 +6,15 @@
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0x969696</color>
-		<texture>Fabric.jpg</texture>
 	</sphere>
 	<cylinder>
-		<height>15</height>
+		<height>30</height>
 		<radius>5</radius>
 		<position>0 0 0</position>
 		<orientation>0 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
+		<slice>0 0 1</slice>
 		<color>0x969696</color>
 	</cylinder>
 	<sphere>
@@ -25,6 +25,21 @@
 		<color>0x969696</color>
 	</sphere>
 	<camera>
+		<origin>-60 0 -50</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<camera>
+		<origin>0 0 -50</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<camera>
+		<origin>60 0 -50</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<camera>
 		<origin>0.0 0 50</origin>
 		<fov>60</fov>
 		<look-at>0 0 0</look-at>
@@ -34,8 +49,8 @@
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>
-	<light>
-		<position>-150 50 50</position>
+		<light>
+		<position>0 0 -50</position>
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>

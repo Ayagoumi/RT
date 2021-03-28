@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:48:56 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/26 19:05:14 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:25:54 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ t_vect3			torus_normal(t_object *obj, t_ray *ray)
 	m = sqrt(powf(obj->radius2, 2) - powf(k, 2));
 	n = normalize(vect_sub(h, vect_sub(a_vect, \
 		v_c_prod(vect_sub(ray->origin, a_vect), m / (obj->radius1 + m)))));
-	return(n);
+	return (n);
 }

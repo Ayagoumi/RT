@@ -1,0 +1,33 @@
+<scene>
+	<ambient>10</ambient>
+	<sphere>
+		<position>30 0 -160</position>
+		<radius>10</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 90</rotation>
+		<color>0xff</color>
+		<texture>earthmap.jpg</texture>
+	</sphere>
+	<sphere>
+		<position>15 0 0</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 90</rotation>
+		<texture>earthmap.jpg</texture>
+		<texture>pn.pngg.png</texture>
+		<color>0xff0000</color>
+	</sphere>
+	<camera>
+		<origin>0 0 70</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<light>
+		<position>-10 0 70</position>
+		<color>0xffffaf</color>
+		<intensity>100</intensity>
+		<look-at>0 0 0</look-at>
+		<type>parallel</type>
+	</light>
+
+</scene>

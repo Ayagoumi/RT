@@ -6,13 +6,13 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 11:01:23 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/27 11:01:35 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:22:30 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-double powd(double x, int n)
+double	powd(double x, int n)
 {
 	double	res;
 

@@ -1,0 +1,37 @@
+<scene>
+	<ambient>5</ambient>
+	<sphere>
+		<position>0 0 0</position>
+		<radius>10</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 00</rotation>
+		<texture>earth.jpg</texture>
+		<color>0xff0000</color>
+		<slice>0 5 0</slice>
+	</sphere>
+	<camera>
+		<origin>40 60 30</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 40 30 50</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 30 50</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 50</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<light>
+		<position>0 0 120</position>
+		<color>0xffffff</color>
+		<intensity>90</intensity>
+	</light>
+</scene>

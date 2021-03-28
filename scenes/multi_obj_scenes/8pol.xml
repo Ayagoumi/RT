@@ -1,0 +1,245 @@
+<scene>
+    <ambient>5</ambient>
+
+	<plane>
+		<position>0 -3 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x00ff00</color>
+		<texture>table.png</texture>
+	</plane>
+
+	<sphere>
+		<position>0 0 0</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>3 0 5</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+	<sphere>
+		<position>-3 0 5</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>0 0 10</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 -30 60</rotation>
+		<texture>8ball.png</texture>
+		<color>0x000000</color>
+	</sphere>
+	<sphere>
+		<position>-6 0 10</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+		<sphere>
+		<position>6 0 10</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+		<sphere>
+		<position>3 0 15</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>-3 0 15</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+	<sphere>
+		<position>-9 0 15</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>9 0 15</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+	<sphere>
+		<position>0 0 20</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+	<sphere>
+		<position>-6 0 20</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+	<sphere>
+		<position>-12 0 20</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+		<sphere>
+		<position>6 0 20</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffff00</color>
+	</sphere>
+	<sphere>
+		<position>12 0 20</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</sphere>
+
+	<sphere>
+		<position>-12 0 -3</position>
+		<radius>3</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</sphere>
+
+    <cylinder>
+		<height>120</height>
+		<radius>2</radius>
+		<position>10 5 0</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>5 40 0</rotation>
+		<color>0x0000ff</color>
+        <texture>stecca.png</texture>
+	</cylinder>
+	<cylinder>
+		<height>125</height>
+		<radius>1.8</radius>
+		<position>10 5 0</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>5 40 0</rotation>
+		<color>0x0000ff</color>
+        <texture>gold.png</texture>
+	</cylinder>
+	<cylinder>
+		<height>130</height>
+		<radius>1.3</radius>
+		<position>10 5 0</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>5 40 0</rotation>
+		<color>0x0000ff</color>
+        <texture>rubber.png</texture>
+	</cylinder>
+
+	<cylinder>
+		<height></height>
+		<radius>22</radius>
+		<position>0 5 -120</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</cylinder>
+	<sphere>
+		<position>0 -3 -122</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x000000</color>
+	</sphere>
+	<sphere>
+		<position>0 -15 -100</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x000000</color>
+	</sphere>
+
+	<cylinder>
+		<height></height>
+		<radius>22</radius>
+		<position>-300 5 0</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 30</rotation>
+		<color>0xffffff</color>
+	</cylinder>
+
+	<camera>
+		<origin> 0 50 16</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+	<camera>
+		<origin> 0 20 50</origin>
+		<fov>120</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+	<camera>
+		<origin>120 20 0</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+
+	<light>
+		<position>0 10 30</position>
+		<color>0xffffff</color>
+		<intensity>60</intensity>
+	</light>
+
+	<light>
+		<position>0 50 10</position>
+		<color>0xffffff</color>
+		<intensity>60</intensity>
+	</light>
+
+	<light>
+		<position>100 50 -100</position>
+		<color>0xffffff</color>
+		<intensity>20</intensity>
+	</light>
+	<light>
+		<position>120 50 -100</position>
+		<color>0xffffff</color>
+		<intensity>20</intensity>
+	</light>
+	<light>
+		<position>-100 50 -100</position>
+		<color>0xffffff</color>
+		<intensity>20</intensity>
+	</light>
+	<light>
+		<position>-120 50 -100</position>
+		<color>0xffffff</color>
+		<intensity>20</intensity>
+	</light>
+
+</scene>

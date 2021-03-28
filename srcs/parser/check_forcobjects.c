@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:17:24 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/28 16:38:55 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:27:45 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		check_for_torus(int type, t_node n)
 		return (-1);
 	return (1);
 }
-
 
 int		check_for_disk(int type, t_node n)
 {
