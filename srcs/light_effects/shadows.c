@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shadows.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/27 10:18:12 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 17:57:02 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int				in_shadow(t_rt *rt, t_light *light, t_object *object)
 			shadow.hit_point = v_c_prod(shadow.direction, t);
 			distance = sqrtf(dot(shadow.hit_point, shadow.hit_point)) + 1e-5;
 			if (object->type == TORUS)
-				distance = sqrtf(dot(shadow.hit_point, shadow.hit_point)) + 1e-1;
+				distance = sqrtf(dot(shadow.hit_point, shadow.hit_point));
 			if (t > 0 && distance < light->d && !obj->is_transp)
 				return (0);
 			else if (t > 0 && distance < light->d && obj->is_transp)
