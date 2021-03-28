@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   objfile.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 12:11:31 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/28 11:20:55 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:27:05 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_object		*stock_points(int nb, char *path)
 	while (get_next_line(fd, &line))
 	{
 		w.split = ft_strsplit(line, ' ');
-		if (!*w.split)
+		if (!w.split || !*w.split)
 			continue;
 		if (w.z < nb && !ft_strcmp(w.split[0], "v"))
 			str_v(&w, tab);

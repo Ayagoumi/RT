@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   objfile2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:51:27 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/27 11:53:02 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:16:38 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void			test_obj(t_stk *w, t_point *tab, int j)
 		w->obj->point_b = tab[ft_atoi(w->split[2]) - 1];
 		w->obj->point_c = tab[ft_atoi(w->split[3]) - 1];
 		w->obj->color = (t_color){1.0, 1.0, 1.0};
+		w->obj->next = NULL;
 		w->tmp = w->obj;
 	}
 	else
@@ -38,6 +39,7 @@ void			test_obj(t_stk *w, t_point *tab, int j)
 		w->tmp->next->point_b = tab[ft_atoi(w->split[2]) - 1];
 		w->tmp->next->point_c = tab[ft_atoi(w->split[3]) - 1];
 		w->tmp->next->color = (t_color){f_rand(1.0 , 0.0), f_rand(1.0 , 0.0), f_rand(1.0 , 0.0)};
+		w->tmp->next->next = NULL;
 		w->tmp = w->tmp->next;
 	}
 	free_tab2(&w->split, j);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilfunc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 05:28:42 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/27 11:30:25 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 15:41:01 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void					*new_object(int type)
 		if (!(n_obj = malloc(sizeof(t_object))))
 			return (NULL);
 		new_objects2(n_obj);
+		n_obj->type = type;
 		n_obj->height = 0;
 		n_obj->is_transp = 0;
 		n_obj->is_ref = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:59:27 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 10:08:21 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:33:24 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,12 @@ static void	init_intersections(t_rt *new)
 	new->intersection[11] = hit_disk;
 }
 
-t_rt		*init_rt(bool save)
+t_rt		*init_rt(void)
 {
 	t_rt	*new;
 
 	if (!(new = malloc(sizeof(t_rt))))
 		return (NULL);
-	new->save = save;
 	new->cameras = NULL;
 	new->lights = NULL;
 	new->objects = NULL;

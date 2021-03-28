@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:28:22 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 15:58:34 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:10:07 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,12 @@ void	destroy_sdl(t_sdl **s)
 	sdl = *s;
 	SDL_DestroyRenderer(sdl->ren_ptr);
 	SDL_DestroyWindow(sdl->win_ptr);
+	SDL_FreeSurface(sdl->frame_img);
+	SDL_FreeSurface(sdl->loading);
+	SDL_FreeSurface(sdl->savemes);
+	free(sdl->data_frame);
+	free(sdl->data_loading);
+	free(sdl->data_savemes);
 	TTF_Quit();
 	SDL_Quit();
 	free(sdl);

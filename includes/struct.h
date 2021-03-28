@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:47:47 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 12:46:59 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:44:17 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,10 +241,8 @@ typedef struct	s_object
 	int				slice_flag;
 	t_matter		matter;
 	t_tex			*texture;
-	t_vect3			slice_axis;
-	t_vect3			slice_oaxis;
-	bool			slice_axis_check;
-	bool			slice_oaxis_check;
+	t_vect3			slice;
+	bool			slice_check;
 	struct s_object	*next;
 }				t_object;
 
@@ -298,7 +296,6 @@ typedef struct	s_sdl
 
 typedef struct	s_rt
 {
-	bool			save;
 	int				number_id;
 	t_sdl			*sdl;
 	t_object		*objects;

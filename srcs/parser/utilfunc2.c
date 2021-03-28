@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilfunc2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:27:51 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/26 13:11:41 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 15:41:12 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ void	new_objects2(t_object *n_obj)
 	n_obj->rotation = (t_vect3){0, 0, 0};
 	n_obj->translation = (t_vect3){0, 0, 0};
 	n_obj->color = (t_color){0, 0, 0};
-	n_obj->slice_axis = (t_point){0, 0, 0};
-	n_obj->slice_oaxis = (t_point){0, 0, 0};
-	n_obj->slice_axis_check = false;
-	n_obj->slice_oaxis_check = false;
+	n_obj->slice = (t_point){0, 0, 0};
+	n_obj->slice_check = false;
 	n_obj->corner[0] = (t_point){0, 0, 0};
 	n_obj->corner[1] = (t_point){0, 0, 0};
 	n_obj->radius = 0;
@@ -36,6 +34,15 @@ void	new_objects2(t_object *n_obj)
 	n_obj->angle = 0;
 	n_obj->slice_flag = 1;
 	n_obj->distance = 0;
+}
+
+double		map(double x)
+{
+	if (x > 100)
+		return (100.0);
+	else if (x < 0)
+		return (0.0);
+	return (x);
 }
 
 void	stock_slice(t_object *obj, char *str)
@@ -47,20 +54,12 @@ void	stock_slice(t_object *obj, char *str)
 	split = ft_strsplit(str, ' ');
 	while (split[i])
 		i++;
-	if (i == 4)
+	if (i == 3)
 	{
-		if (!ft_strcmp(split[3], "object-axis"))
-		{
-			obj->slice_oaxis = (t_vect3){ft_atod(split[0]),\
-			ft_atod(split[1]), ft_atod(split[2])};
-			obj->slice_oaxis_check = true;
-		}
-		else if (!ft_strcmp(split[3], "axis"))
-		{
-			obj->slice_axis = (t_vect3){ft_atod(split[0]),\
-			ft_atod(split[1]), ft_atod(split[2])};
-			obj->slice_axis_check = true;
-		}
+		obj->slice = (t_vect3){ft_atod(split[0]),\
+		ft_atod(split[1]), ft_atod(split[2])};
+		obj->slice_check = true;
+		obj->slice = (t_vect3){map(obj->slice.x), map(obj->slice.y), map(obj->slice.z)};
 	}
 	free_tab2(&split, i);
 }

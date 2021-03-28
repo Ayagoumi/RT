@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_functions.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 23:14:56 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/25 09:02:19 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:33:54 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			stock_matter(t_object *obj, char *str);
 ** ------------------------------{Init}-------------------------
 */
 
-t_rt			*init_rt(bool save);
+t_rt			*init_rt(void);
 t_tags			init_tab_tags(void);
 void			init_ctags_follow_up(t_tags *tags);
 void			init_ctags_cmp(t_tags *tags);
