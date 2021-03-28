@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 16:53:08 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 12:48:44 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 15:58:56 by aeddaqqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void			copy_obj_help(t_object *n_obj, t_object *obj)
 	n_obj->refraction_index = obj->refraction_index;
 	n_obj->inter = obj->inter;
 	n_obj->id = obj->id;
-	n_obj->slice_oaxis = obj->slice_oaxis;
-	n_obj->slice_axis = obj->slice_axis;
-	n_obj->slice_oaxis_check = obj->slice_oaxis_check;
-	n_obj->slice_axis_check = obj->slice_axis_check;
+	n_obj->slice = obj->slice;
+	n_obj->slice_check = obj->slice_check;
 	n_obj->texture = obj->texture;
 	n_obj->slice_flag = obj->slice_flag;
 }
