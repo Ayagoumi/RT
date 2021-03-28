@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/27 19:11:34 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:33:20 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,30 @@ static t_vect3	lit_comp(t_rt *rt, t_light light, t_object *object, t_ray *ray)
 static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 {
 	double			x;
-	t_object		*close;
-	t_object		*tmp;
+	t_object		*close_tmp[2];
 	t_object		o;
 
-	tmp = rt->objects;
-	close = NULL;
+	close_tmp[1] = rt->objects;
+	close_tmp[0] = NULL;
 	ray->t = -1.0;
 	x = -1;
-	while (tmp)
+	while (close_tmp[1])
 	{
-		copy_obj(&o, tmp);
+		copy_obj(&o, close_tmp[1]);
 		if (node->id != o.id)
 		{
 			rt->intersection[o.type](&o, ray);
-			ray->t = slice_obj(tmp, *ray, ray->t);
+			ray->t = slice_obj(close_tmp[1], *ray, ray->t);
 			if (ray->t > 0.0 && (x > ray->t || x == -1))
 			{
-				close = tmp;
+				close_tmp[0] = close_tmp[1];
 				x = ray->t;
 			}
 		}
-		tmp = tmp->next;
+		close_tmp[1] = close_tmp[1]->next;
 	}
 	ray->t = x;
-	return (close);
+	return (close_tmp[0]);
 }
 
 t_color			ref_trsp(t_rt *rt, t_object *obj, t_ray reflect, t_light *light)
