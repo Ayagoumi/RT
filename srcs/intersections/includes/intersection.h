@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   intersection.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 15:50:53 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/26 12:49:13 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:55:00 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERSECTION_H
 # define INTERSECTION_H
 
-// int		ft_cylinder_intersect(t_object *cylinder, t_ray *ray, double *tmin);
-// int		box_intersect(t_object *box, t_ray *ray, double *tmin);
-// int		ft_cone_intersect(t_object *cone, t_ray *ray, double *tmin);
-// int		ft_ellipsoid_intersect(t_object *elip, t_ray *ray, double *tmin);
-// int		ft_parallelogram_intersect(t_object *para, t_ray *ray, double *tmin);
-// int		ft_plane_intersect(t_object *plane, t_ray *ray, double *tmin);
-// int		ft_sphere_intersect(t_object *sphere, t_ray *ray, double *tmin);
-// int		ft_triangle_intersect(t_object *triangle, t_ray *ray, double *tmin);
-// int		ft_disk_intersect(t_object *disk, t_ray *ray, double *tmin);
-// void	ft_compute_normals(t_hit *hit, t_ray *ray);
+double	hit_cone(t_object *c, t_ray *r);
+double	hit_cylinder(t_object *cyl, t_ray *r);
+double	hit_disk(t_object *disk, t_ray *r);
+double	hit_ellipsoid(t_object *elip, t_ray *r);
+double	hit_paraboloid(t_object *para, t_ray *r);
+double	hit_plane(t_object *plane, t_ray *ray);
+double	hit_sphere(t_object *sph, t_ray *ray);
+double	hit_torus(t_object *to, t_ray *r);
+double	hit_triangle(t_object *triangle, t_ray *r);
+double	equa_solu(double a, double b, double delta);
 double	slice_obj(t_object *o, t_ray r, double t);
+
 #endif

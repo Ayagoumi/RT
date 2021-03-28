@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 12:33:01 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/27 11:02:48 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:42:40 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ double			hit_ellipsoid(t_object *elip, t_ray *ray);
 double			hit_torus(t_object *torus, t_ray *r);
 double			hit_paraboloid(t_object *pa, t_ray *ray);
 double			hit_disk(t_object *disk, t_ray *ray);
-double			hit_parallelogram(t_object *para, t_ray *ray);
 t_vect3			ellipsoid_normal(t_object *object, t_ray *ray);
 t_vect3			cylinder_normal(t_object *object, t_ray *ray);
 t_vect3			triangle_normal(t_object *object, t_ray *ray);
@@ -45,7 +44,6 @@ t_vect3			plane_normal(t_object *object, t_ray *ray);
 t_vect3			sphere_normal(t_object *obj, t_ray *ray);
 t_vect3			paraboloid_normal(t_object *object, t_ray *ray);
 t_vect3			normal_disk(t_object *disk, t_ray *ray);
-t_vect3			normal_parallelogram(t_object *para, t_ray *ray);
 t_vect3			torus_normal(t_object *obj, t_ray *ray);
 t_vect3			rotation_xyz(t_vect3 v, t_vect3 a);
 void			hooks(t_rt *rt);

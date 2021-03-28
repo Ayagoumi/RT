@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:46:46 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/26 18:05:44 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:40:00 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ typedef	enum	e_type
 	PARABOLOID,
 	TRIANGLE,
 	TORUS,
-	PARALLELOGRAM,
 	DISK,
 	AMBIENT
 }				t_type;
