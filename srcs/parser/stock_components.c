@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stock_components.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:24:14 by aeddaqqa          #+#    #+#             */
-/*   Updated: 2021/03/28 15:35:51 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:58:09 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,22 @@ static int		stock_texture(t_object **obj, int i, SDL_Surface *s, char *str)
 	while (split[++i])
 		if (i == 1 && !ft_strcmp("slice", split[i]))
 			(*obj)->texture->slice = true;
-	(*obj)->texture->type = TEX;
 	path = ft_strjoin("./resources/textures/", split[0]);
 	if (!path || !(s = IMG_Load(path)))
 	{
 		free_tab2(&split, i);
 		if (path)
 			free(path);
-		(*obj)->texture->type = NONE;
 		return (-1);
 	}
+	(*obj)->texture->type = TEX;
 	free(path);
 	(*obj)->texture->w = s->w;
 	(*obj)->texture->h = s->h;
 	(*obj)->texture->data_pixels = \
 		convert_color((char*)s->pixels, s->w, s->h, s->format->BytesPerPixel);
+	free_tab2(&split, i);
+	SDL_FreeSurface(s);
 	return (1);
 }
 
