@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   image.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoouali <yoouali@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:23:39 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/26 08:32:24 by yoouali          ###   ########.fr       */
+/*   Updated: 2021/03/29 10:54:27 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef	struct	s_ind
 	int		i;
 	int		j;
 }				t_ind;
-
 
 typedef	struct	s_col
 {
@@ -59,18 +58,17 @@ typedef struct	s_image
 	unsigned int	clr_important;
 }				t_image;
 
-
-int         	rgb_to_int_yatak(t_col col);
-t_col       	int_to_rgb_yatak(int val);
-t_col       	alpha_compositing(t_col c1, t_col c2, double a1, double a2);
-t_col      		divide_color(t_col c, double v);
-t_col      		plus_color(t_col c1, t_col c2);
+int				rgb_to_int_yatak(t_col col);
+t_col			int_to_rgb_yatak(int val);
+t_col			alpha_compositing(t_col c1, t_col c2, double a1, double a2);
+t_col			divide_color(t_col c, double v);
+t_col			plus_color(t_col c1, t_col c2);
 void			grey_effect(int *img);
 void			cartoon_effect(int *img);
 void			sepia_effect(int *img);
 void			anaglyph_effect(int *img);
 void			blur_effect(int *img);
-int       	  	compare_color(int   c1, int c2);
+int				compare_color(int c1, int c2);
 void			image_create(int *img);
 char			*straddbmp(char *str, t_ind ind);
 

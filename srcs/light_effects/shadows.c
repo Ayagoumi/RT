@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   shadows.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/29 10:52:22 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:56:04 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-void	set_light(t_light *light, t_object *obj)
+void			set_light(t_light *light, t_object *obj)
 {
 	if (obj->is_transp < 1)
 		light->color = multip_color(light->color,\
