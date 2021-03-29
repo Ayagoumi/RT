@@ -1,0 +1,174 @@
+<scene>
+	<ambient>5</ambient>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>0 0 -400</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>0 0 400</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>0 -400 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>0 400 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>400 0 0</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>20</reflexion>
+		<position>-400 0 0</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+	</plane>
+	<sphere>
+		<position>0 0 0</position>
+		<radius>50</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+		<reflexion>20</reflexion>
+		<matter>Glass</matter>
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>0 150 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x2ECC71</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>0 -150 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF1C40F</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>
+		
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>150 0 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x3498DB</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>
+		
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>-150 0 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x9B59B6</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>	
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>0 0 -150</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xC0392B</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>
+		
+	</sphere>
+	<sphere>
+	<reflexion>20</reflexion>
+		<matter>Glass</matter>
+		<position>0 0 150</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x2E4053</color>
+		<transparent>1</transparent>
+		<ref_index>1.3</ref_index>
+		
+	</sphere>
+	<camera>
+		<origin>150 150 150</origin>
+		<fov>120</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+	<light>
+		<position>0  0 300</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+	<light>
+		<position>0  0 -300</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+
+	<light>
+		<position>0  300 0</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+	<light>
+		<position>0 -300 0</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+
+	<light>
+		<position>300 0 0</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+	<light>
+		<position>-300 0 0</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
+</scene>

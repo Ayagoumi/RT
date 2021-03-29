@@ -1,0 +1,118 @@
+<scene>
+<ambient>10</ambient>
+
+	<plane>
+		<position>0 -40 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<texture>desirt.png</texture>
+	</plane>
+
+	<plane>
+		<position>0 0 -3000</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0</color>
+	</plane>
+
+	<sphere>
+		<position>0 40 0</position>
+		<radius>20</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 -90 0</rotation>
+		<color>0xffffff</color>
+		<texture>rd2head.png</texture>
+	</sphere>
+	<cylinder>
+		<height>60</height>
+		<radius>20</radius>
+		<position>0 0 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+		<texture>r2d2.png</texture>
+	</cylinder>
+
+	<cylinder>
+		<height>60</height>
+		<radius>5</radius>
+		<position>25 -10 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+		<texture>r2d2hand.png</texture>
+	</cylinder>
+	<cylinder>
+		<height>60</height>
+		<radius>5</radius>
+		<position>-25 -10 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x4170B5</color>
+		<texture>r2d2hand.png</texture>
+	</cylinder>
+	<sphere>
+		<position>23 20 0</position>
+		<radius>8</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x4170B5</color>
+	</sphere>
+	<sphere>
+		<position>-23 20 0</position>
+		<radius>8</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x4170B5</color>
+	</sphere>
+	<sphere>
+		<position>120 -10 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x4170B5</color>
+		<texture>bb8.png</texture>
+	</sphere>
+	<sphere>
+		<position>120 30 0</position>
+		<radius>15</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 90 180</rotation>
+		<color>0x4170B5</color>
+		<texture>bb8head.png</texture>
+	</sphere>
+
+	<sphere>
+		<position>-400 800 -800</position>
+		<radius>200</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 90 180</rotation>
+		<color>0xff</color>
+		<texture>deathstar.png</texture>
+	</sphere>
+	<light>
+		<position>0 1300 -700</position>
+		<color>0xffffff</color>
+		<intensity>60</intensity>
+	</light>
+
+
+<camera>
+		<origin>50 0 200</origin>
+		<fov>120</fov>
+		<look-at>50 0 0</look-at>
+</camera>
+
+<light>
+		<position>50 100 150</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+</light>
+
+</scene>

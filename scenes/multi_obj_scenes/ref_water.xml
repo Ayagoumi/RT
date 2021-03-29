@@ -1,0 +1,73 @@
+<scene>
+	<ambient>50</ambient>
+	<plane>
+		<matter>mirror</matter>
+		<reflexion>1</reflexion>
+		<position>0 0 -400</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+	<plane>
+		<position>0 0 400</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+
+	<plane>
+		<position>0 -400 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+	<plane>
+		<position>0 400 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+
+	<plane>
+		<position>400 0 0</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+	<plane>
+		<position>-400 0 0</position>
+		<orientation>1 0 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+	</plane>
+
+	<sphere>
+		<reflexion>1</reflexion>
+		<matter>water</matter>
+		<position>0 0 0</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xE74C3C</color>
+	</sphere>
+
+
+	<camera>
+		<origin>150 50 100</origin>
+		<fov>120</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+
+	<light>
+		<position>0  0 100</position>
+		<color>0xffffff</color>
+		<intensity>60</intensity>
+	</light>
+
+</scene>

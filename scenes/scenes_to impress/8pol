@@ -7,10 +7,10 @@
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0x00ff00</color>
-		<texture>table.png</texture>
 	</plane>
 
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>0 0 0</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -18,6 +18,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>3 0 5</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -25,6 +26,7 @@
 		<color>0xffff00</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-3 0 5</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -32,6 +34,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>0 0 10</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -40,6 +43,7 @@
 		<color>0x000000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-6 0 10</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -47,6 +51,7 @@
 		<color>0xffff00</color>
 	</sphere>
 		<sphere>
+        <reflexion>0.2</reflexion>
 		<position>6 0 10</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -54,6 +59,7 @@
 		<color>0xff0000</color>
 	</sphere>
 		<sphere>
+        <reflexion>0.2</reflexion>
 		<position>3 0 15</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -61,6 +67,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-3 0 15</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -68,6 +75,7 @@
 		<color>0xffff00</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-9 0 15</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -75,6 +83,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>9 0 15</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -82,6 +91,7 @@
 		<color>0xffff00</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>0 0 20</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -89,6 +99,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-6 0 20</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -96,6 +107,7 @@
 		<color>0xffff00</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-12 0 20</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -103,6 +115,7 @@
 		<color>0xffff00</color>
 	</sphere>
 		<sphere>
+        <reflexion>0.2</reflexion>
 		<position>6 0 20</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -110,6 +123,7 @@
 		<color>0xffff00</color>
 	</sphere>
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>12 0 20</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -118,6 +132,7 @@
 	</sphere>
 
 	<sphere>
+    <reflexion>0.2</reflexion>
 		<position>-12 0 -3</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
@@ -189,6 +204,21 @@
 		<rotation>0 0 30</rotation>
 		<color>0xffffff</color>
 	</cylinder>
+
+	<sphere>
+		<position>-300 0 -100</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x000000</color>
+	</sphere>
+	<sphere>
+		<position>-280 0 -100</position>
+		<radius>25</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x000000</color>
+	</sphere>
 
 	<camera>
 		<origin> 0 50 16</origin>

@@ -1,0 +1,147 @@
+<scene>
+	<ambient>5</ambient>
+	<plane>
+		<position>0 0 -50</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>mirror</matter>
+		<reflexion>1</reflexion>
+	</plane>
+
+
+	<plane>
+		<position>0 50 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>glass</matter>
+		<reflexion>10</reflexion>
+	</plane>
+	<plane>
+		<position>0 -50 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>glass</matter>
+		<reflexion>10</reflexion>
+	</plane>
+	<plane>
+		<position>0 0 200</position>
+		<orientation>0 0 1</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xffffff</color>
+		<matter>mirror</matter>
+		<reflexion>1</reflexion>
+	</plane>
+
+	<sphere>
+		<position>0 -35 0</position>
+		<radius>20</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+		<reflexion>1</reflexion>
+	</sphere>
+		<sphere>
+		<position>60 -35 0</position>
+		<radius>20</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+		<reflexion>1</reflexion>
+	</sphere>
+		<sphere>
+		<position>-60 -35 0</position>
+		<radius>20</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF4F6F7</color>
+		<reflexion>1</reflexion>
+	</sphere>
+
+	<sphere>
+		<position>0 -45 30</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x1E8449</color>
+	</sphere>
+	<sphere>
+		<position>10 -45 30</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x7D3C98</color>
+	</sphere>
+		<sphere>
+		<position>-15 -45 50</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x2E4053</color>
+	</sphere>
+	<sphere>
+		<position>30 -45 60</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xF7DC6F</color>
+	</sphere>
+	<sphere>
+		<position>60 -45 60</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xECF0F1</color>
+	</sphere>
+	<sphere>
+		<position>-60 -45 60</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xA04000</color>
+	</sphere>
+
+	<camera>
+		<origin>0 20 150</origin>
+		<fov>120</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<light>
+		<position>0 0 0</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+	<light>
+		<position>0 0 100</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+	<light>
+		<position>-100 0 0</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+	<light>
+		<position>100 0 0</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+
+	<light>
+		<position>50 0 100</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+	<light>
+		<position>-50 0 100</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
+
+</scene>
