@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   object_matter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeddaqqa <aeddaqqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:50:31 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/09 10:58:20 by aeddaqqa         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:58:48 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	set_matter1(t_object *o)
 		o->refraction_index = 1.8;
 		o->is_transp = 0.9;
 		o->is_ref = 0.4;
-		o->color = (t_color){185.0 * 0.2 / 255, 242.0 * 0.2 / 255, 0.2};
+		o->color = (t_color){185.0 * 0.5 / 255, 242.0 * 0.5 / 255, 0.5};
 	}
 	if (o->matter == MIRROR)
 	{
@@ -38,7 +38,7 @@ void		set_matter(t_object *o)
 		o->refraction_index = 1.5;
 		o->is_transp = 0.9;
 		o->is_ref = 0.1;
-		o->color = (t_color){246.0 * 0.2 / 255, 254.0 * 0.2 / 255, 0.2};
+		o->color = (t_color){246.0 * 0.5 / 255, 254.0 * 0.5 / 255, 0.5};
 	}
 	if (o->matter == WATER)
 	{
@@ -46,6 +46,6 @@ void		set_matter(t_object *o)
 		o->is_transp = 0.6;
 		o->is_ref = 0.2;
 		o->color =\
-		(t_color){212.0 * 0.2 / 255, 241.0 * 0.2 / 255, 249.0 * 0.2 / 255};
+		(t_color){212.0 * 0.5 / 255, 241.0 * 0.5 / 255, 249.0 * 0.5 / 255};
 	}
 }

@@ -56,16 +56,19 @@
 	</plane>
 	<sphere>
 		<position>0 0 0</position>
+		<matter>diamond</matter>
 		<radius>50</radius>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
-		<color>0xF4F6F7</color>
-		<reflexion>20</reflexion>
-		<matter>Glass</matter>
+		<color>0x0</color>
 	</sphere>
+	<light>
+		<position>0 0 0</position>
+		<color>0xffffff</color>
+		<intensity>80</intensity>
+	</light>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>0 150 0</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>
@@ -76,7 +79,6 @@
 	</sphere>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>0 -150 0</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>
@@ -88,7 +90,6 @@
 	</sphere>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>150 0 0</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>
@@ -100,7 +101,6 @@
 	</sphere>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>-150 0 0</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>
@@ -111,7 +111,6 @@
 	</sphere>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>0 0 -150</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>
@@ -123,7 +122,6 @@
 	</sphere>
 	<sphere>
 	<reflexion>20</reflexion>
-		<matter>Glass</matter>
 		<position>0 0 150</position>
 		<radius>25</radius>
 		<translation>0 0 0</translation>

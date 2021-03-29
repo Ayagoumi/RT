@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   camera_coords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 18:33:59 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/29 10:03:46 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:17:17 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-t_vect3			checkvec(t_vect3 fwd, t_vect3 vup)
+static t_vect3	checkvec(t_vect3 fwd, t_vect3 vup)
 {
 	double	chk;
 
 	chk = dot(fwd, vup);
-	if ((chk > 0.8 && chk <= 1) || (chk < -0.8 && chk >= -1))
-		return ((t_vect3){1, 0, 0});
+	if (fabs(chk) == 1)
+		return ((t_vect3){0, 0, -1 * chk});
 	return ((t_vect3){0, 1, 0});
 }
 
@@ -32,6 +32,7 @@ void			new_camera(t_rt *rt)
 	rt->cameras->plan_w = rt->cameras->plan_h * rt->cameras->ratio;
 	tmp = vect_sub(rt->cameras->l, rt->cameras->o);
 	rt->cameras->cords.w = normalize(tmp);
+	rt->cameras->up = checkvec(rt->cameras->cords.w, rt->cameras->up);
 	tmp = cross(rt->cameras->cords.w, rt->cameras->up);
 	rt->cameras->cords.u = normalize(tmp);
 	rt->cameras->cords.v = cross(rt->cameras->cords.u, rt->cameras->cords.w);
