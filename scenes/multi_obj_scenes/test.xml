@@ -25,6 +25,16 @@
 		<look-at>0 0 1</look-at>
 	</camera>
 	<camera>
+		<origin> 0 -50 50</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
+		<origin> 0 -20 50</origin>
+		<fov>60</fov>
+		<look-at>0 0 1</look-at>
+	</camera>
+	<camera>
 		<origin> 0 0 50</origin>
 		<fov>60</fov>
 		<look-at>0 0 1</look-at>

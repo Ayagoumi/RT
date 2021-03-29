@@ -3,7 +3,7 @@
 		<cone>
 		<angle>50</angle>
 		<height>10</height>
-		<position>-40 10 0</position>
+		<position>-45 10 0</position>
 		<orientation>0 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
@@ -12,7 +12,7 @@
 	<cone>
 		<angle>50</angle>
 		<height>10</height>
-		<position>-40 -15 0</position>
+		<position>-45 -15 0</position>
 		<orientation>0 -1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>

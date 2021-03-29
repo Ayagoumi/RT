@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_ref_trsp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/29 13:32:56 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:47:35 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 			if (ray->t > 1e-5 && (x > ray->t || x == -1))
 			{
 				close_tmp[0] = close_tmp[1];
-				x = ray->t + 1e-5;
+				x = ray->t;
 			}
 		}
 		close_tmp[1] = close_tmp[1]->next;

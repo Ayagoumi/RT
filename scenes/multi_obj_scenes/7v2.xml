@@ -36,9 +36,9 @@
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0x969696</color>
+		<texture>moon.jpg</texture>
 	</cylinder>
 	<cylinder>
-		
 		<height>50</height>
 		<radius>5</radius>
 		<position>30 0 -40</position>

@@ -1,5 +1,5 @@
 <scene>
-	<ambient>5</ambient>
+	<ambient>0</ambient>
 	<sphere>
 		<position>0 0 -10</position>
 		<radius>5</radius>
@@ -8,13 +8,22 @@
 		<color>0x969696</color>
 		<texture>uranus.jpg</texture>
 	</sphere>
+	<sphere>
+		<position>0 0 -10</position>
+		<radius>15</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x969696</color>
+		<matter>glass</matter>
+		<texture>uranus.jpg</texture>
+	</sphere>
 	<camera>
-		<origin> 0 1 0</origin>
+		<origin> 0 0 50</origin>
 		<fov>60</fov>
 		<look-at>0 0 0</look-at>
 	</camera>
 	<light>
-		<position>0 0 60</position>
+		<position>0 0 160</position>
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>

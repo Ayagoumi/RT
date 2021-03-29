@@ -36,7 +36,7 @@
 		<color>0xff0000</color>
 	</sphere>
 	<plane>
-		<position>0 0 -100</position>
+		<position>0 0 -200</position>
 		<orientation>0 0 1</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
@@ -44,17 +44,17 @@
 		<matter>mirror</matter>
 	</plane>
 	<camera>
-		<origin>0 0 300</origin>
+		<origin>0 -100 300</origin>
 		<fov>60</fov>
 		<look-at>0 0 1</look-at>
 	</camera>
 	<camera>
-		<origin>0 0 200</origin>
+		<origin>0 -50 200</origin>
 		<fov>60</fov>
 		<look-at>0 0 1</look-at>
 	</camera>
 	<camera>
-		<origin>0 0 100</origin>
+		<origin>0 -30 100</origin>
 		<fov>60</fov>
 		<look-at>0 0 1</look-at>
 	</camera>

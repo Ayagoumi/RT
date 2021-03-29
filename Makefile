@@ -6,7 +6,7 @@
 #    By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 16:29:44 by aeddaqqa          #+#    #+#              #
-#    Updated: 2021/03/26 15:47:34 by ayagoumi         ###   ########.fr        #
+#    Updated: 2021/03/29 13:18:43 by ayagoumi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SDL =  `sdl2-config --cflags --libs` -lSDL2 -lSDL2_image -lSDL2_ttf
 all : Lib $(NAME)
 
 $(OBJDIR)/%.o : $(SRCDIR)/%.c $(LIBFT) $(LIBCALC) $(LIBPARSE) $(LIBCAM) $(LIBLIGHTS) $(LIBNORMAL) $(LIBINTERSECT)  $(LIBFILTERS) $(LIBRENDER) $(INC) $(INC1) $(INC3) $(INC2)
-	gcc $(FLAGS) -c -o $@ $< -I $(INC)
+	@gcc $(FLAGS) -c -o $@ $< -I $(INC)
 
 $(NAME) : $(LIBFT) $(LIBCALC) $(LIBPARSE) $(LIBCAM) $(LIBLIGHTS) $(LIBNORMAL) $(LIBINTERSECT)  $(LIBFILTERS) $(LIBRENDER) $(OBJ)
 	@gcc $(FLAGS) -o $@ $^ $(SDL) -I $(INC)

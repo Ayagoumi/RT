@@ -1,13 +1,39 @@
 <scene>
 	<ambient>5</ambient>
 	<paraboloid>
-		<position>0 0 0</position>
+		<position>10 10 0</position>
 		<color>0xff0000</color>
 		<distance>10</distance>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
-		<orientation>0 1 0</orientation>
+		<orientation>1 1 0</orientation>
 	</paraboloid>
+	<paraboloid>
+		<position>-10 -10 0</position>
+		<color>0xff0000</color>
+		<distance>10</distance>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<orientation>-1 -1 0</orientation>
+	</paraboloid>
+	<paraboloid>
+		<position>0 0 -10</position>
+		<color>0xffff00</color>
+		<distance>10</distance>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<orientation>0 0 -1</orientation>
+	</paraboloid>
+	<camera>
+		<origin> 0 0 150</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
+	<camera>
+		<origin> 0 0 300</origin>
+		<fov>60</fov>
+		<look-at>0 0 0</look-at>
+	</camera>
 	<camera>
 		<origin> 0 0 1500</origin>
 		<fov>60</fov>
@@ -15,6 +41,11 @@
 	</camera>
 	<light>
 		<position>0 200 200</position>
+		<color>0xffffff</color>
+		<intensity>100</intensity>
+	</light>
+	<light>
+		<position>0 -200 -200</position>
 		<color>0xffffff</color>
 		<intensity>100</intensity>
 	</light>
