@@ -1,24 +1,48 @@
 <scene>
 	<ambient>5</ambient>
 	<sphere>
-		<position>0 15 0</position>
+		<position>7 7 0</position>
 		<radius>5</radius>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0x969696</color>
 	</sphere>
 	<cylinder>
-		<height>30</height>
+		<height>20</height>
 		<radius>5</radius>
 		<position>0 0 0</position>
-		<orientation>0 1 0</orientation>
+		<orientation>1 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<slice>0 0 1</slice>
 		<color>0x969696</color>
 	</cylinder>
 	<sphere>
-		<position>0 -15 0</position>
+		<position>-7 -7 0</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x969696</color>
+	</sphere>
+		<sphere>
+		<position>-7 7 5</position>
+		<radius>5</radius>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0x969696</color>
+	</sphere>
+	<cylinder>
+		<height>20</height>
+		<radius>5</radius>
+		<position>0 0 5</position>
+		<orientation>-1 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<slice>0 0 1</slice>
+		<color>0x969696</color>
+	</cylinder>
+	<sphere>
+		<position>7 -7 5</position>
 		<radius>5</radius>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
