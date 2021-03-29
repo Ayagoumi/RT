@@ -15,10 +15,16 @@
 		<color>0xffffff</color>
 		<intensity>50</intensity>
 	</light>
+	<light>
+		<position>0 -14 40</position>
+		<color>0xffffff</color>
+		<intensity>50</intensity>
+	</light>
 	<sphere>
 		<position>0 -14 40</position>
 		<radius>3</radius>
 		<translation>0 0 0</translation>
+		<transparent>0.8</transparent>
 		<rotation>0 0 0</rotation>
 		<color>0xff0000</color>
 	</sphere>

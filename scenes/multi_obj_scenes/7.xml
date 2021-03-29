@@ -1,7 +1,7 @@
 <scene>
 	<ambient>20</ambient>
 	<camera>
-		<origin>0 1 0</origin>
+		<origin>0 5 120</origin>
 		<fov>60</fov>
 		<look-at>0 0 0</look-at>
 	</camera>
@@ -17,7 +17,7 @@
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<transparent>0.8</transparent>
-		<color>0xfff000</color>
+		<color>0xff0000</color>
 	</sphere>
 	<cylinder>
 		<height>50</height>
