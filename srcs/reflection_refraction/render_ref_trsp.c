@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_ref_trsp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/29 10:07:59 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:32:56 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 			if (ray->t > 1e-5 && (x > ray->t || x == -1))
 			{
 				close_tmp[0] = close_tmp[1];
-				x = ray->t;
+				x = ray->t + 1e-5;
 			}
 		}
 		close_tmp[1] = close_tmp[1]->next;
@@ -65,14 +65,16 @@ static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 
 t_color			ref_trsp(t_rt *rt, t_object *obj, t_ray reflect, t_light *light)
 {
+	t_object	o;
 	t_object	*close;
 
 	if ((close = refintrsct(rt, &reflect, obj)) && reflect.t != -1)
 	{
 		reflect.hit_point = vect_add(reflect.origin,\
 		v_c_prod(reflect.direction, reflect.t));
-		close->normal = rt->normal[close->type](close, &reflect);
-		return (lit_comp(rt, *light, close, &reflect));
+		copy_obj(&o, close);
+		o.normal = rt->normal[o.type](&o, &reflect);
+		return (lit_comp(rt, *light, &o, &reflect));
 	}
 	return ((t_color){0, 0, 0});
 }
