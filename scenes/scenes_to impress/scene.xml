@@ -2,7 +2,7 @@
 	<ambient>5</ambient>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 -8 30</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -12,7 +12,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 -4 30</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -22,7 +22,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 0 30</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -32,7 +32,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 4 30</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -42,7 +42,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 8 30</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -52,7 +52,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>12 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -62,7 +62,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>8 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -72,7 +72,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>4 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -82,7 +82,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -92,7 +92,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-4 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -102,7 +102,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-8 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -112,7 +112,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-12 0 30</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -142,6 +142,7 @@
 		<radius>4</radius>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
+		<transparent>0.8</transparent>
 		<color>0xff0000</color>
 	</sphere>
 
@@ -171,8 +172,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>12 12 0</position>
+		<height>24</height>
+		<position>12 0 0</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -198,8 +199,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>12 12 20</position>
+		<height>24</height>
+		<position>12 0 20</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -225,8 +226,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>-12 12 20</position>
+		<height>24</height>
+		<position>-12 0 20</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -252,8 +253,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>-12 12 0</position>
+		<height>24</height>
+		<position>-12 0 0</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -279,8 +280,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>-12 12 -20</position>
+		<height>24</height>
+		<position>-12 0 -20</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -306,8 +307,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>12 12 -20</position>
+		<height>24</height>
+		<position>12 0 -20</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -332,8 +333,8 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
-		<position>-12 12 -40</position>
+		<height>24</height>
+		<position>-12 0 -40</position>
 		<orientation>0 1 0</orientation>
 		<radius>2</radius>
 		<color>0xffffff</color>
@@ -358,9 +359,9 @@
 	</sphere>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<radius>2</radius>
-		<position>12 12 -40</position>
+		<position>12 0 -40</position>
 		<orientation>0 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
@@ -440,7 +441,7 @@
 	</plane>
 
 <cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 -8 -50</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -450,7 +451,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 -4 -50</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -460,7 +461,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 0 -50</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -470,7 +471,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 4 -50</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -480,7 +481,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 8 -50</position>
 		<orientation>1 0 0</orientation>
 		<radius>1</radius>
@@ -490,7 +491,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>12 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -500,7 +501,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>8 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -510,7 +511,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>4 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -520,7 +521,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>0 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -530,7 +531,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-4 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -540,7 +541,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-8 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -550,7 +551,7 @@
 	</cylinder>
 
 	<cylinder>
-		<height>23</height>
+		<height>24</height>
 		<position>-12 0 -50</position>
 		<orientation>0 1 0</orientation>
 		<radius>1</radius>
@@ -602,16 +603,22 @@
 		<intensity>50</intensity>
 	</light>
 
+	<light>
+		<position>0 0 -4</position>
+		<color>0xffffff</color>
+		<intensity>100</intensity>
+	</light>
+
 	<camera>
-		<origin> 0 0 50</origin>
+		<origin> 0 0 70</origin>
 		<fov>60</fov>
-		<look-at>0 0 51</look-at>
+		<look-at>0 0 -1</look-at>
 	</camera>
 
 	<camera>
 		<origin> 0 0 30</origin>
 		<fov>60</fov>
-		<look-at>0 0 31</look-at>
+		<look-at>0 0 -1</look-at>
 	</camera>
 
 	<camera>
@@ -621,13 +628,7 @@
 	</camera>
 
 	<camera>
-		<origin> 0 0 -20</origin>
-		<fov>60</fov>
-		<look-at>0 0 1</look-at>
-	</camera>
-
-	<camera>
-		<origin> 0 0 -40</origin>
+		<origin> 0 0 -30</origin>
 		<fov>60</fov>
 		<look-at>0 0 1</look-at>
 	</camera>
