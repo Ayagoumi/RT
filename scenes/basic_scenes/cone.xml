@@ -1,10 +1,73 @@
 <scene>
 	<ambient>0</ambient>
+		<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>-40 10 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>-40 -15 0</position>
+		<orientation>0 -1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
 	<cone>
 		<angle>50</angle>
 		<height>10</height>
 		<position>-10 0 0</position>
-		<orientation>0 1 0 </orientation>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>-10 0 0</position>
+		<orientation>0 1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>15 5 0</position>
+		<orientation>0 -1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>15 -5 0</position>
+		<orientation>0 -1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>40 10 0</position>
+		<orientation>0 -1 0</orientation>
+		<translation>0 0 0</translation>
+		<rotation>0 0 0</rotation>
+		<color>0xff0000</color>
+	</cone>
+	<cone>
+		<angle>50</angle>
+		<height>10</height>
+		<position>40 -15 0</position>
+		<orientation>0 1 0</orientation>
 		<translation>0 0 0</translation>
 		<rotation>0 0 0</rotation>
 		<color>0xff0000</color>

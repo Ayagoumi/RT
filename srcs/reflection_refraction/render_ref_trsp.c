@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_ref_trsp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/28 19:33:20 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:04:00 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static t_vect3	lit_comp(t_rt *rt, t_light light, t_object *object, t_ray *ray)
 {
 	t_vect3 color;
-	float	n_l;
+	double	n_l;
 
 	if (object->texture->type != NONE && (object->type == SPHERE ||\
 	object->type == CYLINDER || object->type == CONE ||\

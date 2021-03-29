@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera_coords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 18:33:59 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/07 11:36:11 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:03:46 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vect3			checkvec(t_vect3 fwd, t_vect3 vup)
 {
-	float	chk;
+	double	chk;
 
 	chk = dot(fwd, vup);
 	if ((chk > 0.8 && chk <= 1) || (chk < -0.8 && chk >= -1))

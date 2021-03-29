@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:56:37 by ebatchas          #+#    #+#             */
-/*   Updated: 2021/03/26 18:06:03 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:05:25 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ static int	ft_case_one(double coeffs[4], double s[4], double *q, double *p)
 
 static int	ft_case_norm(t_quartic *q)
 {
-	if (IS_ZERO(q->u))
+	if (is_zero(q->u))
 		q->u = 0;
 	else if (q->u > 0.0)
 		q->u = sqrt(q->u);
 	else
 		return (0);
-	if (IS_ZERO(q->v))
+	if (is_zero(q->v))
 		q->v = 0.0;
 	else if (q->v > 0.0)
 		q->v = sqrt(q->v);
@@ -83,7 +83,7 @@ int			ft_solve_quartic(double w[5], double s[4])
 	q.q = (1.0 / 8.0) * q.sq_a * q.a - (1.0 / 2.0) * q.a * q.b + q.c;
 	q.r = -(3.0 / 256.0) * q.sq_a * q.sq_a + (1.0 / 16.0) * q.sq_a * q.b -
 		1.0 / 4.0 * q.a * q.c + q.d;
-	if (IS_ZERO(q.r))
+	if (is_zero(q.r))
 		num = ft_case_one(coeffs, s, &q.q, &q.p);
 	else
 		num = ft_case_two(coeffs, s, &q);

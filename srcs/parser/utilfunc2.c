@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:27:51 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/28 18:27:09 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:10:27 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		cmp_with_objects(char *s, char **tab)
 
 	i = 0;
 	if (s)
-		while (i < LIMIT_ELEMENTS + 1)
+		while (i < LIMIT_ELEMENTS)
 		{
 			if (!ft_strcmp(s, tab[i]))
 				return (i);

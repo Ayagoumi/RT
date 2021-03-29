@@ -6,13 +6,13 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:49:51 by ayagoumi          #+#    #+#             */
-/*   Updated: 2021/03/26 17:53:20 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:05:44 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rt.h"
 
-double	cbrt(double x)
+double	ft_cbrt(double x)
 {
 	if (x > 0.0)
 		return (pow(x, 1.0 / 3.0));

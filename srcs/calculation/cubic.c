@@ -6,7 +6,7 @@
 /*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:51:35 by ebatchas          #+#    #+#             */
-/*   Updated: 2021/03/26 18:06:16 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:05:15 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ static int	ft_case_one(double s[2], double *q)
 	int		num;
 	double	u;
 
-	if (IS_ZERO(*q))
+	if (is_zero(*q))
 	{
 		s[0] = 0;
 		num = 1;
 	}
 	else
 	{
-		u = CBRT(-(*q));
+		u = ft_cbrt(-(*q));
 		s[0] = 2.0 * u;
 		s[1] = -u;
 		num = 2;
@@ -52,8 +52,8 @@ static int	ft_case_three(double s[3], double *q, double *d)
 	double	v;
 
 	sqrt_d = sqrt(*d);
-	u = CBRT(sqrt_d - (*q));
-	v = -CBRT(sqrt_d + (*q));
+	u = ft_cbrt(sqrt_d - (*q));
+	v = -ft_cbrt(sqrt_d + (*q));
 	s[0] = u + v;
 	return (1);
 }
@@ -73,7 +73,7 @@ int			ft_solve_cubic(double w[4], double s[3])
 	c.q = 1.0 / 2.0 * (2.0 / 27.0 * c.a * c.sq_a - 1.0 / 3.0 * c.a * c.b + c.c);
 	c.cb_p = c.p * c.p * c.p;
 	c.d = c.q * c.q + c.cb_p;
-	if (IS_ZERO(c.d))
+	if (is_zero(c.d))
 		num = ft_case_one(s, &c.q);
 	else if (c.d < 0.0f)
 		num = ft_case_two(s, &c.q, &c.p, &c.cb_p);

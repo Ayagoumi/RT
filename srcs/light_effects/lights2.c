@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lights2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 19:01:23 by chzabakh          #+#    #+#             */
-/*   Updated: 2021/03/07 16:38:57 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:03:52 by ayagoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_color	multip_color(t_color c1, t_color c2)
 {
 	t_color	new;
-	float	tmp;
+	double	tmp;
 
 	tmp = c1.x * c2.x;
 	new.x = tmp > 1.0 ? 1.0 : tmp;
