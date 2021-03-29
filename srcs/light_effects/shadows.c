@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shadows.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayagoumi <ayagoumi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 19:15:58 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/29 09:57:42 by ayagoumi         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:19:36 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int				in_shadow(t_rt *rt, t_light *light, t_object *object)
 	{
 		copy_obj(&o, obj);
 		if (object->id != obj->id\
-				&& (t_d[0] = rt->intersection[obj->type](&o, &shadow)) > 0.0)
+				&& (t_d[0] = rt->intersection[obj->type](&o, &shadow)) > 1e-5)
 		{
-			t_d[0] = slice_obj(&o, shadow, t_d[0]);
+			t_d[0] = slice_obj(&o, shadow, t_d[0]) + 1e-2;
 			shadow.hit_point = v_c_prod(shadow.direction, t_d[0]);
-			t_d[1] = sqrtf(dot(shadow.hit_point, shadow.hit_point)) + 1e-5;
-			if (t_d[0] > 0 && t_d[1] < light->d && !obj->is_transp)
+			t_d[1] = sqrtf(dot(shadow.hit_point, shadow.hit_point));
+			if (t_d[0] > 0.0 && t_d[1] < light->d && !obj->is_transp)
 				return (0);
-			else if (t_d[0] > 0 && t_d[1] < light->d && obj->is_transp)
+			else if (t_d[0] > 1e-5 && t_d[1] < light->d && obj->is_transp)
 				light->intensity *= powf(obj->is_transp, 0.2);
 		}
 		obj = obj->next;
