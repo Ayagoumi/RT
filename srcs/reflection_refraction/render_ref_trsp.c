@@ -6,7 +6,7 @@
 /*   By: nabouzah <nabouzah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 09:29:47 by nabouzah          #+#    #+#             */
-/*   Updated: 2021/03/28 19:33:20 by nabouzah         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:53:24 by nabouzah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static t_object	*refintrsct(t_rt *rt, t_ray *ray, t_object *node)
 		{
 			rt->intersection[o.type](&o, ray);
 			ray->t = slice_obj(close_tmp[1], *ray, ray->t);
-			if (ray->t > 0.0 && (x > ray->t || x == -1))
+			if (ray->t > 1e-5 && (x > ray->t || x == -1))
 			{
 				close_tmp[0] = close_tmp[1];
 				x = ray->t;
