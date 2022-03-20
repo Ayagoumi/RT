@@ -3,7 +3,7 @@
 **RT** is a ray tracing renderer project of School 42. It implements classic ray tracing algorithm and uses OpenCL for hardware acceleration.<br/>
 **Features**: GPU/CPU mode, reflection, refraction, soft shadows, anti-aliasing(SSAA only), texture-mapping, normal-mapping, image filters(sepia, cel-shading, noise and etc).<br/><br/>
 
-## **Keys**
+<!-- ## **Keys**
 <table width="100%">
 <thead>
 <tr>
@@ -105,9 +105,9 @@
 <td valign="top" align="center"><kbd>&nbsp;B&nbsp;</kbd></td>
 </tr>
 </tbody>
-</table><br/>
+</table><br/> -->
 
-## **Screenshots**
+<!-- ## **Screenshots** -->
 
 <!-- ![](screenshots/rt1.png)
 ![](screenshots/rt2.png)
